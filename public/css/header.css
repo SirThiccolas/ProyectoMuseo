@@ -1,0 +1,51 @@
+/* Header */
+header {
+  width: 100%;
+  overflow: hidden;
+  background: lightgrey;
+  height: 100px;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+header .logo {
+  float: left;
+}
+
+.logo img {
+  width: 100px;
+  padding: 14px 20px;
+}
+
+.enlaces {
+  float: left;
+  line-height: 100px;
+}
+
+.enlaces a {
+  color: black;
+  text-decoration: none;
+  padding: 0px 20px;
+  line-height: normal;
+  font-size: 20px;
+}
+
+.usuario {
+  float: right;
+}
+
+.usuario p {
+  color: black;
+  line-height: 60px;
+  font-size: 20px;
+  float: left;
+}
+
+.usuario img {
+  width: 50px;
+  padding: 25px 20px;
+}/*# sourceMappingURL=header.css.map */

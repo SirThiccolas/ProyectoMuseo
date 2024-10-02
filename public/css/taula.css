@@ -1,0 +1,64 @@
+/* Main */
+.main {
+  margin-top: 100px;
+}
+
+.editar {
+  border: 0px;
+  border-radius: 7px;
+  background-color: rgb(177, 175, 175);
+  position: absolute;
+  height: 27px;
+  width: 80px;
+  left: 55%;
+  color: white;
+}
+
+.editar img {
+  width: 10px;
+  margin: 3px 2px;
+  float: left;
+}
+
+.barra-busqueda {
+  float: right;
+  margin-right: 5%;
+  border: solid 1px lightgray;
+  border-radius: 15px;
+  width: 35%;
+}
+
+.barra-busqueda img {
+  width: 20px;
+  margin: 6px 10px 0px 10px;
+  float: left;
+}
+
+.barra-busqueda input {
+  border: 0px;
+  height: 24px;
+  width: 90%;
+}
+
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 0px;
+}
+
+th, td {
+  padding: 20px;
+  text-align: left;
+}
+
+.row-white {
+  background-color: white;
+}
+
+.row-blue {
+  background-color: #d3cff0;
+}/*# sourceMappingURL=taula.css.map */

@@ -1,0 +1,26 @@
+$bgFooter: lightgrey;
+$widthIconosInfo: 20px;
+$widthIconosRedes: 40px; 
+/* Footer */
+
+footer {
+    width:100%;
+	background: $bgFooter;
+    position: absolute;
+    bottom: 0;
+}
+.info-footer {
+    float: left;
+}
+.info-footer img{
+    width: $widthIconosInfo;
+    margin: 0px 10px 0px 25px;
+}
+.redes {
+    float: right;
+    margin-right: 20px;
+}
+.redes img {
+    width: $widthIconosRedes;
+    margin: 30px 5px;
+}

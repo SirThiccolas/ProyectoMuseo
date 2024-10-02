@@ -1,0 +1,26 @@
+/* Footer */
+footer {
+  width: 100%;
+  background: lightgrey;
+  position: absolute;
+  bottom: 0;
+}
+
+.info-footer {
+  float: left;
+}
+
+.info-footer img {
+  width: 20px;
+  margin: 0px 10px 0px 25px;
+}
+
+.redes {
+  float: right;
+  margin-right: 20px;
+}
+
+.redes img {
+  width: 40px;
+  margin: 30px 5px;
+}/*# sourceMappingURL=footer.css.map */

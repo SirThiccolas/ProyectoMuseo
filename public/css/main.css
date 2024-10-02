@@ -1,0 +1,149 @@
+html, body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  width: 100%;
+  overflow: hidden;
+  background: lightgrey;
+  height: 100px;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+header .logo {
+  float: left;
+}
+
+.logo img {
+  width: 100px;
+  padding: 14px 20px;
+}
+
+.enlaces {
+  float: left;
+  line-height: 100px;
+}
+
+.enlaces a {
+  color: black;
+  text-decoration: none;
+  padding: 0px 20px;
+  line-height: normal;
+  font-size: 20px;
+}
+
+.usuario {
+  float: right;
+}
+
+.usuario p {
+  color: black;
+  line-height: 60px;
+  font-size: 20px;
+  float: left;
+}
+
+.usuario img {
+  width: 50px;
+  padding: 25px 20px;
+}
+
+/* Main */
+.main {
+  margin-top: 100px;
+}
+
+.editar {
+  border: 0px;
+  border-radius: 7px;
+  background-color: rgb(177, 175, 175);
+  position: absolute;
+  height: 27px;
+  width: 80px;
+  left: 55%;
+  color: white;
+}
+
+.editar img {
+  width: 10px;
+  margin: 3px 2px;
+  float: left;
+}
+
+.barra-busqueda {
+  float: right;
+  margin-right: 5%;
+  border: solid 1px lightgray;
+  border-radius: 15px;
+  width: 35%;
+}
+
+.barra-busqueda img {
+  width: 20px;
+  margin: 6px 10px 0px 10px;
+  float: left;
+}
+
+.barra-busqueda input {
+  border: 0px;
+  height: 24px;
+  width: 90%;
+}
+
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 0px;
+}
+
+th, td {
+  padding: 20px;
+  text-align: left;
+}
+
+.row-white {
+  background-color: white;
+}
+
+.row-blue {
+  background-color: #d3cff0;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  background: lightgrey;
+  position: absolute;
+  bottom: 0;
+}
+
+.info-footer {
+  float: left;
+}
+
+.info-footer img {
+  width: 20px;
+  margin: 0px 10px 0px 25px;
+}
+
+.redes {
+  float: right;
+  margin-right: 20px;
+}
+
+.redes img {
+  width: 40px;
+  margin: 30px 5px;
+}/*# sourceMappingURL=main.css.map */
