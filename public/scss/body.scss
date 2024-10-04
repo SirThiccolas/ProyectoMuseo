@@ -1,0 +1,8 @@
+$marginBody: 0;
+$paddingBody: 0;
+$myfont: Arial, sans-serif;
+html, body {
+  font-family: $myfont;
+  margin: $marginBody; 
+  padding: $paddingBody;
+}
