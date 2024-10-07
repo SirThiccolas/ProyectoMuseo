@@ -18,8 +18,10 @@ class User
             if ($contrasenya == $row['Password']) {
                 return $row;
             }
+        }else{
+            echo "Usuari no registrat";
         }
-        return false;
+        
     }
 
     public function getItems()
