@@ -2,7 +2,7 @@
 
 <div class="main">
     <?php if ($_SESSION['rol'] == "admin" || $_SESSION['rol'] == "tecnico") : ?>
-        <a href="app/views/editarRegistres.php" class='editar'><img src='public/img/icono-mas.png' alt='Icono mas'>Editar</a>
+        <button class='editar'><img src='public/img/icono-mas.png' alt='Icono mas'>Editar</button>
     <?php endif; ?>
 
     <div class="barra-busqueda"><img src="public/img/icono-lupa.png" alt=""><input type="text" placeholder="Cerca"></div>

@@ -18,8 +18,8 @@
                 <a href="#">Contacto</a>
             </nav>
             <nav class="usuario">
-                <p><?= $_SESSION['usuari'] ?></p>
-                <a href="../../controllers/LogoutController.php">Cerrar sesion</a>
+                <p><?php echo $_SESSION['usuari'] ?></p>
+                <a href="index.php">Cerrar sesion</a>
                 <img src="public/img/logo-usuario.png" alt="Logo usuari">
             </nav>
         </div>
