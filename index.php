@@ -1,25 +1,39 @@
 <?php
+session_start();
+?>
+<!--Controlador frontal: fichero que se encarga de cargarlo absolutamente todo -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/main.css">
+    <title>Museu Apel·les Fenosa</title>
+</head>
+<body>
+<?php 
+require_once "autoload.php";
 
-require_once 'app/controllers/LoginController.php';
-require_once 'app/controllers/IndexController.php';
-require_once 'app/controllers/LogoutController.php';
+   
+if (isset($_GET['controller'])){
+    $nombreController = $_GET['controller']."Controller";
+}
+else{
+    //Controlador per dedecte
+    $nombreController = "LoginController";
+}
+if (class_exists($nombreController)){
+    $controlador = new $nombreController(); 
+    if(isset($_GET['action'])){
+        $action = $_GET['action'];
+    }
+    else{
+        $action ="loginForm";
+    }
 
-$controller = isset($_GET['controller']) ? $_GET['controller'] : 'login';
-$action = isset($_GET['action']) ? $_GET['action'] : 'login';
+    $controlador->$action();   
+}else{
 
-switch ($controller) {
-    case 'login':
-        $controller = new LoginController();
-        $controller->login();
-        break;
-    case 'index':
-        $controller = new IndexController();
-        $controller->index();
-        break;
-    case 'logout':
-        $controller = new LogoutController();
-        $controller->logout();
-        break;
-    default:
-        echo "Página no encontrada";
+    echo "No existe el controlador";
 }

@@ -20,6 +20,11 @@
   float: left;
 }
 
+input:focus {
+  border: none;
+  outline: none;
+}
+
 .barra-busqueda {
   float: right;
   margin-right: 5%;
@@ -52,7 +57,12 @@ table, th, td {
 
 th, td {
   padding: 20px;
-  text-align: left;
+  text-align: center;
+}
+
+td > a > img {
+  width: 20px;
+  margin: 0 auto;
 }
 
 .row-white {
@@ -61,4 +71,18 @@ th, td {
 
 .row-blue {
   background-color: #d3cff0;
-}/*# sourceMappingURL=taula.css.map */
+}
+
+.edit-options div {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-options div a img {
+  width: 20px;
+}
+
+.imagenFicha a img {
+  width: 20px;
+}/*# sourceMappingURL=taula_registres.css.map */

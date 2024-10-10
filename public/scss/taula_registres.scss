@@ -1,6 +1,4 @@
-$rowWhite: white;
-$rowBlue: #d3cff0;
-$bgColorBoton: rgb(177, 175, 175);
+@import "variables";
 /* Main */
 
 .main {
@@ -20,6 +18,10 @@ $bgColorBoton: rgb(177, 175, 175);
     width: 10px;
     margin: 3px 2px;
     float: left;
+}
+input:focus {
+    border: none;
+    outline: none;
 }
 .barra-busqueda {
     float: right;
@@ -48,11 +50,26 @@ table, th, td {
 }
 th, td {
     padding: 20px;
-    text-align: left;
+    text-align: center;
+}
+td > a > img {
+    width: 20px;
+    margin: 0 auto;
 }
 .row-white {
     background-color: $rowWhite;
 }
 .row-blue {
     background-color: $rowBlue; 
+}
+.edit-options div {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.edit-options div a img{
+    width: 20px;
+}
+.imagenFicha a img {
+    width: 20px;
 }

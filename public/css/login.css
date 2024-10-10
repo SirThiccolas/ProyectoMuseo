@@ -25,6 +25,11 @@ input[type=text], input[type=password] {
   border: none;
 }
 
+input:focus {
+  border: none;
+  outline: none;
+}
+
 .btn {
   background-color: lightgrey;
   color: white;

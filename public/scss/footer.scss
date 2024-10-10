@@ -1,12 +1,10 @@
-$bgFooter: lightgrey;
-$widthIconosInfo: 20px;
-$widthIconosRedes: 40px; 
+@import "variables";
 /* Footer */
 
 footer {
     width:100%;
 	background: $bgFooter;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 .info-footer {

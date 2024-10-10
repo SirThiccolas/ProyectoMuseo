@@ -2,11 +2,11 @@
 
 class LogoutController
 {
-    public function logout()
+    public function cerrarSesion()
     {
-        session_start();
         session_destroy();
-        header("Location: index.php");
-        exit;
+        echo "<meta http-equiv='refresh' content='0;url=index.php'>";
+           
     }
 }
+?>
