@@ -1,0 +1,75 @@
+@import "variables";
+/* Main */
+
+.main {
+    margin-top: 100px;
+}
+.editar {
+    border: 0px;
+    border-radius: 7px;
+    background-color: $bgColorBoton;
+    position: absolute;
+    height: 27px;
+    width: 80px;
+    left: 55%;
+    color: white;
+}
+.editar img{
+    width: 10px;
+    margin: 3px 2px;
+    float: left;
+}
+input:focus {
+    border: none;
+    outline: none;
+}
+.barra-busqueda {
+    float: right;
+    margin-right: 5%;
+    border: solid 1px lightgray;
+    border-radius: 15px;
+    width: 35%;
+}
+.barra-busqueda img {
+    width: 20px;
+    margin: 6px 10px 0px 10px;
+    float: left;
+}
+.barra-busqueda input {
+    border: 0px;
+    height: 24px;
+    width: 90%;
+}
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 0px;
+}
+th, td {
+    padding: 20px;
+    text-align: center;
+}
+td > a > img {
+    width: 20px;
+    margin: 0 auto;
+}
+.row-white {
+    background-color: $rowWhite;
+}
+.row-blue {
+    background-color: $rowBlue; 
+}
+.edit-options div {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.edit-options div a img{
+    width: 20px;
+}
+.imagenFicha a img {
+    width: 20px;
+}

@@ -2,7 +2,7 @@
 footer {
   width: 100%;
   background: lightgrey;
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 
