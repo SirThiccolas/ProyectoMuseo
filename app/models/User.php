@@ -12,5 +12,12 @@ class User extends Database
         $resultado = $rows->fetch(PDO::FETCH_ASSOC);
         return $resultado;
     }
-    
+    public function getUser()
+    {
+        $sql = "SELECT * FROM usuaris";
+        $db = $this->conectar();
+        $rows = $db->query($sql);
+        $resultado = $rows->fetchAll(PDO::FETCH_ASSOC);
+        return $resultado;
+    }
 }
