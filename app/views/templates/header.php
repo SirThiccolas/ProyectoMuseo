@@ -11,7 +11,11 @@
             <div class="paste-button">
                 <button class="button"><?php echo $_SESSION['usuari']?> &nbsp; ▼</button>
                 <div class="dropdown-content">
-                  <a href="index.php?controller=OpcionsGestions&action=mostrarOpcionsGestions">Gestions</a>
+                    <?php 
+                    if ($_SESSION['rol'] == "admin") {
+                        echo "<a href='index.php?controller=OpcionsGestions&action=mostrarOpcionsGestions'>Gestions</a>";
+                    }
+                    ?>
                   <a href="index.php?controller=Logout&action=cerrarSesion">Tancar sessio</a>
                 </div>
             </div>

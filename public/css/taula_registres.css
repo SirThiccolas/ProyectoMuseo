@@ -2,87 +2,66 @@
 .main {
   margin-top: 100px;
 }
-
-.editar {
-  border: 0px;
+.main .editar {
+  border: 0;
   border-radius: 7px;
-  background-color: rgb(177, 175, 175);
+  background-color: #4194ec;
   position: absolute;
   height: 27px;
   width: 80px;
   left: 55%;
   color: white;
 }
-
-.editar img {
+.main .editar img {
   width: 10px;
   margin: 3px 2px;
   float: left;
 }
-
-input:focus {
-  border: none;
-  outline: none;
-}
-
-.barra-busqueda {
+.main .barra-busqueda {
   float: right;
   margin-right: 5%;
   border: solid 1px lightgray;
   border-radius: 15px;
   width: 35%;
 }
-
-.barra-busqueda img {
+.main .barra-busqueda img {
   width: 20px;
-  margin: 6px 10px 0px 10px;
+  margin: 6px 10px 0 10px;
   float: left;
 }
-
-.barra-busqueda input {
-  border: 0px;
+.main .barra-busqueda input {
+  border: 0;
   height: 24px;
   width: 90%;
 }
-
-table {
+.main table {
   width: 90%;
   margin: 20px auto;
   border-collapse: collapse;
 }
-
-table, th, td {
-  border: 0px;
-}
-
-th, td {
+.main table th,
+.main table td {
   padding: 20px;
   text-align: center;
 }
-
-td > a > img {
+.main table td a img {
   width: 20px;
   margin: 0 auto;
 }
-
-.row-white {
+.main table .row-white {
   background-color: white;
 }
-
-.row-blue {
-  background-color: #d3cff0;
+.main table .row-blue {
+  background-color: #e0f3ff;
 }
-
-.edit-options div {
-  align-items: center;
+.main .edit-options div {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
-
-.edit-options div a img {
+.main .edit-options div a img {
   width: 20px;
 }
-
-.imagenFicha a img {
+.main .imagenFicha a img {
   width: 20px;
 }/*# sourceMappingURL=taula_registres.css.map */

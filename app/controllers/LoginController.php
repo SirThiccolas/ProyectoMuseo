@@ -1,6 +1,6 @@
 <?php
 
-require_once 'app/models/User.php';
+require_once 'app/models/Users.php';
 
 class LoginController
 {
@@ -10,7 +10,7 @@ class LoginController
     
     }
     public function login(){
-        $user = new User();
+        $user = new Users();
         $usuario = $_POST['usuari'];
         $contrasenya = $_POST['contrasenya'];
         

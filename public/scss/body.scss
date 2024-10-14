@@ -4,4 +4,11 @@ html, body {
   font-family: $myfont;
   margin: $marginBody; 
   padding: $paddingBody;
+  display: flex;
+  flex-direction: column;
+  height: 100%; // Cambiar a 100% para que el footer se mantenga al final
+}
+
+main {
+  flex: 1; // Esto permitirá que el main ocupe el espacio restante
 }

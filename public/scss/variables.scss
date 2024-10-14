@@ -5,14 +5,22 @@ $myfont: Arial, sans-serif;
 
 // Ambas tablas
 $rowWhite: white;
-$rowBlue: #d3cff0;
-$bgColorBoton: rgb(177, 175, 175);
+$rowBlue: #e0f3ff;  // Actualizado para una tonalidad de azul más clara
+$bgColorBoton: #4194ec;  // Actualizado a un color más consistente con botones
+$bgColorBotonHover: #0056b3;  // Color de hover para los botones
 
 // Tabla Registres
-
+$borderTableRegistres: 0px;
+$paddingTableRegistres: 20px;
+$textAlignTableRegistres: center;
+$searchBarWidth: 35%;
+$searchBarBorder: solid 1px lightgray;
+$searchBarBorderRadius: 15px;
 
 // Tabla Usuaris
-
+$borderTableUsuaris: 0px;
+$paddingTableUsuaris: 20px;
+$textAlignTableUsuaris: center;
 
 // Footer
 $bgFooter: lightgrey;
@@ -21,4 +29,4 @@ $widthIconosRedes: 40px;
 
 // Header
 $bgHeader: lightgrey;
-$fontSizeHeader: 20px; 
+$fontSizeHeader: 20px;

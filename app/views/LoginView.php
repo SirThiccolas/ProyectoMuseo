@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" href="public/css/login.css">k
+        <link rel="stylesheet" href="public/css/login.css">
     </head>
     <body>
     <div class="login-container">

@@ -1,0 +1,49 @@
+.gridVoc {
+  position: relative;
+  border: 1px solid #000;
+  padding-top: 37px;
+  background: #B34C00;
+  width: 100%;
+}
+.gridVoc .gridVoc-container {
+  overflow-y: auto;
+  height: 200px;
+}
+.gridVoc .gridVoc-container .tablaVocabulario {
+  border-spacing: 0;
+  width: 100%;
+}
+.gridVoc .gridVoc-container .tablaVocabulario thead > th, .gridVoc .gridVoc-container .tablaVocabulario thead > td {
+  border-bottom: 1px solid #000;
+  background: #fff;
+  color: #000;
+  padding: 10px 25px;
+}
+.gridVoc .gridVoc-container .tablaVocabulario thead > th {
+  height: 0;
+  line-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: transparent;
+  border: none;
+  white-space: nowrap;
+}
+.gridVoc .gridVoc-container .tablaVocabulario thead > th div {
+  position: absolute;
+  background: transparent;
+  color: #fff;
+  padding: 9px 25px;
+  top: 0;
+  margin-left: -25px;
+  line-height: normal;
+  border-left: 1px solid #800;
+}
+.gridVoc .gridVoc-container .tablaVocabulario tbody > td + td {
+  border-left: 1px solid #000;
+}
+.gridVoc .gridVoc-container .tablaVocabulario tbody > td {
+  border-bottom: 1px solid #000;
+  background: #fff;
+  color: #000;
+  padding: 10px 25px;
+}/*# sourceMappingURL=tabla_vocabularis copy.css.map */

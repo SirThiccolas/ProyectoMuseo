@@ -2,25 +2,27 @@
 footer {
   width: 100%;
   background: lightgrey;
-  position: fixed;
+  position: relative;
   bottom: 0;
+  display: flex;
+  margin-top: auto;
 }
-
-.info-footer {
+footer .info-footer {
   float: left;
 }
-
-.info-footer img {
-  width: 20px;
-  margin: 0px 10px 0px 25px;
+footer .info-footer p {
+  display: flex;
+  align-items: center;
 }
-
-.redes {
+footer .info-footer p img {
+  width: 20px;
+  margin: 0 10px 0 25px;
+}
+footer .redes {
   float: right;
   margin-right: 20px;
 }
-
-.redes img {
+footer .redes img {
   width: 40px;
   margin: 30px 5px;
 }/*# sourceMappingURL=footer.css.map */

@@ -1,10 +1,10 @@
 <?php
     if ($_SESSION['rol'] != "admin") {
-        echo "<meta http-equiv='refresh' content='0;url=index.php'>";
+        echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Obres&action=mostrarObres'>";
     }
 ?>
     <div class="opcions-gestions">
-        <a href="opcionsUsuaris.php">
+        <a href="index.php?controller=Usuaris&action=mostrarUsers">
             <div>
                 <img src="public/img/icono-gestionUsuarios.png" alt="Icono gestion usuarios">
                 <h3>Gestio de usuaris</h3>
@@ -16,7 +16,7 @@
                 <h3>Copies de seguretat</h3>
             </div>
         </a>
-        <a href="opcionsVocabularis.php">
+        <a href="index.php?controller=Vocabularis&action=mostrarVocabularis">
             <div>
                 <img src="public/img/icono-gestionVocabularios.png" alt="Icono gestion vocabularios">
                 <h3>Gestio de vocabularis</h3>

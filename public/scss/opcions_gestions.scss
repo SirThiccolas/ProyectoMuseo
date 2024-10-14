@@ -2,23 +2,27 @@
     display: flex;
     justify-content: space-evenly;
     margin-top: 100px;
-}
-.opcions-gestions > a {
-    text-decoration: none;
-    color: black;
-}
-.opcions-gestions > a > div {
-    border: 5px solid black;
-    padding: 20px;
-    width: 200px;
-    height: 250px;
-    text-align: center;
-}
-.opcions-gestions > a > div > img {
-    width: 180px;
-    height: 180px;
-}
-.opcions-gestions > a:hover {
-    cursor: pointer;
-    background-color: lightgray;
+
+    a {
+        text-decoration: none;
+        color: black;
+
+        div {
+            border: 5px solid black;
+            padding: 20px;
+            width: 200px;
+            height: 250px;
+            text-align: center;
+
+            img {
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: lightgray;
+        }
+    }
 }
