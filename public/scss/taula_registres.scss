@@ -51,12 +51,14 @@
             padding: 20px;
             text-align: center;
         }
-
+        td img {
+            width: 40px;
+            max-height: 40px;
+        }
         td a img {
             width: 20px;
             margin: 0 auto;
         }
-
         .row-white {
             background-color: $rowWhite;
         }

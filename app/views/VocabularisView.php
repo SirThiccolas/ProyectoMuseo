@@ -1,17 +1,18 @@
 <?php
-if (!isset($_SESSION['rol']) || $_SESSION['rol'] != "admin") {
-    header("Location: index.php?controller=Obres&action=mostrarObres");
-    exit();
+if ($_SESSION['rol'] != "admin") {
+    echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Obres&action=mostrarObres'>";
 }
 ?>
 <div class='eleccionVocabulario'>
-    <h1>Selecciona un Vocabulario</h1>
+    <h1>Selecciona un vocabulari</h1>
     <div>
-        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=autores">Autors</a>
-        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=causasBaja">Causes de baixa</a>
-        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=datacions">Datacions</a>
-        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=estatsConservacio">Estats de conservació</a>
-        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=formesIngres">Formes d'ingrès</a>
-        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=tipusExposicio">Tipus d'exposició</a>
+        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=autores"><button>Autors</button></a>
+        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=causasBaja"><button>Causes de baixa</button></a>
+        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=datacions"><button>Datacions</button></a>
+        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=estatsConservacio"><button>Estats de conservació</button></a>
+        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=formesIngres"><button>Formes d'ingrès</button></a>
+        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=tipusExposicio"><button>Tipus d'exposició</button></a>
+        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=material"><button>Materials</button></a>
+        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=tecnica"><button>Tecniques</button></a>
     </div>
 </div>

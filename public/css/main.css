@@ -61,7 +61,7 @@ header .logo {
 
 .usuari div {
   float: left;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .logo-usuari {
@@ -164,6 +164,10 @@ header .logo {
 .main table td {
   padding: 20px;
   text-align: center;
+}
+.main table td img {
+  width: 40px;
+  max-height: 40px;
 }
 .main table td a img {
   width: 20px;
@@ -363,11 +367,43 @@ div.form-registres > div {
   background-color: lightgray;
 }
 
+/* opcions */
+.eleccionVocabulario {
+  margin: auto auto;
+  width: 600px;
+  background-color: lightgrey;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.eleccionVocabulario h1 {
+  text-align: center;
+}
+.eleccionVocabulario div {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.eleccionVocabulario div a button {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: 20px;
+  margin: 20px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.eleccionVocabulario div a button:hover {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* taula */
 .gridVoc {
   position: relative;
   padding-top: 37px;
   width: 70%;
-  margin: 40px auto;
+  margin: auto auto;
 }
 .gridVoc .gridVoc-container {
   overflow-y: auto;
@@ -394,6 +430,7 @@ div.form-registres > div {
 }
 .gridVoc .gridVoc-container .tablaVocabulario thead > tr > th div {
   position: absolute;
+  background-color: rgb(161, 158, 158);
   background: transparent;
   color: black;
   padding: 9px 25px;
@@ -402,8 +439,25 @@ div.form-registres > div {
   line-height: normal;
 }
 .gridVoc .gridVoc-container .tablaVocabulario tbody > tr > td {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px dotted #000;
   background: #fff;
   color: #000;
   padding: 10px 25px;
+}
+.gridVoc .gridVoc-container .tablaVocabulario tbody > tr > td > a > img {
+  width: 20px;
+}
+.gridVoc a button {
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+  background-color: rgb(145, 145, 238);
+  border: none;
+  font-size: 16px;
+  margin-top: 15px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.gridVoc a button:hover {
+  background-color: rgb(195, 195, 245);
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

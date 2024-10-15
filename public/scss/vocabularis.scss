@@ -1,0 +1,96 @@
+@import "variables";
+
+/* opcions */
+.eleccionVocabulario {
+    margin: auto auto;
+    width: 600px;
+    background-color: $bgHeader;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    h1 {
+        text-align: center;
+    }
+    div {
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        a button {
+            width: 200px;
+            height: 50px;
+            border-radius: 10px;
+            border: 1px solid black;
+            font-size: 20px;
+            margin: 20px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+        a button:hover {
+            background-color: #fff;
+            cursor: pointer;
+        }
+    }
+}
+
+/* taula */
+.gridVoc {
+    position: relative;
+    padding-top: 37px;
+    width:70%;
+    margin: auto auto;
+    .gridVoc-container {
+        overflow-y: auto;
+        height: 400px;
+        .tablaVocabulario {
+            border-spacing: 0;
+            width:100%;
+            thead > tr > th, thead > tr > td{
+                border-bottom:1px solid #000;
+                background: #fff;
+                color: #000;
+                padding: 10px 25px;
+            }
+            thead > tr > th {
+                height: 0;
+                line-height: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+                color: transparent;
+                border: none;
+                white-space: nowrap;
+            }
+            thead > tr > th div{
+                position: absolute;
+                background-color: rgb(161, 158, 158);
+                background: transparent;
+                color: black;
+                padding: 9px 25px;
+                top: 0;
+                margin-left: -25px;
+                line-height: normal;
+                }
+            tbody > tr > td {
+                border-bottom: 1px dotted #000;
+                background: #fff;
+                color: #000;
+                padding: 10px 25px;
+            }
+            tbody > tr > td > a > img{
+                width: 20px;
+            }
+        }
+    }
+    a button{
+        width: 100px;
+        height: 40px;
+        border-radius: 15px;
+        background-color: rgb(145, 145, 238);
+        border: none;
+        font-size: 16px;
+        margin-top: 15px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+    a button:hover{
+        background-color: rgb(195, 195, 245);
+        cursor: pointer;
+    }
+}

@@ -29,7 +29,7 @@
 
                     echo "<tr class='$row_class'>";
                     echo "<td>" . $obra["Num_registro"] . "</td>";
-                    echo "<td>" . $obra["Fotografia"] . "</td>";
+                    echo "<td><img src='public/img-bd/" . $obra["Fotografia"] . "'></td>";
                     echo "<td>" . $obra["Titol"] . "</td>";
                     echo "<td>" . $obra["Autor"] . "</td>";
                     // Mostrar el nombre de la ubicación en lugar de su ID
