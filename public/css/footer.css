@@ -4,7 +4,6 @@ footer {
   background: lightgrey;
   position: relative;
   bottom: 0;
-  display: flex;
   margin-top: auto;
 }
 footer .info-footer {

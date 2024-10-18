@@ -80,7 +80,9 @@ class VocabularisController
         }
 
         // Cargar la vista de edición
+        require_once 'app/views/templates/header.php';
         require_once 'app/views/EditarVocabulariView.php';
+        require_once 'app/views/templates/footer.html';
     }
 
     public function actualizarVocabulari()
@@ -144,7 +146,7 @@ class VocabularisController
         $id = $_GET['id'] ?? '';
 
         require_once 'app/views/templates/header.php';
-        require_once 'app/views/FormularioCrearVocabularioView.php';
+        require_once 'app/views/CrearVocabularioView.php';
         require_once 'app/views/templates/footer.html';
     }
 
@@ -215,7 +217,9 @@ class VocabularisController
         }
 
         // Cargar la vista de edición
+        require_once 'app/views/templates/header.php';
         require_once 'app/views/EliminarVocabulariView.php';
+        require_once 'app/views/templates/footer.html';
     }
 
     public function confirmarEliminarVocabulari()
@@ -255,9 +259,9 @@ class VocabularisController
                 default:
                     echo "No s'ha fet cap canvi.";
             }
-            echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Vocabularis&action=mostrarVocabularis'>";
+            echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Vocabularis&action=mostrarTabla&id=".$_POST['vocabulario']."'>";
         } else {
-            echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Vocabularis&action=mostrarVocabularis'>";
+            echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Vocabularis&action=mostrarTabla&id=".$_POST['vocabulario']."'>";
         }
     }
 }

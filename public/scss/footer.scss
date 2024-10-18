@@ -6,7 +6,6 @@ footer {
     background: $bgFooter;
     position: relative;
     bottom: 0;
-    display: flex; // Usar flexbox para alinear el contenido
     margin-top: auto; // Mantener al final del contenido
     .info-footer {
         float: left;

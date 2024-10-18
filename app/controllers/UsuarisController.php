@@ -60,7 +60,7 @@ class UsuarisController
             $rolUser = $_POST['rol'];
 
             // Actualizar el usuario en la base de datos
-            $editaruser->deleteUser($idUser);
+            $editaruser->updateUser($idUser, $nomUser, $emailUser, $rolUser);
 
             // Redirigir de nuevo a la lista de usuarios
             echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Usuaris&action=mostrarUsers'>";

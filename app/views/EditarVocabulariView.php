@@ -20,4 +20,4 @@ if ($_SESSION['rol'] != "admin") {
 
     <button type="submit">Actualizar</button>
 </form>
-<a href="index.php?controller=Vocabularis&action=mostrarVocabularis"><button>Volver</button></a>
+<a href="index.php?controller=Vocabularis&action=mostrarTabla&id=<?php echo $_GET['vocabulari']; ?>"><button>Volver</button></a>

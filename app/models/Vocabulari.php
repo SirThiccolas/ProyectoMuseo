@@ -265,7 +265,7 @@ class Vocabulari extends Database
         return $stmt->execute();
     }
 
-    public function deleteausaBaja($id)
+    public function deleteCausaBaja($id)
     {
         $sql = "DELETE FROM vocabulario_causas_baja WHERE id = :id";
         $db = $this->conectar();
