@@ -60,14 +60,14 @@ if ($_SESSION['rol'] != "admin") {
                         <td><input type="text" id="tecnica" name="tecnica" required></td>
                     </tr>
                 <?php endif; ?>
-                <tr>
+                <tr class="botonesFormVoc">
                     <td><input type="reset" value="Neteja"></td>
                     <td><input type="submit" value="Crear"></td>
                 </tr>
             </table>
         </form>
 
-        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=<?php echo $id; ?>"><button>Volver</button></a>
+        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=<?php echo $id; ?>">Tornar</a>
 
         
     </div>

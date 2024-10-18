@@ -1,16 +1,21 @@
 <?php
-// Asegúrate de que $id y $resultados estén definidos
 if (!isset($id) || !isset($resultados)) {
-    die("Error: Las variables no están definidas.");
+    echo "Error: Les variables no estan definides.";
+    echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Vocabularis&action=mostrarVocabularis'>";
 }
     if ($_SESSION['rol'] != "admin") {
         echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Obres&action=mostrarObres'>";
     }
 ?>
-<a href="index.php?controller=Vocabularis&action=mostrarFormularioCrear&id=<?php echo $id; ?>">
-            <button>Crear nou registre</button>
-        </a>
-<div class="gridVoc">
+
+<div class="extrasTaulaVoc">
+    <a href="index.php?controller=Vocabularis&action=mostrarFormularioCrear&id=<?php echo $id; ?>" class="crearRegistreVoc"><img src='public/img/icono-mas.png' alt='Icono mas'>Crear nou registre</a>
+    <div class="barra-busqueda">
+        <img src="public/img/icono-lupa.png" alt=""><input type="text" placeholder="Cerca">
+    </div>
+</div>
+
+<div class="gridVoc">   
     <div class="gridVoc-container">
         <table class="tablaVocabulario">
             <thead>
@@ -22,6 +27,7 @@ if (!isset($id) || !isset($resultados)) {
                 <?php else: ?>
                     <th><?php echo ucfirst($id); ?><div><?php echo ucfirst($id); ?></div></th>
                 <?php endif; ?>
+                    <th class="accionsTauVoc">Accions<div>Accions</div></th>
                 </tr>
             </thead>
             <tbody>

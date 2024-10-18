@@ -1,10 +1,8 @@
-<div class="main">
-        <?php
-        if ($_SESSION['rol'] == "admin" || $_SESSION['rol'] == "tecnico" ) {
-            echo "<a href='opcionsRegistres.php' class='editar'><img src='public/img/icono-mas.png' alt='Icono mas'>Editar</a>";
-        }
-        ?>
-        <div class="barra-busqueda"><img src="public/img/icono-lupa.png" alt=""><input type="text" placeholder="Cerca"></div>
+<div class="extrasTaulaObres">
+    <a href='index.php?controller=Usuaris&action=crearUser' class='crearRegistreObres'><img src='public/img/icono-mas.png' alt='Icono mas'>Donar d'alta</a>
+    <div class="barra-busqueda"><img src="public/img/icono-lupa.png" alt=""><input type="text" placeholder="Cerca"></div>
+</div>
+<div class="taulaObres">
         <table>
             <tr>
                 <th>Nº Registre</th>
@@ -35,7 +33,12 @@
                     // Mostrar el nombre de la ubicación en lugar de su ID
                     echo "<td>" . $obra["Nombre_Ubicacion"] . "</td>";
                     echo "<td>" . $obra["Any_Final"] . "</td>";
-                    echo "<td class='imagenFicha'><a href='verFicha.php?id=".$obra['Num_registro']."'><img src='public/img/icono-ficha.png' alt='Veure ficha'></a></td>";
+                    echo "<td class='imagenFicha'>
+                    <a href='index.php?controller=Obres&action=veureFicha&id=".$obra['Num_registro']."'><img src='public/img/icono-ficha.png' alt='Veure fitxa'></a>";
+                    if ($_SESSION['rol'] == "admin" || $_SESSION['rol'] == "tecnico") {
+                        echo "<a href='index.php?controller=Obres&action=editarFicha&id=".$obra['Num_registro']."'><img src='public/img/icono-lapiz.png' alt='Editar fitxa'></a>";
+                    }
+                    echo "</td>";
                     echo "</tr>";
 
                     // Incrementar contador

@@ -4,16 +4,22 @@ if ($_SESSION['rol'] != "admin") {
 }
 
 ?>
-
-<h2>Editar <?php echo ucfirst($_GET['vocabulari']); ?></h2>
-<form action="index.php?controller=Vocabularis&action=confirmarEliminarVocabulari" method="POST">
-    <input type="hidden" name="id" value="<?php echo $vocabularioActual['id']; ?>">
-    <input type="hidden" name="vocabulario" value="<?php echo $_GET['vocabulari']; ?>">
-
-    <label for="opcions">
-        <p><input type="radio" name="opcio" value="si">Si</p>
-        <p><input type="radio" name="opcio" value="no">No</p>
-    </label>
-    <button type="submit">Enviar</button>
-</form>
-<a href="index.php?controller=Vocabularis&action=mostrarVocabularis"><button>Volver</button></a>
+<div class="esborrarVocabulari">
+    <div>
+        <h1>Esborrar registre</h1>
+        <p>Segur que vols esborrar el registre?</p>
+        <form action="index.php?controller=Vocabularis&action=eliminarVocabulari" method="POST">
+            <input type="hidden" name="id" value="<?php echo $vocabularioActual['id']; ?>">
+            <input type="hidden" name="vocabulario" value="<?php echo $_GET['vocabulari']; ?>">
+            <table>
+                <tr>
+                    <td><input type="radio" name="opcio" value="si">Si</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="opcio" value="no">No</td>
+                </tr>
+            </table>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</div>

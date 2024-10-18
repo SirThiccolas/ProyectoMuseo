@@ -27,29 +27,23 @@ class Users extends Database
     {
         $db = $this->conectar();
 
-        // Verifica si el nombre de usuario ya existe
         $comprNom = "SELECT * FROM usuaris WHERE Nom_Usuari = :nomUser";
         $stmt = $db->prepare($comprNom);
         $stmt->bindParam(':nomUser', $nomUser);
         $stmt->execute();
         
         if ($stmt->rowCount() > 0) {
-            return "Aquest nom no es troba disponible, prova de nou.";
+            echo "Aquest nom no es troba disponible, prova de nou.";
         }
 
-        // Inserta el nuevo usuario
         $sql = "INSERT INTO usuaris (Nom_Usuari, Password, Email, Rol) VALUES (:nomUser, :pwdUser, :emailUser, :rolUser)";
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':nomUser', $nomUser);
-        $stmt->bindParam(':pwdUser', password_hash($pwdUser, PASSWORD_DEFAULT)); // Cifra la contraseña
+        $stmt->bindParam(':pwdUser', $pwdUser); 
         $stmt->bindParam(':emailUser', $emailUser);
         $stmt->bindParam(':rolUser', $rolUser);
 
-        if ($stmt->execute()) {
-            return null; // No error
-        } else {
-            return "Error en la creació de l'usuari.";
-        }
+        return $stmt->execute();
     }
 
     public function getUserById($id)

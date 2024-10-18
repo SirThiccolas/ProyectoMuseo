@@ -68,18 +68,11 @@ class VocabularisController
         $vocabulario = $_GET['vocabulari'] ?? null;
         $id = $_GET['id'] ?? null;
 
-        // Comprobar si se reciben los parámetros necesarios
-        if ($vocabulario === null || $id === null) {
-            echo "No s'han rebut els atributs necessaris.";
-        }
-
-        // Obtener el vocabulario actual para mostrar en el formulario
         $vocabularioActual = $this->vocabulari->getVocabulariById($id, $vocabulario);
         if (!$vocabularioActual) {
             echo "No s'ha trobat cap vocabulari amb aquest ID.";
         }
 
-        // Cargar la vista de edición
         require_once 'app/views/templates/header.php';
         require_once 'app/views/EditarVocabulariView.php';
         require_once 'app/views/templates/footer.html';
@@ -87,16 +80,9 @@ class VocabularisController
 
     public function actualizarVocabulari()
     {
-        // Obtener los parámetros necesarios
         $vocabulario = $_POST['vocabulario'] ?? null;
         $id = $_POST['id'] ?? null;
 
-        // Comprobar si se reciben los parámetros necesarios
-        if ($vocabulario === null || $id === null) {
-            echo "No s'han rebut els atributs necessaris.";
-        }
-
-        // Obtener otros campos del formulario según el tipo de vocabulario
         switch ($vocabulario) {
             case 'autores':
                 $nombre = $_POST['nombre'] ?? '';
@@ -136,7 +122,7 @@ class VocabularisController
                 echo "No s'ha fet cap canvi.";
         }
 
-        echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Vocabularis&action=mostrarVocabularis'>";
+        echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Vocabularis&action=mostrarTabla&id=$vocabulario'>";
     }
 
 
@@ -153,10 +139,6 @@ class VocabularisController
     public function crearVocabulari()
     {
         $vocabulari = $_POST['vocabulari'] ?? null;
-
-        if ($vocabulari === null) {
-            echo "No s'ha fet cap canvi.";
-        }
 
         switch ($vocabulari) {
             case 'autores':
@@ -202,66 +184,56 @@ class VocabularisController
 
     public function eliminarVocabulari()
     {
-        $vocabulario = $_GET['vocabulari'] ?? null;
-        $id = $_GET['id'] ?? null;
-
-        // Comprobar si se reciben los parámetros necesarios
-        if ($vocabulario === null || $id === null) {
-            echo "No s'han rebut els atributs necessaris.";
-        }
-
-        // Obtener el vocabulario actual para mostrar en el formulario
-        $vocabularioActual = $this->vocabulari->getVocabulariById($id, $vocabulario);
-        if (!$vocabularioActual) {
-            echo "No s'ha trobat cap vocabulari amb aquest ID.";
-        }
-
-        // Cargar la vista de edición
-        require_once 'app/views/templates/header.php';
-        require_once 'app/views/EliminarVocabulariView.php';
-        require_once 'app/views/templates/footer.html';
-    }
-
-    public function confirmarEliminarVocabulari()
-    {
-        $opcion = $_POST['opcio'];
-        if ($opcion == "si") {
-            $vocabulario = $_POST['vocabulario'] ?? null;
-            $id = $_POST['id'] ?? null;
-            if ($vocabulario === null || $id === null) {
-                echo "No s'han rebut els atributs necessaris.";
+        if ($_POST) {
+            $opcion = $_POST['opcio'];
+            if ($opcion == "si") {
+                $vocabulario = $_POST['vocabulario'] ?? null;
+                $id = $_POST['id'] ?? null;
+    
+                switch ($vocabulario) {
+                    case 'autores':
+                        $this->vocabulari->deleteAutor($id);
+                        break;
+                    case 'causasBaja':
+                        $this->vocabulari->deleteCausaBaja($id);
+                        break;
+                    case 'datacions':
+                        $this->vocabulari->deleteDatacion($id);
+                        break;
+                    case 'estatsConservacio':
+                        $this->vocabulari->deleteEstadoConservacion($id);
+                        break;
+                    case 'formesIngres':
+                        $this->vocabulari->deleteFormaIngreso($id);
+                        break;
+                    case 'tipusExposicio':
+                        $this->vocabulari->deleteTipoExposicion($id);
+                        break;
+                    case 'material':
+                        $this->vocabulari->deleteMaterial($id);
+                        break;
+                    case 'tecnica':
+                        $this->vocabulari->deleteTecnica($id);
+                        break;
+                    default:
+                        echo "No s'ha fet cap canvi.";
+                }
+                echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Vocabularis&action=mostrarTabla&id=".$_POST['vocabulario']."'>";
+            } else {
+                echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Vocabularis&action=mostrarTabla&id=".$_POST['vocabulario']."'>";
             }
-            switch ($vocabulario) {
-                case 'autores':
-                    $this->vocabulari->deleteAutor($id);
-                    break;
-                case 'causasBaja':
-                    $this->vocabulari->deleteCausaBaja($id);
-                    break;
-                case 'datacions':
-                    $this->vocabulari->deleteDatacion($id);
-                    break;
-                case 'estatsConservacio':
-                    $this->vocabulari->deleteEstadoConservacion($id);
-                    break;
-                case 'formesIngres':
-                    $this->vocabulari->deleteFormaIngreso($id);
-                    break;
-                case 'tipusExposicio':
-                    $this->vocabulari->deleteTipoExposicion($id);
-                    break;
-                case 'material':
-                    $this->vocabulari->deleteMaterial($id);
-                    break;
-                case 'tecnica':
-                    $this->vocabulari->deleteTecnica($id);
-                    break;
-                default:
-                    echo "No s'ha fet cap canvi.";
-            }
-            echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Vocabularis&action=mostrarTabla&id=".$_POST['vocabulario']."'>";
         } else {
-            echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Vocabularis&action=mostrarTabla&id=".$_POST['vocabulario']."'>";
+            $vocabulario = $_GET['vocabulari'] ?? null;
+            $id = $_GET['id'] ?? null;
+            $vocabularioActual = $this->vocabulari->getVocabulariById($id, $vocabulario);
+            if (!$vocabularioActual) {
+                echo "No s'ha trobat cap vocabulari amb aquest ID.";
+                echo "<meta http-equiv='refresh' content='2;url=index.php?controller=Vocabularis&action=mostrarTabla&id=".$_POST['vocabulario']."'>";
+            } else {
+                require_once 'app/views/templates/header.php';
+                require_once 'app/views/EliminarVocabulariView.php';
+                require_once 'app/views/templates/footer.html';
+            }
         }
     }
 }

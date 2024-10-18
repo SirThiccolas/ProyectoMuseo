@@ -1,9 +1,14 @@
-@import "body";
-@import "header";
-@import "taula_registres";
-@import "taula_usuaris";
-@import "footer";
-@import "form_registres";
-@import "form_crear_vocabularis";
-@import "opcions_gestions";
+/* BODY, HEADER Y FOOTER */
+@import "principals";
+
+/* RELACIONAT AMB OBRES */
+@import "registres";
+
+/* GESTIONS */
+@import "gestions";
+
+/* RELACIONAT AMB USUARIS */
+@import "usuaris";
+
+/* RELACIONAT AMB VOCABULARIS */
 @import "vocabularis";

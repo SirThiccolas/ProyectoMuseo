@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* BODY, HEADER Y FOOTER */
 html, body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -71,7 +72,6 @@ header .logo {
   float: right;
 }
 
-/* From Uiverse.io by aadium */
 .paste-button {
   float: right;
   display: block;
@@ -119,78 +119,240 @@ header .logo {
   display: block;
 }
 
-/* Main */
-.main {
-  margin-top: 100px;
+/* Footer */
+footer {
+  width: 100%;
+  background: lightgrey;
+  position: relative;
+  bottom: 0;
+  margin-top: auto;
 }
-.main .editar {
+footer .info-footer {
+  float: left;
+}
+footer .info-footer p {
+  display: flex;
+  align-items: center;
+}
+footer .info-footer p img {
+  width: 20px;
+  margin: 0 10px 0 25px;
+}
+footer .redes {
+  float: right;
+  margin-right: 20px;
+}
+footer .redes img {
+  width: 40px;
+  margin: 30px 5px;
+}
+
+/* RELACIONAT AMB OBRES */
+/* TAULA OBRES */
+.extrasTaulaObres {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 8%;
+}
+.extrasTaulaObres .crearRegistreObres {
+  margin-right: 10px;
   border: 0;
   border-radius: 7px;
   background-color: #4194ec;
-  position: absolute;
+  padding: 6px 6px 0px 6px;
   height: 27px;
-  width: 80px;
-  left: 55%;
+  text-decoration: none;
   color: white;
 }
-.main .editar img {
+.extrasTaulaObres .crearRegistreObres img {
   width: 10px;
-  margin: 3px 2px;
+  margin: 4px 2px;
   float: left;
 }
-.main .barra-busqueda {
+.extrasTaulaObres .barra-busqueda {
   float: right;
-  margin-right: 5%;
-  border: solid 1px lightgray;
+  border: solid 1px rgb(182, 182, 182);
   border-radius: 15px;
-  width: 35%;
+  width: 250px;
 }
-.main .barra-busqueda img {
+.extrasTaulaObres .barra-busqueda img {
   width: 20px;
   margin: 6px 10px 0 10px;
   float: left;
 }
-.main .barra-busqueda input {
+.extrasTaulaObres .barra-busqueda input {
+  width: 190px;
   border: 0;
-  height: 24px;
-  width: 90%;
+  height: 28px;
 }
-.main table {
+.extrasTaulaObres .barra-busqueda input:focus {
+  outline: none;
+}
+
+.taulaObres .barra-busqueda {
+  float: right;
+  margin-top: 10px;
+  margin-right: 7%;
+  border: solid 1px rgb(182, 182, 182);
+  border-radius: 15px;
+  width: 250px;
+}
+.taulaObres .barra-busqueda img {
+  width: 20px;
+  margin: 6px 10px 0 10px;
+  float: left;
+}
+.taulaObres .barra-busqueda input {
+  width: 190px;
+  border: 0;
+  height: 28px;
+}
+.taulaObres .barra-busqueda input:focus {
+  outline: none;
+}
+.taulaObres table {
   width: 90%;
   margin: 20px auto;
   border-collapse: collapse;
 }
-.main table th,
-.main table td {
+.taulaObres table th,
+.taulaObres table td {
   padding: 20px;
   text-align: center;
 }
-.main table td img {
+.taulaObres table td img {
   width: 40px;
   max-height: 40px;
 }
-.main table td a img {
+.taulaObres table td a img {
   width: 20px;
   margin: 0 auto;
 }
-.main table .row-white {
+.taulaObres table .row-white {
   background-color: white;
 }
-.main table .row-blue {
+.taulaObres table .row-blue {
   background-color: #e0f3ff;
 }
-.main .edit-options div {
+.taulaObres .edit-options div {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.main .edit-options div a img {
+.taulaObres .edit-options div a img {
   width: 20px;
 }
-.main .imagenFicha a img {
+.taulaObres .imagenFicha a img {
   width: 20px;
 }
 
+/* GESTIONS */
+.opcions-gestions {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 100px;
+}
+.opcions-gestions a {
+  text-decoration: none;
+  color: black;
+}
+.opcions-gestions a div {
+  border: 5px solid black;
+  padding: 20px;
+  width: 200px;
+  height: 250px;
+  text-align: center;
+}
+.opcions-gestions a div img {
+  width: 180px;
+  height: 180px;
+}
+.opcions-gestions a:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+/* RELACIONAT AMB USUARIS */
+/* TAULA USUARIS */
+div.extrasTaulaUsers {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 10.5%;
+}
+div.extrasTaulaUsers .crearRegistreUsers {
+  margin-right: 10px;
+  border: 0;
+  border-radius: 7px;
+  background-color: #4194ec;
+  padding: 6px 6px 0px 6px;
+  height: 27px;
+  text-decoration: none;
+  color: white;
+}
+div.extrasTaulaUsers .crearRegistreUsers img {
+  width: 10px;
+  margin: 4px 2px;
+  float: left;
+}
+div.extrasTaulaUsers .barra-busqueda {
+  float: right;
+  border: solid 1px rgb(182, 182, 182);
+  border-radius: 15px;
+  width: 250px;
+}
+div.extrasTaulaUsers .barra-busqueda img {
+  width: 20px;
+  margin: 6px 10px 0 10px;
+  float: left;
+}
+div.extrasTaulaUsers .barra-busqueda input {
+  width: 190px;
+  border: 0;
+  height: 28px;
+}
+div.extrasTaulaUsers .barra-busqueda input:focus {
+  outline: none;
+}
+
+.taulaUsers table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+.taulaUsers table th,
+.taulaUsers table td {
+  padding: 20px;
+  text-align: center;
+}
+.taulaUsers table td img {
+  width: 40px;
+  max-height: 40px;
+}
+.taulaUsers table td a img {
+  width: 20px;
+  margin: 0 auto;
+}
+.taulaUsers table .row-white {
+  background-color: white;
+}
+.taulaUsers table .row-blue {
+  background-color: #e0f3ff;
+}
+.taulaUsers .edit-options div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.taulaUsers .edit-options div a img {
+  width: 20px;
+}
+.taulaUsers .imagenFicha a img {
+  width: 20px;
+}
+
+/* CREAR USUARIS */
 .main-formCrearUsuari {
   display: flex;
   justify-content: center;
@@ -267,140 +429,106 @@ header .logo {
   background-color: #0056b3;
 }
 
-/* Footer */
-footer {
-  width: 100%;
-  background: lightgrey;
-  position: relative;
-  bottom: 0;
-  margin-top: auto;
+/* EDITAR USERS */
+.main-formEditarUsuari {
+  margin: auto auto;
+  width: 500px;
+  background-color: lightgrey;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
-footer .info-footer {
-  float: left;
-}
-footer .info-footer p {
-  display: flex;
-  align-items: center;
-}
-footer .info-footer p img {
-  width: 20px;
-  margin: 0 10px 0 25px;
-}
-footer .redes {
-  float: right;
-  margin-right: 20px;
-}
-footer .redes img {
-  width: 40px;
-  margin: 30px 5px;
-}
-
-div.form-registres {
-  width: 600px;
-  height: 350px;
-  margin: 0 auto;
-  margin-top: 50px;
-  border-radius: 15px;
-  box-shadow: 15px 15px 30px rgb(71, 71, 71);
-}
-
-div.form-registres form {
-  float: left;
-  width: 60%;
-  text-align: center;
-  background-color: lightgray;
-  border-bottom-left-radius: 15px;
-  border-top-left-radius: 15px;
-  height: 100%;
-}
-
-div.form-registres form p {
-  text-align: center;
-}
-
-div.form-registres > div {
-  float: right;
-  width: 40%;
-  height: 100%;
-}
-
-.imagenFormRegistros {
-  width: 100%;
-  height: 100%;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
-
-.submitFormRegister {
-  border: none;
-  border-radius: 15px;
-}
-
-.submitFormRegister:hover {
-  cursor: pointer;
-  background-color: rgb(150, 146, 146);
-}
-
-.formCrearVocabulari {
+.main-formEditarUsuari table {
   margin: auto auto;
 }
-.formCrearVocabulari div {
-  width: 400px;
-  background-color: #838181;
-}
-.formCrearVocabulari div h1 {
-  text-align: center;
-  padding-top: 30px;
-}
-.formCrearVocabulari div form {
-  margin: 40px;
-  border: 1px solid black;
-  border-radius: 15px;
-}
-.formCrearVocabulari div form table {
-  margin: 5px;
-}
-.formCrearVocabulari div form table tr {
-  margin-top: 2px;
-}
-.formCrearVocabulari div form table tr td label {
-  margin-left: 4px;
-}
-.formCrearVocabulari div form table tr td button {
+.main-formEditarUsuari table tr td {
   text-align: center;
 }
-.formCrearVocabulari div form table tr td input[type=text],
-.formCrearVocabulari div form table tr td input[type=number] {
-  margin-left: 3px;
-  border-radius: 15px;
-  width: 200px;
+.main-formEditarUsuari table tr td p {
+  border-bottom: 0.5px dotted black;
 }
-
-.opcions-gestions {
+.main-formEditarUsuari table tr td input[type=text] {
+  padding-left: 4px;
+  height: 20px;
+  border-radius: 15px;
+  border: 1px solid lightgray;
+}
+.main-formEditarUsuari table tr td select {
+  text-align: center;
+  width: 40%;
+  padding: 2px;
+  border-radius: 15px;
+  border: 1px solid lightgray;
+}
+.main-formEditarUsuari table tr td select option {
+  background-color: lightgray;
+}
+.main-formEditarUsuari table tr td input[type=submit],
+.main-formEditarUsuari table tr td input[type=reset] {
+  width: 70%;
+  margin-top: 30px;
+  padding: 5px;
+  border-radius: 15px;
+}
+.main-formEditarUsuari table tr td input[type=submit]:hover,
+.main-formEditarUsuari table tr td input[type=reset]:hover {
+  cursor: pointer;
+  background-color: #a3a1a1;
+}
+.main-formEditarUsuari a {
   display: flex;
-  justify-content: space-evenly;
-  margin-top: 100px;
-}
-.opcions-gestions a {
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-decoration: none;
   color: black;
 }
-.opcions-gestions a div {
-  border: 5px solid black;
-  padding: 20px;
-  width: 200px;
-  height: 250px;
+
+/* ELIMINAR USER */
+.esborrarUsuari {
+  margin: auto auto;
+}
+.esborrarUsuari div {
+  width: 400px;
+  background-color: #c5c4c4;
+  border-radius: 15px;
+  box-shadow: 15px 15px 30px rgb(71, 71, 71);
+  padding-bottom: 5px;
+}
+.esborrarUsuari div h1 {
   text-align: center;
+  padding-top: 30px;
 }
-.opcions-gestions a div img {
-  width: 180px;
-  height: 180px;
+.esborrarUsuari div p {
+  text-align: center;
+  padding-top: 5px;
 }
-.opcions-gestions a:hover {
+.esborrarUsuari div form {
+  margin: 40px;
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+}
+.esborrarUsuari div form table {
+  margin: 5px;
+  width: 200px;
+  float: left;
+}
+.esborrarUsuari div form table tr {
+  margin-top: 2px;
+}
+.esborrarUsuari div form input[type=submit] {
+  width: 70px;
+  height: 40px;
+  border-radius: 15px;
+  margin: auto auto;
+}
+.esborrarUsuari div form input[type=submit]:hover {
   cursor: pointer;
-  background-color: lightgray;
+  background-color: #a3a1a1;
 }
 
+/* RELACIONAT AMB VOCABULARIS */
 /* opcions */
 .eleccionVocabulario {
   margin: auto auto;
@@ -432,6 +560,48 @@ div.form-registres > div {
   cursor: pointer;
 }
 
+/* barra busqueda y boto crear */
+.extrasTaulaVoc {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 15%;
+}
+.extrasTaulaVoc .crearRegistreVoc {
+  margin-right: 10px;
+  border: 0;
+  border-radius: 7px;
+  background-color: #4194ec;
+  padding: 6px 6px 0px 6px;
+  height: 27px;
+  text-decoration: none;
+  color: white;
+}
+.extrasTaulaVoc .crearRegistreVoc img {
+  width: 10px;
+  margin: 4px 2px;
+  float: left;
+}
+.extrasTaulaVoc .barra-busqueda {
+  float: right;
+  border: solid 1px rgb(182, 182, 182);
+  border-radius: 15px;
+  width: 250px;
+}
+.extrasTaulaVoc .barra-busqueda img {
+  width: 20px;
+  margin: 6px 10px 0 10px;
+  float: left;
+}
+.extrasTaulaVoc .barra-busqueda input {
+  width: 190px;
+  border: 0;
+  height: 28px;
+}
+.extrasTaulaVoc .barra-busqueda input:focus {
+  outline: none;
+}
+
 /* taula */
 .gridVoc {
   position: relative;
@@ -461,6 +631,9 @@ div.form-registres > div {
   color: transparent;
   border: none;
   white-space: nowrap;
+}
+.gridVoc .gridVoc-container .tablaVocabulario thead > tr > th.accionsTauVoc {
+  width: 100px;
 }
 .gridVoc .gridVoc-container .tablaVocabulario thead > tr > th div {
   position: absolute;
@@ -494,4 +667,167 @@ div.form-registres > div {
 .gridVoc a button:hover {
   background-color: rgb(195, 195, 245);
   cursor: pointer;
+}
+
+/* crear vocabularis */
+.formCrearVocabulari {
+  margin: auto auto;
+}
+.formCrearVocabulari div {
+  width: 400px;
+  background-color: #c5c4c4;
+  border-radius: 15px;
+  box-shadow: 15px 15px 30px rgb(71, 71, 71);
+}
+.formCrearVocabulari div h1 {
+  text-align: center;
+  padding-top: 30px;
+}
+.formCrearVocabulari div form {
+  margin: 40px;
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+}
+.formCrearVocabulari div form table {
+  margin: 5px;
+}
+.formCrearVocabulari div form table tr {
+  margin-top: 2px;
+}
+.formCrearVocabulari div form table tr td label {
+  margin-left: 8px;
+}
+.formCrearVocabulari div form table tr td button {
+  text-align: center;
+}
+.formCrearVocabulari div form table tr td input[type=text],
+.formCrearVocabulari div form table tr td input[type=number] {
+  margin-left: 3px;
+  border-radius: 15px;
+  width: 200px;
+}
+.formCrearVocabulari div form table tr.botonesFormVoc {
+  width: 400px;
+}
+.formCrearVocabulari div form table tr.botonesFormVoc > td > input {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 15px;
+}
+.formCrearVocabulari div form table tr.botonesFormVoc > td > input:hover {
+  cursor: pointer;
+  background-color: #a3a1a1;
+}
+.formCrearVocabulari div a {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+/* editar vocabulari */
+.editarVocabulari {
+  margin: auto auto;
+}
+.editarVocabulari div {
+  width: 400px;
+  background-color: #c5c4c4;
+  border-radius: 15px;
+  box-shadow: 15px 15px 30px rgb(71, 71, 71);
+}
+.editarVocabulari div h1 {
+  text-align: center;
+  padding-top: 30px;
+}
+.editarVocabulari div form {
+  margin: 40px;
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+}
+.editarVocabulari div form table {
+  margin: 5px;
+}
+.editarVocabulari div form table tr {
+  margin-top: 2px;
+}
+.editarVocabulari div form table tr td label {
+  margin-left: 8px;
+}
+.editarVocabulari div form table tr td button {
+  text-align: center;
+}
+.editarVocabulari div form table tr td input[type=text],
+.editarVocabulari div form table tr td input[type=number] {
+  margin-left: 3px;
+  border-radius: 15px;
+  width: 200px;
+}
+.editarVocabulari div form table tr.botonesFormVoc {
+  width: 400px;
+}
+.editarVocabulari div form table tr.botonesFormVoc > td > input {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 15px;
+}
+.editarVocabulari div form table tr.botonesFormVoc > td > input:hover {
+  cursor: pointer;
+  background-color: #a3a1a1;
+}
+.editarVocabulari div a {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+/* esborrar vocabulari */
+.esborrarVocabulari {
+  margin: auto auto;
+}
+.esborrarVocabulari div {
+  width: 400px;
+  background-color: #c5c4c4;
+  border-radius: 15px;
+  box-shadow: 15px 15px 30px rgb(71, 71, 71);
+  padding-bottom: 5px;
+}
+.esborrarVocabulari div h1 {
+  text-align: center;
+  padding-top: 30px;
+}
+.esborrarVocabulari div p {
+  text-align: center;
+  padding-top: 5px;
+}
+.esborrarVocabulari div form {
+  margin: 40px;
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+}
+.esborrarVocabulari div form table {
+  margin: 5px;
+  width: 200px;
+  float: left;
+}
+.esborrarVocabulari div form table tr {
+  margin-top: 2px;
+}
+.esborrarVocabulari div form input[type=submit] {
+  width: 70px;
+  height: 40px;
+  border-radius: 15px;
+  margin: auto auto;
+}
+.esborrarVocabulari div form input[type=submit]:hover {
+  cursor: pointer;
+  background-color: #a3a1a1;
 }/*# sourceMappingURL=main.css.map */

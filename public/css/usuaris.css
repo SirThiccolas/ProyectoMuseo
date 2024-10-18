@@ -1,0 +1,254 @@
+@charset "UTF-8";
+/* TAULA USUARIS */
+div.extrasTaulaUsers {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 10.5%;
+}
+div.extrasTaulaUsers .crearRegistreUsers {
+  margin-right: 10px;
+  border: 0;
+  border-radius: 7px;
+  background-color: #4194ec;
+  padding: 6px 6px 0px 6px;
+  height: 27px;
+  text-decoration: none;
+  color: white;
+}
+div.extrasTaulaUsers .crearRegistreUsers img {
+  width: 10px;
+  margin: 4px 2px;
+  float: left;
+}
+div.extrasTaulaUsers .barra-busqueda {
+  float: right;
+  border: solid 1px rgb(182, 182, 182);
+  border-radius: 15px;
+  width: 250px;
+}
+div.extrasTaulaUsers .barra-busqueda img {
+  width: 20px;
+  margin: 6px 10px 0 10px;
+  float: left;
+}
+div.extrasTaulaUsers .barra-busqueda input {
+  width: 190px;
+  border: 0;
+  height: 28px;
+}
+div.extrasTaulaUsers .barra-busqueda input:focus {
+  outline: none;
+}
+
+.taulaUsers table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+.taulaUsers table th,
+.taulaUsers table td {
+  padding: 20px;
+  text-align: center;
+}
+.taulaUsers table td img {
+  width: 40px;
+  max-height: 40px;
+}
+.taulaUsers table td a img {
+  width: 20px;
+  margin: 0 auto;
+}
+.taulaUsers table .row-white {
+  background-color: white;
+}
+.taulaUsers table .row-blue {
+  background-color: #e0f3ff;
+}
+.taulaUsers .edit-options div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.taulaUsers .edit-options div a img {
+  width: 20px;
+}
+.taulaUsers .imagenFicha a img {
+  width: 20px;
+}
+
+/* CREAR USUARIS */
+.main-formCrearUsuari {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  background-color: #f7f7f7;
+}
+.main-formCrearUsuari .form-crearUsuari {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.main-formCrearUsuari .form-crearUsuari table {
+  width: 100%;
+  border-spacing: 0 15px;
+}
+.main-formCrearUsuari .form-crearUsuari table td {
+  padding: 10px;
+  vertical-align: top;
+}
+.main-formCrearUsuari .form-crearUsuari table td p {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+.main-formCrearUsuari .form-crearUsuari table td input[type=text],
+.main-formCrearUsuari .form-crearUsuari table td input[type=password],
+.main-formCrearUsuari .form-crearUsuari table td select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+.main-formCrearUsuari .form-crearUsuari table td input[type=text]:focus,
+.main-formCrearUsuari .form-crearUsuari table td input[type=password]:focus,
+.main-formCrearUsuari .form-crearUsuari table td select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.main-formCrearUsuari .form-crearUsuari table tr td:nth-child(2) {
+  padding-left: 15px;
+}
+.main-formCrearUsuari .form-crearUsuari table select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: white;
+  padding-right: 30px;
+  position: relative;
+}
+.main-formCrearUsuari .form-crearUsuari table select:after {
+  content: "▼";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.main-formCrearUsuari .form-crearUsuari table input[type=submit] {
+  background-color: #4194ec;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+.main-formCrearUsuari .form-crearUsuari table input[type=submit]:hover {
+  background-color: #0056b3;
+}
+
+/* EDITAR USERS */
+.main-formEditarUsuari {
+  margin: auto auto;
+  width: 500px;
+  background-color: lightgrey;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.main-formEditarUsuari table {
+  margin: auto auto;
+}
+.main-formEditarUsuari table tr td {
+  text-align: center;
+}
+.main-formEditarUsuari table tr td p {
+  border-bottom: 0.5px dotted black;
+}
+.main-formEditarUsuari table tr td input[type=text] {
+  padding-left: 4px;
+  height: 20px;
+  border-radius: 15px;
+  border: 1px solid lightgray;
+}
+.main-formEditarUsuari table tr td select {
+  text-align: center;
+  width: 40%;
+  padding: 2px;
+  border-radius: 15px;
+  border: 1px solid lightgray;
+}
+.main-formEditarUsuari table tr td select option {
+  background-color: lightgray;
+}
+.main-formEditarUsuari table tr td input[type=submit],
+.main-formEditarUsuari table tr td input[type=reset] {
+  width: 70%;
+  margin-top: 30px;
+  padding: 5px;
+  border-radius: 15px;
+}
+.main-formEditarUsuari table tr td input[type=submit]:hover,
+.main-formEditarUsuari table tr td input[type=reset]:hover {
+  cursor: pointer;
+  background-color: #a3a1a1;
+}
+.main-formEditarUsuari a {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+/* ELIMINAR USER */
+.esborrarUsuari {
+  margin: auto auto;
+}
+.esborrarUsuari div {
+  width: 400px;
+  background-color: #c5c4c4;
+  border-radius: 15px;
+  box-shadow: 15px 15px 30px rgb(71, 71, 71);
+  padding-bottom: 5px;
+}
+.esborrarUsuari div h1 {
+  text-align: center;
+  padding-top: 30px;
+}
+.esborrarUsuari div p {
+  text-align: center;
+  padding-top: 5px;
+}
+.esborrarUsuari div form {
+  margin: 40px;
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+}
+.esborrarUsuari div form table {
+  margin: 5px;
+  width: 200px;
+  float: left;
+}
+.esborrarUsuari div form table tr {
+  margin-top: 2px;
+}
+.esborrarUsuari div form input[type=submit] {
+  width: 70px;
+  height: 40px;
+  border-radius: 15px;
+  margin: auto auto;
+}
+.esborrarUsuari div form input[type=submit]:hover {
+  cursor: pointer;
+  background-color: #a3a1a1;
+}/*# sourceMappingURL=usuaris.css.map */

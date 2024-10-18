@@ -3,9 +3,11 @@
         echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Obres&action=mostrarObres'>";
     }
 ?>
-<div class="main">
-        <a href='index.php?controller=Usuaris&action=crearUser' class='editar'><img src='public/img/icono-mas.png' alt='Icono mas'>Donar d'alta</a>
-        <div class="barra-busqueda"><img src="public/img/icono-lupa.png" alt=""><input type="text" placeholder="Cerca"></div>
+<div class="extrasTaulaUsers">
+    <a href='index.php?controller=Usuaris&action=crearUser' class='crearRegistreUsers'><img src='public/img/icono-mas.png' alt='Icono mas'>Donar d'alta</a>
+    <div class="barra-busqueda"><img src="public/img/icono-lupa.png" alt=""><input type="text" placeholder="Cerca"></div>
+</div>
+<div class="taulaUsers">
         <table>
             <tr>
                 <th>ID Usuari</th>

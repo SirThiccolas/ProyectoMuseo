@@ -1,0 +1,98 @@
+/* TAULA OBRES */
+.extrasTaulaObres {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 8%;
+}
+.extrasTaulaObres .crearRegistreObres {
+  margin-right: 10px;
+  border: 0;
+  border-radius: 7px;
+  background-color: #4194ec;
+  padding: 6px 6px 0px 6px;
+  height: 27px;
+  text-decoration: none;
+  color: white;
+}
+.extrasTaulaObres .crearRegistreObres img {
+  width: 10px;
+  margin: 4px 2px;
+  float: left;
+}
+.extrasTaulaObres .barra-busqueda {
+  float: right;
+  border: solid 1px rgb(182, 182, 182);
+  border-radius: 15px;
+  width: 250px;
+}
+.extrasTaulaObres .barra-busqueda img {
+  width: 20px;
+  margin: 6px 10px 0 10px;
+  float: left;
+}
+.extrasTaulaObres .barra-busqueda input {
+  width: 190px;
+  border: 0;
+  height: 28px;
+}
+.extrasTaulaObres .barra-busqueda input:focus {
+  outline: none;
+}
+
+.taulaObres .barra-busqueda {
+  float: right;
+  margin-top: 10px;
+  margin-right: 7%;
+  border: solid 1px rgb(182, 182, 182);
+  border-radius: 15px;
+  width: 250px;
+}
+.taulaObres .barra-busqueda img {
+  width: 20px;
+  margin: 6px 10px 0 10px;
+  float: left;
+}
+.taulaObres .barra-busqueda input {
+  width: 190px;
+  border: 0;
+  height: 28px;
+}
+.taulaObres .barra-busqueda input:focus {
+  outline: none;
+}
+.taulaObres table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+.taulaObres table th,
+.taulaObres table td {
+  padding: 20px;
+  text-align: center;
+}
+.taulaObres table td img {
+  width: 40px;
+  max-height: 40px;
+}
+.taulaObres table td a img {
+  width: 20px;
+  margin: 0 auto;
+}
+.taulaObres table .row-white {
+  background-color: white;
+}
+.taulaObres table .row-blue {
+  background-color: #e0f3ff;
+}
+.taulaObres .edit-options div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.taulaObres .edit-options div a img {
+  width: 20px;
+}
+.taulaObres .imagenFicha a img {
+  width: 20px;
+}/*# sourceMappingURL=registres.css.map */

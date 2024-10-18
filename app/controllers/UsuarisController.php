@@ -15,32 +15,29 @@ class UsuarisController
 
     public function crearUser()
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_POST) {
             $nomUser = $_POST['nom'];
             $pwdUser = $_POST['contrasenya'];
             $pwd2User = $_POST['contrasenya2'];
             $emailUser = $_POST['mail'];
             $rolUser = $_POST['rol'];
 
-            // Valida que las contraseñas coincidan
             if ($pwdUser !== $pwd2User) {
                 $error = "Les contrasenyes no coincideixen.";
                 require_once 'app/views/templates/header.php';
                 require_once 'app/views/CrearUserView.php';
                 require_once 'app/views/templates/footer.html';
-                return;
             }
 
             $crearuser = new Users();
-            $error = $crearuser->createUser($nomUser, $pwdUser, $emailUser, $rolUser);
+            $confUser = $crearuser->createUser($nomUser, $pwdUser, $emailUser, $rolUser);
 
-            if ($error) {
+            if ($confUser) {
                 require_once 'app/views/templates/header.php';
                 require_once 'app/views/CrearUserView.php';
                 require_once 'app/views/templates/footer.html';
-            } else {
-                echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Usuaris&action=mostrarUsers'>";
             }
+            echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Usuaris&action=mostrarUsers'>";
         } else {
             require_once 'app/views/templates/header.php';
             require_once 'app/views/CrearUserView.php';
@@ -54,21 +51,16 @@ class UsuarisController
         $editaruser = new Users();
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            // Capturar los datos del formulario
             $nomUser = $_POST['nom'];
             $emailUser = $_POST['mail'];
             $rolUser = $_POST['rol'];
 
-            // Actualizar el usuario en la base de datos
             $editaruser->updateUser($idUser, $nomUser, $emailUser, $rolUser);
 
-            // Redirigir de nuevo a la lista de usuarios
             echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Usuaris&action=mostrarUsers'>";
         } else {
-            // Obtener los datos actuales del usuario
             $user = $editaruser->getUserById($idUser);
             
-            // Mostrar la vista de edición
             require_once 'app/views/templates/header.php';
             require_once 'app/views/EditarUserView.php';
             require_once 'app/views/templates/footer.html';
@@ -77,14 +69,28 @@ class UsuarisController
     
     public function deleteUser()
     {
-        $idUser = $_GET['id'];
         $eliminaruser = new Users();
+        $idUser = $_GET['id'];
 
-        // Llamar al método para eliminar al usuario
-        $eliminaruser->deleteUser($idUser);
-
-        // Redirigir de nuevo a la lista de usuarios
-        echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Usuaris&action=mostrarUsers'>"; 
+        if ($_POST) {
+            $opcion = $_POST['opcio'];
+            if ($opcion == "si") {
+                $eliminaruser->deleteUser($idUser);
+                echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Usuaris&action=mostrarUsers'>";
+            } else {
+                echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Usuaris&action=mostrarUsers'>";
+            }
+        } else {
+            // Validar si el ID de usuario existe
+            $user = $eliminaruser->getUserById($idUser);
+            if (!$user) {
+                echo "No s'ha trobat cap usuari amb aquest ID.";
+                echo "<meta http-equiv='refresh' content='2;url=index.php?controller=Usuaris&action=mostrarUsers'>";
+            } else {
+                require_once 'app/views/templates/header.php';
+                require_once 'app/views/EliminarUserView.php';
+                require_once 'app/views/templates/footer.html';
+            }
+        }
     }
-
 }

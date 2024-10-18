@@ -15,8 +15,10 @@
                 </td>    
             </tr>
             <tr>
-                <td colspan='2'><input type='submit' value='Guardar canvis'></td>
+                <td><input type='submit' value='Guardar canvis'></td>
+                <td><input type='reset' value='Netejar'></td>
             </tr>
         </table>
     </form>    
+    <a href="index.php?controller=Usuaris&action=mostrarUsers">Tornar</a>
 </div>
