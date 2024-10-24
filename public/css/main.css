@@ -225,9 +225,14 @@ footer .redes img {
   width: 40px;
   max-height: 40px;
 }
+.taulaObres table td .imagen-contenedor {
+  display: flex; /* Usar flexbox para alinear imágenes */
+  justify-content: center; /* Centrar las imágenes en el contenedor */
+  align-items: center; /* Alinear verticalmente las imágenes si es necesario */
+}
 .taulaObres table td a img {
-  width: 20px;
-  margin: 0 auto;
+  width: 20px; /* Ajustar el tamaño de las imágenes según sea necesario */
+  margin: 0 5px; /* Espaciado horizontal entre las imágenes */
 }
 .taulaObres table .row-white {
   background-color: white;
@@ -245,6 +250,162 @@ footer .redes img {
 }
 .taulaObres .imagenFicha a img {
   width: 20px;
+}
+
+/* FICHA BASICA */
+.fichaBasica {
+  background-color: lightgrey;
+}
+.fichaBasica div {
+  width: 800px;
+  margin: auto auto;
+  border: 1px solid black;
+  background-color: white;
+}
+.fichaBasica div p {
+  font-size: 20px;
+  text-align: center;
+}
+.fichaBasica div div {
+  width: 700px;
+  margin: auto 50px;
+  border: 1px solid black;
+  margin-bottom: 30px;
+}
+.fichaBasica div div img {
+  width: 100px;
+  height: 118px;
+  margin: 2px;
+  float: left;
+}
+.fichaBasica div div table tr td {
+  width: 180px;
+}
+.fichaBasica div div table tr td:last-child {
+  width: 200px;
+  border-bottom: 1px solid lightgray;
+}
+.fichaBasica div nav {
+  margin: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.fichaBasica div nav a {
+  text-decoration: none;
+  color: black;
+}
+.fichaBasica div nav a img {
+  width: 20px;
+  margin-right: 3px;
+}
+
+/* FICHA GENERAL */
+.fichaGeneral {
+  background-color: lightgrey;
+}
+.fichaGeneral div {
+  width: 1700px;
+  margin: auto auto;
+  border: 1px solid black;
+  background-color: white;
+  /* PRIMERA FILA FICHA */
+  /* SEGUNDA FILA FICHA */
+  /* TERCERA FILA FICHA */
+  /* ENLACES EXTRAS */
+}
+.fichaGeneral div p {
+  font-size: 20px;
+  text-align: center;
+}
+.fichaGeneral div .primera-fila {
+  border: none;
+  width: 1500px;
+  height: 120px;
+  margin-bottom: 70px;
+}
+.fichaGeneral div .primera-fila .item1 {
+  width: 850px;
+  float: left;
+}
+.fichaGeneral div .primera-fila .item1 img {
+  width: 110px;
+  height: 143px;
+  margin: 2px;
+  float: left;
+  margin-right: 5px;
+}
+.fichaGeneral div .primera-fila .item2 {
+  width: 600px;
+  float: right;
+}
+.fichaGeneral div .segunda-fila {
+  width: 1500px;
+  height: 120px;
+  border: none;
+  margin-bottom: 70px;
+}
+.fichaGeneral div .segunda-fila .item3 {
+  width: 600px;
+  float: left;
+}
+.fichaGeneral div .segunda-fila .item4 {
+  width: 850px;
+  float: right;
+}
+.fichaGeneral div .tercera-fila {
+  width: 1500px;
+  border: none;
+  height: 120px;
+  margin-bottom: 30px;
+}
+.fichaGeneral div .tercera-fila .item5 {
+  width: 850px;
+  float: left;
+}
+.fichaGeneral div .tercera-fila .item6 {
+  width: 600px;
+  float: right;
+}
+.fichaGeneral div div div table {
+  margin-left: 5px;
+}
+.fichaGeneral div div div table tr td:first-child {
+  width: 250px;
+}
+.fichaGeneral div div div table tr td {
+  height: 25px;
+}
+.fichaGeneral div .extras {
+  width: 1500px;
+  margin: auto auto;
+  border: 1px solid black;
+}
+.fichaGeneral div .extras table tr td {
+  border-right: 1px solid rgb(136, 135, 135);
+  padding-right: 100px;
+  text-align: center;
+  height: 30px;
+}
+.fichaGeneral div .extras table tr td a {
+  margin-left: 100px;
+  text-decoration: none;
+  color: black;
+}
+.fichaGeneral div .extras table tr td:last-child {
+  border: none;
+}
+.fichaGeneral div nav {
+  margin: 40px 100px 40px 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.fichaGeneral div nav a {
+  text-decoration: none;
+  color: black;
+}
+.fichaGeneral div nav a img {
+  width: 20px;
+  margin-right: 3px;
 }
 
 /* GESTIONS */
@@ -830,4 +991,33 @@ div.extrasTaulaUsers .barra-busqueda input:focus {
 .esborrarVocabulari div form input[type=submit]:hover {
   cursor: pointer;
   background-color: #a3a1a1;
+}
+
+/* POPUPS */
+/* Estilos para el popup */
+#popupFicha {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+#popupFicha .popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+#popupFicha .popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

@@ -14,5 +14,7 @@ if ($_SESSION['rol'] != "admin") {
         <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=tipusExposicio"><button>Tipus d'exposició</button></a>
         <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=material"><button>Materials</button></a>
         <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=tecnica"><button>Tecniques</button></a>
+        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=getty"><button>Codis Getty</button></a>
+        <a href="index.php?controller=Vocabularis&action=mostrarTabla&id=classificacio"><button>Classificacio generica</button></a>
     </div>
 </div>

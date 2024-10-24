@@ -1,0 +1,291 @@
+@import "variables";
+
+/* TAULA OBRES */
+.extrasTaulaObres {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-right: 8%;
+    .crearRegistreObres {
+        margin-right: 10px;
+        border: 0;
+        border-radius: 7px;
+        background-color: $bgColorBoton;
+        padding: 6px 6px 0px 6px;
+        height: 27px;
+        text-decoration: none;
+        color: white;
+        img {
+            width: 10px;
+            margin: 4px 2px;
+            float: left;
+        }
+    }
+    
+    .barra-busqueda {
+        float: right;
+        border: solid 1px rgb(182, 182, 182);
+        border-radius: 15px;
+        width: 250px;
+        img {
+            width: 20px;
+            margin: 6px 10px 0 10px;
+            float: left;
+        }
+    
+        input {
+            width: 190px;
+            border: 0;
+            height: 28px;
+        }
+        input:focus {
+            outline: none;
+        }
+    }
+}
+
+.taulaObres {
+    .barra-busqueda {
+        float: right;
+        margin-top: 10px;
+        margin-right: 7%;
+        border: solid 1px rgb(182, 182, 182);
+        border-radius: 15px;
+        width: 250px;
+        img {
+            width: 20px;
+            margin: 6px 10px 0 10px;
+            float: left;
+        }
+    
+        input {
+            width: 190px;
+            border: 0;
+            height: 28px;
+        }
+        input:focus {
+            outline: none;
+        }
+    }
+
+    table {
+        width: 90%;
+        margin: 20px auto;
+        border-collapse: collapse;
+
+        th,
+        td {
+            padding: 20px;
+            text-align: center;
+        }
+        td img {
+            width: 40px;
+            max-height: 40px;
+        }
+        td .imagen-contenedor {
+            display: flex; /* Usar flexbox para alinear imágenes */
+            justify-content: center; /* Centrar las imágenes en el contenedor */
+            align-items: center; /* Alinear verticalmente las imágenes si es necesario */
+        }
+
+        td a img {
+            width: 20px; /* Ajustar el tamaño de las imágenes según sea necesario */
+            margin: 0 5px; /* Espaciado horizontal entre las imágenes */
+        }
+        .row-white {
+            background-color: $rowWhite;
+        }
+
+        .row-blue {
+            background-color: $rowBlue;
+        }
+    }
+
+    .edit-options {
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            a img {
+                width: 20px;
+            }
+        }
+    }
+
+    .imagenFicha a img {
+        width: 20px;
+    }
+}
+
+
+/* FICHA BASICA */
+.fichaBasica {
+    background-color: lightgrey;
+    div {
+        width: 800px;
+        margin: auto auto;
+        border: 1px solid black;
+        background-color: white;
+        p {
+            font-size: 20px;
+            text-align: center;
+        }
+        div {
+            width: 700px;
+            margin: auto 50px;
+            border: 1px solid black;
+            margin-bottom: 30px;
+            img {
+                width: 100px;
+                height: 118px;
+                margin: 2px;
+                float: left;
+            }
+            table {
+                tr {
+                    td {
+                        width: 180px;
+                    }
+                    td:last-child {
+                        width: 200px;
+                        border-bottom: 1px solid lightgray;   
+                    }
+                }
+            }
+        }
+        nav {
+            margin: 50px;
+            display: flex;
+            justify-content: space-between;
+            a {
+                text-decoration: none;
+                color: black;
+                img {
+                    width: 20px;
+                    margin-right: 3px;
+                }
+            }
+        }
+    }
+}
+
+/* FICHA GENERAL */
+.fichaGeneral {
+    background-color: lightgrey;
+    div {
+        width: 1700px;
+        margin: auto auto;
+        border: 1px solid black;
+        background-color: white;
+        p {
+            font-size: 20px;
+            text-align: center;
+        }
+        /* PRIMERA FILA FICHA */
+        .primera-fila {
+            border: none;
+            width: 1500px;
+            height: 120px;
+            margin-bottom: 70px;
+            .item1 {
+                width: 850px;
+                float: left;
+                img {
+                    width: 110px;
+                    height: 143px;
+                    margin: 2px;
+                    float: left;
+                    margin-right: 5px;
+                }
+            }
+            .item2 {
+                width: 600px;
+                float: right;
+            }
+        }
+        /* SEGUNDA FILA FICHA */
+        .segunda-fila {
+            width: 1500px;
+            height: 120px;
+            border: none;
+            margin-bottom: 70px;
+            .item3 {
+                width: 600px;
+                float: left;
+            }
+            .item4 {
+                width: 850px;
+                float: right;
+            }
+        }
+        /* TERCERA FILA FICHA */
+        .tercera-fila {
+            width: 1500px;
+            border: none;
+            height: 120px;
+            margin-bottom: 30px;
+            .item5 {
+                width: 850px;
+                float: left;
+            }
+            .item6 {
+                width: 600px;
+                float: right;
+            }
+        }
+        div {
+            div {
+                table {
+                    margin-left: 5px;
+                    tr {
+                        td:first-child {
+                            width: 250px;
+                        }
+                        td {
+                            height: 25px;
+                        }
+                    }
+                }
+            }
+        }
+        /* ENLACES EXTRAS */
+        .extras {
+            width: 1500px;
+            margin: auto auto;
+            border: 1px solid black;
+            table {
+                tr {
+                    td {
+                        border-right: 1px solid rgb(136, 135, 135);
+                        padding-right: 100px;
+                        text-align: center;
+                        height: 30px;
+                        a {
+                            margin-left: 100px;
+                            text-decoration: none;
+                            color: black;
+                        }
+                    }
+                    td:last-child {
+                        border: none;
+                    }
+                }
+                
+            }
+        }
+        nav {
+            margin: 40px 100px 40px 100px;
+            display: flex;
+            justify-content: space-between;
+            a {
+                text-decoration: none;
+                color: black;
+                img {
+                    width: 20px;
+                    margin-right: 3px;
+                }
+            }
+        }
+    }
+}
