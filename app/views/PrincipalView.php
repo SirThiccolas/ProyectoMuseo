@@ -37,18 +37,17 @@
                 echo "<td>" . $obra["Nombre_Ubicacion"] . "</td>";
                 echo "<td>" . $obra["Any_Final"] . "</td>";
                 echo "<td class='imagenFicha'>";
-                        echo "<div class='imagen-contenedor'>
-                            <a href='#' class='openPopup' data-id='".$obra['Num_registro']."'>
-                                <img src='public/img/icono-ficha.png' alt='Veure fitxa'>
-                            </a>";
-                            if ($_SESSION['rol'] == "admin" || $_SESSION['rol'] == "tecnico") {
-                                echo "<a href='index.php?controller=Obres&action=editarFicha&id=".$obra['Num_registro']."'>";
-                                    echo "<img src='public/img/icono-lapiz.png' alt='Editar fitxa'>";
-                                echo "</a>";
-                            }
-                        echo "</div>";
-                    echo "</td>";
-
+                    echo "<div class='imagen-contenedor'>
+                        <a href='#' class='openPopup' data-id='".$obra['Num_registro']."'>
+                            <img src='public/img/icono-ficha.png' alt='Veure fitxa'>
+                        </a>";
+                    if ($_SESSION['rol'] == "admin" || $_SESSION['rol'] == "tecnico") {
+                        echo "<a href='index.php?controller=Obres&action=editarFicha&id=".$obra['Num_registro']."'>";
+                            echo "<img src='public/img/icono-lapiz.png' alt='Editar fitxa'>";
+                        echo "</a>";
+                    }
+                    echo "</div>";
+                echo "</td>";
                 echo "</tr>";
                 $row_counter++;
             }
@@ -58,7 +57,7 @@
         ?>
     </table>    
 </div>
-<div id="popupFicha" class="popup">
+<div id="popupFicha">
     <div class="popup-content">
         <p>¿Quieres ver la ficha básica o la ficha general?</p>
         <button id="fichaBasicaBtn">Ficha Básica</button>

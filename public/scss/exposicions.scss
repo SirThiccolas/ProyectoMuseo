@@ -1,0 +1,51 @@
+@import "variables";
+.taulaExposicions {
+    table {
+        width: 90%;
+        margin: 20px auto;
+        border-collapse: collapse;
+
+        th,
+        td {
+            padding: 20px;
+            text-align: center;
+        }
+        td img {
+            width: 40px;
+            max-height: 40px;
+        }
+        td .imagen-contenedor {
+            display: flex; /* Usar flexbox para alinear imágenes */
+            justify-content: center; /* Centrar las imágenes en el contenedor */
+            align-items: center; /* Alinear verticalmente las imágenes si es necesario */
+        }
+
+        td a img {
+            width: 20px; /* Ajustar el tamaño de las imágenes según sea necesario */
+            margin: 0 5px; /* Espaciado horizontal entre las imágenes */
+        }
+        .row-white {
+            background-color: $rowWhite;
+        }
+
+        .row-blue {
+            background-color: $rowBlue;
+        }
+    }
+
+    .edit-options {
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            a img {
+                width: 20px;
+            }
+        }
+    }
+
+    .imagenFicha a img {
+        width: 20px;
+    }
+}

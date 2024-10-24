@@ -4,7 +4,7 @@
         <nav class="enlaces">
             <a href="index.php?controller=Obres&action=mostrarObres">Inici</a>
             <a href="#">Serveis</a>
-            <a href="#">Projectes</a>
+            <a href="index.php?controller=Exposicions&action=mostrarExposicions">Exposicions</a>
             <a href="#">Contacte</a>
         </nav>
         <nav class="usuari">

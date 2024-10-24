@@ -150,11 +150,11 @@ if ($ficha) {
         <div class="extras">
             <table>
                 <tr>
-                    <td><a href="#" id="openPopup" onclick="popupRestauraciones()">Restauracions</a></td>
-                    <td><a href="">Exposicions</a></td>
-                    <td><a href="">Bibliografia</a></td>
-                    <td><a href="">Descripcio</a></td>
-                    <td><a href="">Historia de l'objecte</a></td>
+                    <td><a href="#" onclick="popupRestauraciones()">Restauracions</a></td>
+                    <td><a href="#" onclick="popupExposiciones()">Exposicions</a></td>
+                    <td><a href="#" onclick="popupBibliografia()">Bibliografia</a></td>
+                    <td><a href="#" onclick="popupDescripcion()">Descripcio</a></td>
+                    <td><a href="#" onclick="popupHistoria()">Historia de l'objecte</a></td>
                 </tr>
             </table>
         </div>
@@ -171,4 +171,4 @@ if ($ficha) {
 
 ?>
 
-<script src="public/js/popupFichaRestauraciones.js"></script>
+<script src="public/js/PopUpsFicha.js"></script>

@@ -1,39 +1,39 @@
 <!-- VER RESTAURACIONES FICHA -->
-<div id="popupRestauraciones" class="popup">
+<div id="popupRestauraciones">
     <div class="popup-content">
-        <p><?php echo $ficha[0]["Datacio"]?></p>
-        <button id="closePopup">Cerrar</button>
+        <p></p>
+        <button id="closePopupRestauraciones">Cerrar</button>
     </div>
 </div>
 
 <!-- VER EXPOSICIONES FICHA -->
-<div id="popupExposiciones" class="popup">
+<div id="popupExposiciones">
     <div class="popup-content">
-        <p><?php echo $ficha[0]["Datacio"]?></p>
-        <button id="closePopup">Cerrar</button>
+        <p></p>
+        <button id="closePopupExposiciones">Cerrar</button>
     </div>
 </div>
 
 <!-- VER BIBLIOGRAFIA FICHA -->
-<div id="popupBibliografia" class="popup">
+<div id="popupBibliografia">
     <div class="popup-content">
         <p><?php echo $ficha[0]["Bibliografia"]?></p>
-        <button id="closePopup">Cerrar</button>
+        <button id="closePopupBibliografia">Cerrar</button>
     </div>
 </div>
 
 <!-- VER DESCRIPCION FICHA -->
-<div id="popupDescripcion" class="popup">
+<div id="popupDescripcion">
     <div class="popup-content">
-        <p><?php echo $ficha[0]["Descripcion"]?></p>
-        <button id="closePopup">Cerrar</button>
+        <p><?php echo $ficha[0]["Descripcio"]?></p>
+        <button id="closePopupDescripcion">Cerrar</button>
     </div>
 </div>
 
 <!-- VER HISTORIA FICHA -->
-<div id="popupHistoria" class="popup">
+<div id="popupHistoria">
     <div class="popup-content">
         <p><?php echo $ficha[0]["Historia_Objecte"]?></p>
-        <button id="closePopup">Cerrar</button>
+        <button id="closePopupHistoria">Cerrar</button>
     </div>
 </div>

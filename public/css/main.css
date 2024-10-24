@@ -993,6 +993,48 @@ div.extrasTaulaUsers .barra-busqueda input:focus {
   background-color: #a3a1a1;
 }
 
+/* RELACIONAT AMB EXPOSICIONS */
+.taulaExposicions table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+.taulaExposicions table th,
+.taulaExposicions table td {
+  padding: 20px;
+  text-align: center;
+}
+.taulaExposicions table td img {
+  width: 40px;
+  max-height: 40px;
+}
+.taulaExposicions table td .imagen-contenedor {
+  display: flex; /* Usar flexbox para alinear imágenes */
+  justify-content: center; /* Centrar las imágenes en el contenedor */
+  align-items: center; /* Alinear verticalmente las imágenes si es necesario */
+}
+.taulaExposicions table td a img {
+  width: 20px; /* Ajustar el tamaño de las imágenes según sea necesario */
+  margin: 0 5px; /* Espaciado horizontal entre las imágenes */
+}
+.taulaExposicions table .row-white {
+  background-color: white;
+}
+.taulaExposicions table .row-blue {
+  background-color: #e0f3ff;
+}
+.taulaExposicions .edit-options div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.taulaExposicions .edit-options div a img {
+  width: 20px;
+}
+.taulaExposicions .imagenFicha a img {
+  width: 20px;
+}
+
 /* POPUPS */
 /* Estilos para el popup */
 #popupFicha {
@@ -1017,6 +1059,147 @@ div.extrasTaulaUsers .barra-busqueda input:focus {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 #popupFicha .popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* POP UPS FICHA GENERAL */
+/* POPUP RESTAURACIONES */
+#popupRestauraciones {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+#popupRestauraciones .popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+#popupRestauraciones .popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* POPUP EXPOSICIONES */
+#popupExposiciones {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+#popupExposiciones .popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+#popupExposiciones .popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* POPUP BIBLIOGRAFIA */
+#popupBibliografia {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+#popupBibliografia .popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+#popupBibliografia .popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* POPUP DESCRIPCION */
+#popupDescripcion {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+#popupDescripcion .popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+#popupDescripcion .popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* POPUP Historia */
+#popupHistoria {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+#popupHistoria .popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+#popupHistoria .popup-content button {
   margin: 10px;
   padding: 10px 20px;
   cursor: pointer;

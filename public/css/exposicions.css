@@ -1,0 +1,41 @@
+@charset "UTF-8";
+.taulaExposicions table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+.taulaExposicions table th,
+.taulaExposicions table td {
+  padding: 20px;
+  text-align: center;
+}
+.taulaExposicions table td img {
+  width: 40px;
+  max-height: 40px;
+}
+.taulaExposicions table td .imagen-contenedor {
+  display: flex; /* Usar flexbox para alinear imágenes */
+  justify-content: center; /* Centrar las imágenes en el contenedor */
+  align-items: center; /* Alinear verticalmente las imágenes si es necesario */
+}
+.taulaExposicions table td a img {
+  width: 20px; /* Ajustar el tamaño de las imágenes según sea necesario */
+  margin: 0 5px; /* Espaciado horizontal entre las imágenes */
+}
+.taulaExposicions table .row-white {
+  background-color: white;
+}
+.taulaExposicions table .row-blue {
+  background-color: #e0f3ff;
+}
+.taulaExposicions .edit-options div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.taulaExposicions .edit-options div a img {
+  width: 20px;
+}
+.taulaExposicions .imagenFicha a img {
+  width: 20px;
+}/*# sourceMappingURL=exposicions.css.map */
