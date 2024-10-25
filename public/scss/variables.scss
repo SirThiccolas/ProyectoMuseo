@@ -4,10 +4,8 @@ $paddingBody: 0;
 $myfont: Arial, sans-serif;
 
 // Ambas tablas
-$rowWhite: white;
-$rowBlue: #e0f3ff;  // Actualizado para una tonalidad de azul más clara
-$bgColorBoton: #4194ec;  // Actualizado a un color más consistente con botones
-$bgColorBotonHover: #0056b3;  // Color de hover para los botones
+$bgColorBoton: hsl(211, 82%, 59%); 
+$bgColorBotonHover: #0056b3;  
 
 // Tabla Registres
 $borderTableRegistres: 0px;
@@ -16,6 +14,7 @@ $textAlignTableRegistres: center;
 $searchBarWidth: 35%;
 $searchBarBorder: solid 1px lightgray;
 $searchBarBorderRadius: 15px;
+$rowRed: rgba(255, 0, 0, 0.5);
 
 // Tabla Usuaris
 $borderTableUsuaris: 0px;

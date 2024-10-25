@@ -10,7 +10,7 @@ div.extrasTaulaUsers .crearRegistreUsers {
   margin-right: 10px;
   border: 0;
   border-radius: 7px;
-  background-color: #4194ec;
+  background-color: hsl(211, 82%, 59%);
   padding: 6px 6px 0px 6px;
   height: 27px;
   text-decoration: none;
@@ -58,12 +58,6 @@ div.extrasTaulaUsers .barra-busqueda input:focus {
 .taulaUsers table td a img {
   width: 20px;
   margin: 0 auto;
-}
-.taulaUsers table .row-white {
-  background-color: white;
-}
-.taulaUsers table .row-blue {
-  background-color: #e0f3ff;
 }
 .taulaUsers .edit-options div {
   display: flex;

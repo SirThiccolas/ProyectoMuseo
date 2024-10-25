@@ -72,7 +72,16 @@
         width: 90%;
         margin: 20px auto;
         border-collapse: collapse;
-
+        tr div {
+            height: 50px;
+            width: 30px;
+            border: none;
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
         th,
         td {
             padding: 20px;
@@ -83,21 +92,17 @@
             max-height: 40px;
         }
         td .imagen-contenedor {
-            display: flex; /* Usar flexbox para alinear imágenes */
-            justify-content: center; /* Centrar las imágenes en el contenedor */
-            align-items: center; /* Alinear verticalmente las imágenes si es necesario */
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
         }
 
         td a img {
-            width: 20px; /* Ajustar el tamaño de las imágenes según sea necesario */
-            margin: 0 5px; /* Espaciado horizontal entre las imágenes */
+            width: 20px;
+            margin: 0 5px; 
         }
-        .row-white {
-            background-color: $rowWhite;
-        }
-
-        .row-blue {
-            background-color: $rowBlue;
+        .row-red {
+            background-color: $rowRed;
         }
     }
 
@@ -131,6 +136,18 @@
             font-size: 20px;
             text-align: center;
         }
+        div.imagenFicha{
+            float: left;
+            height: 105px;
+            width: 100px;
+            margin: 5px;
+            border: none;
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
         div {
             width: 700px;
             margin: auto 50px;
@@ -148,7 +165,7 @@
                         width: 180px;
                     }
                     td:last-child {
-                        width: 200px;
+                        width: 300px;
                         border-bottom: 1px solid lightgray;   
                     }
                 }
@@ -191,12 +208,17 @@
             .item1 {
                 width: 850px;
                 float: left;
-                img {
-                    width: 110px;
-                    height: 143px;
-                    margin: 2px;
+                div {
+                    border: none;
                     float: left;
-                    margin-right: 5px;
+                    height: 141px;
+                    width: 125px;
+                    margin: 5px;
+                    img {
+                        object-fit: fill;
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
             }
             .item2 {
@@ -239,11 +261,15 @@
                 table {
                     margin-left: 5px;
                     tr {
+                        td {
+                            height: 25px;
+                        }
                         td:first-child {
                             width: 250px;
                         }
-                        td {
-                            height: 25px;
+                        td:last-child {
+                            width: 300px;
+                            border-bottom: 1px solid lightgray;  
                         }
                     }
                 }

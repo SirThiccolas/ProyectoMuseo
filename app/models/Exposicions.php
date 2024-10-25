@@ -10,7 +10,7 @@ class Exposicions extends Database
                     
         $db = $this->conectar();
         $rows = $db->query($sql);
-        $resultado = $rows->fetchAll(PDO::FETCH_ASSOC); // Usamos fetchAll en lugar de fetch
+        $resultado = $rows->fetchAll(PDO::FETCH_ASSOC);
         return $resultado;
     }
 }

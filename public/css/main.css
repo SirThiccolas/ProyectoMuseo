@@ -159,7 +159,7 @@ footer .redes img {
   margin-right: 10px;
   border: 0;
   border-radius: 7px;
-  background-color: #4194ec;
+  background-color: hsl(211, 82%, 59%);
   padding: 6px 6px 0px 6px;
   height: 27px;
   text-decoration: none;
@@ -216,6 +216,17 @@ footer .redes img {
   margin: 20px auto;
   border-collapse: collapse;
 }
+.taulaObres table tr div {
+  height: 50px;
+  width: 30px;
+  border: none;
+}
+.taulaObres table tr div img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 .taulaObres table th,
 .taulaObres table td {
   padding: 20px;
@@ -226,19 +237,16 @@ footer .redes img {
   max-height: 40px;
 }
 .taulaObres table td .imagen-contenedor {
-  display: flex; /* Usar flexbox para alinear imágenes */
-  justify-content: center; /* Centrar las imágenes en el contenedor */
-  align-items: center; /* Alinear verticalmente las imágenes si es necesario */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .taulaObres table td a img {
-  width: 20px; /* Ajustar el tamaño de las imágenes según sea necesario */
-  margin: 0 5px; /* Espaciado horizontal entre las imágenes */
+  width: 20px;
+  margin: 0 5px;
 }
-.taulaObres table .row-white {
-  background-color: white;
-}
-.taulaObres table .row-blue {
-  background-color: #e0f3ff;
+.taulaObres table .row-red {
+  background-color: rgba(255, 0, 0, 0.5);
 }
 .taulaObres .edit-options div {
   display: flex;
@@ -266,6 +274,19 @@ footer .redes img {
   font-size: 20px;
   text-align: center;
 }
+.fichaBasica div div.imagenFicha {
+  float: left;
+  height: 105px;
+  width: 100px;
+  margin: 5px;
+  border: none;
+}
+.fichaBasica div div.imagenFicha img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 .fichaBasica div div {
   width: 700px;
   margin: auto 50px;
@@ -282,7 +303,7 @@ footer .redes img {
   width: 180px;
 }
 .fichaBasica div div table tr td:last-child {
-  width: 200px;
+  width: 300px;
   border-bottom: 1px solid lightgray;
 }
 .fichaBasica div nav {
@@ -327,12 +348,18 @@ footer .redes img {
   width: 850px;
   float: left;
 }
-.fichaGeneral div .primera-fila .item1 img {
-  width: 110px;
-  height: 143px;
-  margin: 2px;
+.fichaGeneral div .primera-fila .item1 div {
+  border: none;
   float: left;
-  margin-right: 5px;
+  height: 141px;
+  width: 125px;
+  margin: 5px;
+}
+.fichaGeneral div .primera-fila .item1 div img {
+  -o-object-fit: fill;
+     object-fit: fill;
+  width: 100%;
+  height: 100%;
 }
 .fichaGeneral div .primera-fila .item2 {
   width: 600px;
@@ -369,11 +396,15 @@ footer .redes img {
 .fichaGeneral div div div table {
   margin-left: 5px;
 }
+.fichaGeneral div div div table tr td {
+  height: 25px;
+}
 .fichaGeneral div div div table tr td:first-child {
   width: 250px;
 }
-.fichaGeneral div div div table tr td {
-  height: 25px;
+.fichaGeneral div div div table tr td:last-child {
+  width: 300px;
+  border-bottom: 1px solid lightgray;
 }
 .fichaGeneral div .extras {
   width: 1500px;
@@ -446,7 +477,7 @@ div.extrasTaulaUsers .crearRegistreUsers {
   margin-right: 10px;
   border: 0;
   border-radius: 7px;
-  background-color: #4194ec;
+  background-color: hsl(211, 82%, 59%);
   padding: 6px 6px 0px 6px;
   height: 27px;
   text-decoration: none;
@@ -494,12 +525,6 @@ div.extrasTaulaUsers .barra-busqueda input:focus {
 .taulaUsers table td a img {
   width: 20px;
   margin: 0 auto;
-}
-.taulaUsers table .row-white {
-  background-color: white;
-}
-.taulaUsers table .row-blue {
-  background-color: #e0f3ff;
 }
 .taulaUsers .edit-options div {
   display: flex;
@@ -732,7 +757,7 @@ div.extrasTaulaUsers .barra-busqueda input:focus {
   margin-right: 10px;
   border: 0;
   border-radius: 7px;
-  background-color: #4194ec;
+  background-color: hsl(211, 82%, 59%);
   padding: 6px 6px 0px 6px;
   height: 27px;
   text-decoration: none;
@@ -1009,19 +1034,13 @@ div.extrasTaulaUsers .barra-busqueda input:focus {
   max-height: 40px;
 }
 .taulaExposicions table td .imagen-contenedor {
-  display: flex; /* Usar flexbox para alinear imágenes */
-  justify-content: center; /* Centrar las imágenes en el contenedor */
-  align-items: center; /* Alinear verticalmente las imágenes si es necesario */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .taulaExposicions table td a img {
-  width: 20px; /* Ajustar el tamaño de las imágenes según sea necesario */
-  margin: 0 5px; /* Espaciado horizontal entre las imágenes */
-}
-.taulaExposicions table .row-white {
-  background-color: white;
-}
-.taulaExposicions table .row-blue {
-  background-color: #e0f3ff;
+  width: 20px;
+  margin: 0 5px;
 }
 .taulaExposicions .edit-options div {
   display: flex;
@@ -1201,6 +1220,142 @@ div.extrasTaulaUsers .barra-busqueda input:focus {
 }
 #popupHistoria .popup-content button {
   margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* POPUP MOVIMENTS */
+#popupMovimentsFicha {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+#popupMovimentsFicha .popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  width: 1100px;
+}
+#popupMovimentsFicha .popup-content table {
+  margin: auto auto;
+}
+#popupMovimentsFicha .popup-content table tr {
+  height: 40px;
+}
+#popupMovimentsFicha .popup-content table tr th {
+  background-color: lightgrey;
+}
+#popupMovimentsFicha .popup-content table tr td {
+  width: 250px;
+}
+#popupMovimentsFicha .popup-content button {
+  margin: 10px;
+  margin-top: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* POPUP RESTAURACIONS */
+#popupRestauraciones {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+#popupRestauraciones .popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  width: 1100px;
+}
+#popupRestauraciones .popup-content table {
+  margin: auto auto;
+}
+#popupRestauraciones .popup-content table tr {
+  height: 40px;
+}
+#popupRestauraciones .popup-content table tr th {
+  background-color: lightgrey;
+}
+#popupRestauraciones .popup-content table tr td {
+  width: 250px;
+}
+#popupRestauraciones .popup-content table tr td a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+#popupRestauraciones .popup-content button {
+  margin: 10px;
+  margin-top: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* POPUP MOVIMENTS */
+#popupExposiciones {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+#popupExposiciones .popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  width: 1100px;
+}
+#popupExposiciones .popup-content table {
+  margin: auto auto;
+}
+#popupExposiciones .popup-content table tr {
+  height: 40px;
+}
+#popupExposiciones .popup-content table tr th {
+  background-color: lightgrey;
+}
+#popupExposiciones .popup-content table tr td {
+  width: 250px;
+}
+#popupExposiciones .popup-content table tr td a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+#popupExposiciones .popup-content button {
+  margin: 10px;
+  margin-top: 30px;
   padding: 10px 20px;
   cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

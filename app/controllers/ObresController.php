@@ -5,28 +5,33 @@ require_once 'app/models/Obres.php';
 class ObresController
 {
     private $modelobras;
-    private $verficha;
+
+    public function __construct() {
+        $this->modelobras = new Obres();
+    }
+
     public function mostrarObres()
     {
-        $modelobras = new Obres();
-        $obres = $modelobras->getObras();
+        $obres = $this->modelobras->getObras();
         require_once 'app/views/templates/header.php';
         require_once 'app/views/PrincipalView.php';
         require_once 'app/views/templates/footer.html';
     }
-    public function veureFichaBasica()
+
+    public function verFicha()
     {
         $id = $_GET['id'] ?? '';
-        $verficha = new Obres();
-        $ficha = $verficha->verFicha($id);
-        require_once 'app/views/FichaBasicaView.php';
+        $tipoficha = $_GET['tipoficha'] ?? '';
+        if ($tipoficha == "basica") {
+            $ficha = $this->modelobras->verFichaBasica($id);
+        } else {
+            $ficha = $this->modelobras->verFichaGeneral($id);
+            $moviments = $this->modelobras->verMovimentsFicha($id); 
+            $restauracions = $this->modelobras->verRestauracionsFicha($id);
+            $exposicions = $this->modelobras->verExposicionsFicha($id);
+            require_once 'app/views/templates/PopUps.php';
+        }
+        require_once 'app/views/FichasObrasView.php';
     }
-    public function veureFichaGeneral()
-    {
-        $id = $_GET['id'] ?? '';
-        $verficha = new Obres();
-        $ficha = $verficha->verFicha($id);
-        require_once 'app/views/templates/PopUps.php';
-        require_once 'app/views/FichaGeneralView.php';
-    }}
-?>
+
+}

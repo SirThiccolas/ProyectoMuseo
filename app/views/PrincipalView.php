@@ -20,43 +20,44 @@
             <th>Ficha</th>
         </tr>
         <?php
-        if ($obres) {
-            // Inicializar contador para alternar colores
-            $row_counter = 0;
+        if (!empty($obres)) {
 
-            // Imprimir cada fila de la base de datos
             foreach ($obres as $obra) {
-                // Alternar clase según la fila
-                $row_class = ($row_counter % 2 == 0) ? "row-white" : "row-blue";
-
-                echo "<tr class='$row_class'>";
-                echo "<td>" . $obra["Num_registro"] . "</td>";
-                echo "<td><img src='public/img-bd/" . $obra["Fotografia"] . "'></td>";
-                echo "<td>" . $obra["Titol"] . "</td>";
-                echo "<td>" . $obra["Autor"] . "</td>";
-                echo "<td>" . $obra["Nombre_Ubicacion"] . "</td>";
-                echo "<td>" . $obra["Any_Final"] . "</td>";
+                if ($obra["Baixa"] == "si") {
+                    echo "<tr class='row-red'>";
+                } else {
+                    echo "<tr>";
+                }
+                
+                echo "<td>" . htmlspecialchars($obra["Num_registro"]) . "</td>";
+                echo "<div class='imagenFicha'>";
+                echo "<td><img src='public/img-bd/" . htmlspecialchars($obra["Fotografia"]) . "' alt='Foto de " . htmlspecialchars($obra["Titol"]) . "'></td>";
+                echo "</div>";
+                echo "<td>" . htmlspecialchars($obra["Titol"]) . "</td>";
+                echo "<td>" . htmlspecialchars($obra["Autor"]) . "</td>";
+                echo "<td>" . htmlspecialchars($obra["Nombre_Ubicacion"]) . "</td>";
+                echo "<td>" . htmlspecialchars($obra["Nombre_Datacion"]) . "</td>";
                 echo "<td class='imagenFicha'>";
-                    echo "<div class='imagen-contenedor'>
-                        <a href='#' class='openPopup' data-id='".$obra['Num_registro']."'>
-                            <img src='public/img/icono-ficha.png' alt='Veure fitxa'>
-                        </a>";
-                    if ($_SESSION['rol'] == "admin" || $_SESSION['rol'] == "tecnico") {
-                        echo "<a href='index.php?controller=Obres&action=editarFicha&id=".$obra['Num_registro']."'>";
-                            echo "<img src='public/img/icono-lapiz.png' alt='Editar fitxa'>";
-                        echo "</a>";
-                    }
-                    echo "</div>";
+                echo "<div class='imagen-contenedor'>";
+                echo "<a href='#' class='openPopup' data-id='" . htmlspecialchars($obra['Num_registro']) . "'>";
+                echo "<img src='public/img/icono-ficha.png' alt='Veure fitxa'>";
+                echo "</a>";
+                if ($_SESSION['rol'] === "admin" || $_SESSION['rol'] === "tecnico") {
+                    echo "<a href='index.php?controller=Obres&action=editarFicha&id=" . htmlspecialchars($obra['Num_registro']) . "'>";
+                    echo "<img src='public/img/icono-lapiz.png' alt='Editar fitxa'>";
+                    echo "</a>";
+                }
+                echo "</div>";
                 echo "</td>";
                 echo "</tr>";
-                $row_counter++;
             }
         } else {
             echo "<tr><td colspan='7'>No hay registros</td></tr>";
         }
         ?>
-    </table>    
+    </table>
 </div>
+
 <div id="popupFicha">
     <div class="popup-content">
         <p>¿Quieres ver la ficha básica o la ficha general?</p>
@@ -65,4 +66,5 @@
         <button id="closePopup">Cerrar</button>
     </div>
 </div>
+
 <script src="public/js/EleccionFicha.js"></script>

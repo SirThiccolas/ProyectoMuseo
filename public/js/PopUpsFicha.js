@@ -1,3 +1,25 @@
+
+// POPUP MOVIMENTS FICHA
+function popupMovimentsFicha() {
+    const popupMovimentsFicha = document.getElementById('popupMovimentsFicha');
+    const closeBtn = document.getElementById("closePopupMovimentsFicha");
+
+    // Mostrar el popup
+    popupMovimentsFicha.style.display = "block";
+
+    // Cerrar el popup cuando se haga clic en el botón "Cerrar"
+    closeBtn.onclick = function() {
+        popupMovimentsFicha.style.display = "none";
+    };
+
+    // Cerrar el popup cuando se haga clic fuera de él
+    window.onclick = function(event) {
+        if (event.target == popupMovimentsFicha) {
+            popupMovimentsFicha.style.display = "none"; 
+        } 
+    };
+}
+
 // POPUP RESTAURACIONES
 function popupRestauraciones() {
     const popupRestauraciones = document.getElementById('popupRestauraciones');
