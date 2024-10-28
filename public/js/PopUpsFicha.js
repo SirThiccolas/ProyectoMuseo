@@ -1,4 +1,3 @@
-
 // POPUP MOVIMENTS FICHA
 function popupMovimentsFicha() {
     const popupMovimentsFicha = document.getElementById('popupMovimentsFicha');

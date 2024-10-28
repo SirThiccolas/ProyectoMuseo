@@ -29,9 +29,13 @@ class ObresController
             $moviments = $this->modelobras->verMovimentsFicha($id); 
             $restauracions = $this->modelobras->verRestauracionsFicha($id);
             $exposicions = $this->modelobras->verExposicionsFicha($id);
-            require_once 'app/views/templates/PopUps.php';
         }
         require_once 'app/views/FichasObrasView.php';
+        require_once 'app/views/templates/PopUps.php';
     }
 
+    public function deleteObra()
+    {
+        
+    }
 }

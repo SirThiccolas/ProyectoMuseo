@@ -1,5 +1,5 @@
-<div class="extrasTaulaObres">
-    <a href='index.php?controller=Obres&action=crearObra' class='crearRegistreObres'>
+<div class="extrasTaulaRestauracions">
+    <a href='index.php?controller=Obres&action=crearObra' class='crearRegistreRestauracions'>
         <img src='public/img/icono-mas.png' alt='Icono mas'>Donar d'alta
     </a>
     <div class="barra-busqueda">
@@ -8,7 +8,7 @@
     </div>
 </div>
 
-<div class="taulaObres">
+<div class="taulaRestauracions">
     <table>
         <tr>
             <th>Nº Registre</th>

@@ -1,14 +1,14 @@
 .opcions-gestions {
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 100px;
-
+    justify-content: space-between;
+    margin: auto auto;
     a {
         text-decoration: none;
         color: black;
-
+        margin: 80px;
         div {
             border: 5px solid black;
+            border-radius: 15px;
             padding: 20px;
             width: 200px;
             height: 250px;
@@ -22,6 +22,7 @@
 
         &:hover {
             cursor: pointer;
+            border-radius: 15px;
             background-color: lightgray;
         }
     }

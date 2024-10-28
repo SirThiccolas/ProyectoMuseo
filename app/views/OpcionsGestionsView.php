@@ -10,10 +10,16 @@
                 <h3>Gestio de usuaris</h3>
             </div>
         </a>
-        <a href="opcionsCopiesSeguretat.php">
+        <a href="#">
             <div>
                 <img src="public/img/icono-copiasSeguridad.png" alt="Icono gestion bienes">
                 <h3>Copies de seguretat</h3>
+            </div>
+        </a>
+        <a href="#">
+            <div>
+                <img src="public/img/icono-gestionUbicaciones.png" alt="Icono gestion ubicaciones">
+                <h3>Ubicacions</h3>
             </div>
         </a>
         <a href="index.php?controller=Vocabularis&action=mostrarVocabularis">

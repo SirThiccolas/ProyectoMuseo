@@ -5,7 +5,7 @@
             <a href="index.php?controller=Obres&action=mostrarObres">Inici</a>
             <a href="#">Serveis</a>
             <a href="index.php?controller=Exposicions&action=mostrarExposicions">Exposicions</a>
-            <a href="#">Contacte</a>
+            <a href="index.php?controller=Restauracions&action=mostrarRestauracions">Restauracions</a>
         </nav>
         <nav class="usuari">
             <div class="paste-button">

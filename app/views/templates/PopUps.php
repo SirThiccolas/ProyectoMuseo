@@ -1,3 +1,13 @@
+<!-- ELECCION DE FICHA -->
+<div id="popupFicha">
+    <div class="popup-content">
+        <p>¿Quieres ver la ficha básica o la ficha general?</p>
+        <button id="fichaBasicaBtn">Ficha Básica</button>
+        <button id="fichaGeneralBtn">Ficha General</button>
+        <button id="closePopup">Cerrar</button>
+    </div>
+</div>
+
 <!-- VER REGISTRO DE MOVIMIENTOS FICHA -->
 <div id="popupMovimentsFicha">
     <div class="popup-content">

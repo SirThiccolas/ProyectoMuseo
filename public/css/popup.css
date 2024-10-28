@@ -104,6 +104,10 @@
   border-radius: 10px;
   text-align: center;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  width: 600px;
+}
+#popupBibliografia .popup-content p {
+  font-size: 20px;
 }
 #popupBibliografia .popup-content button {
   margin: 10px;
@@ -132,6 +136,10 @@
   border-radius: 10px;
   text-align: center;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  width: 600px;
+}
+#popupDescripcion .popup-content p {
+  font-size: 20px;
 }
 #popupDescripcion .popup-content button {
   margin: 10px;
@@ -160,6 +168,10 @@
   border-radius: 10px;
   text-align: center;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  width: 600px;
+}
+#popupHistoria .popup-content p {
+  font-size: 20px;
 }
 #popupHistoria .popup-content button {
   margin: 10px;
