@@ -2,6 +2,7 @@
 
 require_once 'app/models/Obres.php';
 
+
 class ObresController
 {
     private $modelobras;
@@ -15,6 +16,7 @@ class ObresController
         $obres = $this->modelobras->getObras();
         require_once 'app/views/templates/header.php';
         require_once 'app/views/PrincipalView.php';
+        require_once 'app/views/templates/PopUps.php';
         require_once 'app/views/templates/footer.html';
     }
 

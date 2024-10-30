@@ -1,0 +1,77 @@
+@import "variables";
+
+/* TAULA USUARIS */
+.extrasTaulaRestauracions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 10.5%;
+  .crearRegistreRestauracions {
+      margin-right: 10px;
+      border: 0;
+      border-radius: 7px;
+      background-color: $bgColorBoton;
+      padding: 6px 6px 0px 6px;
+      height: 27px;
+      text-decoration: none;
+      color: white;
+      img {
+          width: 10px;
+          margin: 4px 2px;
+          float: left;
+      }
+  }
+  
+  .barra-busqueda {
+      float: right;
+      border: solid 1px rgb(182, 182, 182);
+      border-radius: 15px;
+      width: 250px;
+      img {
+          width: 20px;
+          margin: 6px 10px 0 10px;
+          float: left;
+      }
+  
+      input {
+          width: 190px;
+          border: 0;
+          height: 28px;
+      }
+      input:focus {
+          outline: none;
+      }
+  }
+}
+
+.taulaRestauracions {
+    margin: auto auto;
+    margin-top: 20px;
+    div {
+        display: flex;
+        width: 1600px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        div {
+            border: 2px solid black;
+            border-radius: 15px;
+            width: 300px;
+            margin-bottom: 50px;
+            div.imagen-restuaracion {
+                width: 200px;
+                height: 200px;
+                margin: 20px auto;
+                border: none;
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            p {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}

@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
+// POPUP MOVIMENTS FICHA
+function popupEleccionFicha() {
     const popupFicha = document.getElementById('popupFicha');
     const closePopupBtn = document.getElementById('closePopup');
     
@@ -32,5 +33,4 @@ document.addEventListener('DOMContentLoaded', function() {
             popupFicha.style.display = 'none';
         }
     });
-});
-
+}
