@@ -1,8 +1,17 @@
-
+<!-- ELIMINAR OBRA -->
 <div id="confirmarDeleteObra">
     <div class="popup-content">
-        <p>¿Quieres ver la ficha básica o la ficha general?</p>
+        <p>Segur que vols esborrar aquest registre?</p>
         <button id="confirmarPopupConfirmarDeleteObra">Si</button>
         <button id="closePopupConfirmarDeleteObra">No</button>
+    </div>
+</div>
+
+<!-- ELIMINAR USER -->
+<div id="confirmarDeleteUser">
+    <div class="popup-content">
+        <p>Segur que vols esborrar aquest usuari?</p>
+        <button id="confirmarPopupConfirmarDeleteUser">Si</button>
+        <button id="closePopupConfirmarDeleteUser">No</button>
     </div>
 </div>

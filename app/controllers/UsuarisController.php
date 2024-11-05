@@ -11,6 +11,8 @@ class UsuarisController
         require_once 'app/views/templates/header.php';
         require_once 'app/views/UsersView.php';
         require_once 'app/views/templates/footer.html';
+        require_once 'app/views/templates/PopUps.php';
+        require_once 'app/views/templates/ConfirmarDeletes.php';
     }
 
     public function crearUser()
@@ -70,27 +72,17 @@ class UsuarisController
     public function deleteUser()
     {
         $eliminaruser = new Users();
-        $idUser = $_GET['id'];
+        $idUser = $_GET['id'] ?? null;
 
-        if ($_POST) {
-            $opcion = $_POST['opcio'];
-            if ($opcion == "si") {
-                $eliminaruser->deleteUser($idUser);
-                echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Usuaris&action=mostrarUsers'>";
-            } else {
-                echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Usuaris&action=mostrarUsers'>";
-            }
+        if (!$idUser) {
+            echo "No ha arribat l'ID de l'usuari.";
+            echo "<meta http-equiv='refresh' content='2;url=index.php?controller=Usuaris&action=mostrarUsers'>";
+            return;
         } else {
-            // Validar si el ID de usuario existe
-            $user = $eliminaruser->getUserById($idUser);
-            if (!$user) {
-                echo "No s'ha trobat cap usuari amb aquest ID.";
-                echo "<meta http-equiv='refresh' content='2;url=index.php?controller=Usuaris&action=mostrarUsers'>";
-            } else {
-                require_once 'app/views/templates/header.php';
-                require_once 'app/views/EliminarUserView.php';
-                require_once 'app/views/templates/footer.html';
-            }
+            $eliminaruser->deleteUser($idUser);
+            echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Usuaris&action=mostrarUsers'>";
         }
+
     }
+
 }

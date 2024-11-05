@@ -33,9 +33,13 @@
                         echo "<td>" . $user["Email"] . "</td>";
                         echo "<td>" . $user["Rol"] . "</td>";
                         echo "<td class='imagenFicha'><div>
-                                    <a href='index.php?controller=Usuaris&action=editarUser&id=".$user['ID_Usuari']."'><img src='public/img/icono-lapiz.png'></a>
-                                    <a href='index.php?controller=Usuaris&action=deleteUser&id=".$user['ID_Usuari']."'><img src='public/img/icono-papelera.png'></a>
-                            </div></td>";
+                                    <a href='index.php?controller=Usuaris&action=editarUser&id=".$user['ID_Usuari']."'><img src='public/img/icono-lapiz.png'></a>";
+                                    ?>
+                                    <a href='#' class='openPopup' onclick='confirmarDeleteUser("<?php echo htmlspecialchars($user["ID_Usuari"]); ?>")'>
+                                        <img src='public/img/icono-papelera.png'>
+                                    </a>
+                                    <?php 
+                            echo "</div></td>";
                         echo "</tr>";
                 }
             } else {
@@ -46,3 +50,4 @@
 
         </table>
     </div>
+<script src="public/js/Confirmaciones.js"></script>

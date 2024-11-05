@@ -78,6 +78,24 @@ class Vocabulari extends Database
         $resultado = $rows->fetchAll(PDO::FETCH_ASSOC);
         return $resultado;
     }
+    public function getCogigoGetty()
+    {
+        $sql = "SELECT * FROM vocabulario_codis_getty";
+        
+        $db = $this->conectar();
+        $rows = $db->query($sql);
+        $resultado = $rows->fetchAll(PDO::FETCH_ASSOC);
+        return $resultado;
+    }
+    public function getClasificacionGenerica()
+    {
+        $sql = "SELECT * FROM vocabulario_classificacio_generica";
+        
+        $db = $this->conectar();
+        $rows = $db->query($sql);
+        $resultado = $rows->fetchAll(PDO::FETCH_ASSOC);
+        return $resultado;
+    }
 
     // INSERTS
     public function insertarAutor($nombre)

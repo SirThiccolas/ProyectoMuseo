@@ -200,49 +200,4 @@ div.extrasTaulaUsers .barra-busqueda input:focus {
   padding-bottom: 10px;
   text-decoration: none;
   color: black;
-}
-
-/* ELIMINAR USER */
-.esborrarUsuari {
-  margin: auto auto;
-}
-.esborrarUsuari div {
-  width: 400px;
-  background-color: #c5c4c4;
-  border-radius: 15px;
-  box-shadow: 15px 15px 30px rgb(71, 71, 71);
-  padding-bottom: 5px;
-}
-.esborrarUsuari div h1 {
-  text-align: center;
-  padding-top: 30px;
-}
-.esborrarUsuari div p {
-  text-align: center;
-  padding-top: 5px;
-}
-.esborrarUsuari div form {
-  margin: 40px;
-  border: 1px solid black;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-}
-.esborrarUsuari div form table {
-  margin: 5px;
-  width: 200px;
-  float: left;
-}
-.esborrarUsuari div form table tr {
-  margin-top: 2px;
-}
-.esborrarUsuari div form input[type=submit] {
-  width: 70px;
-  height: 40px;
-  border-radius: 15px;
-  margin: auto auto;
-}
-.esborrarUsuari div form input[type=submit]:hover {
-  cursor: pointer;
-  background-color: #a3a1a1;
 }/*# sourceMappingURL=usuaris.css.map */

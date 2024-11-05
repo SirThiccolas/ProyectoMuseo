@@ -16,7 +16,7 @@
                 <h3>Copies de seguretat</h3>
             </div>
         </a>
-        <a href="#">
+        <a href="index.php?controller=Ubicaciones&action=obtenerArbolUbicaciones">
             <div>
                 <img src="public/img/icono-gestionUbicaciones.png" alt="Icono gestion ubicaciones">
                 <h3>Ubicacions</h3>

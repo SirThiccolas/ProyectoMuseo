@@ -1,10 +1,10 @@
 <!-- ELECCION DE FICHA -->
 <div id="popupFicha">
     <div class="popup-content">
-        <p>¿Quieres ver la ficha básica o la ficha general?</p>
-        <button id="fichaBasicaBtn">Ficha Básica</button>
-        <button id="fichaGeneralBtn">Ficha General</button>
-        <button id="closePopup">Cerrar</button>
+        <p>Indica quina fitxa vols veure:</p>
+        <button id="fichaBasicaBtn">Fitx Basica</button>
+        <button id="fichaGeneralBtn">Fitxa General</button>
+        <button id="closePopup">Tancar</button>
     </div>
 </div>
 
@@ -32,7 +32,7 @@
         <p>No s'han trobat moviments relacionats amb aquesta obra</p>
     <?php endif; ?>
 
-        <button id="closePopupMovimentsFicha">Cerrar</button>
+        <button id="closePopupMovimentsFicha">Tancar</button>
     </div>
 </div>
 
@@ -59,7 +59,7 @@
     <?php else: ?>
         <p>No s'han trobat restauracions relacionades amb aquesta obra</p>
     <?php endif; ?>
-        <button id="closePopupRestauraciones">Cerrar</button>
+        <button id="closePopupRestauraciones">Tancar</button>
     </div>
 </div>
 
@@ -90,7 +90,7 @@
     <?php else: ?>
         <p>No s'han trobat exposicions relacionades amb aquesta obra</p>
     <?php endif; ?>
-        <button id="closePopupExposiciones">Cerrar</button>
+        <button id="closePopupExposiciones">Tancar</button>
     </div>
 </div>
 
@@ -98,7 +98,7 @@
 <div id="popupBibliografia">
     <div class="popup-content">
         <p><?php echo $ficha[0]["Bibliografia"]?></p>
-        <button id="closePopupBibliografia">Cerrar</button>
+        <button id="closePopupBibliografia">Tancar</button>
     </div>
 </div>
 
@@ -106,7 +106,7 @@
 <div id="popupDescripcion">
     <div class="popup-content">
         <p><?php echo $ficha[0]["Descripcio"]?></p>
-        <button id="closePopupDescripcion">Cerrar</button>
+        <button id="closePopupDescripcion">Tancar</button>
     </div>
 </div>
 
@@ -114,6 +114,6 @@
 <div id="popupHistoria">
     <div class="popup-content">
         <p><?php echo $ficha[0]["Historia_Objecte"]?></p>
-        <button id="closePopupHistoria">Cerrar</button>
+        <button id="closePopupHistoria">Tancar</button>
     </div>
 </div>

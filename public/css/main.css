@@ -667,56 +667,12 @@ div.extrasTaulaUsers .barra-busqueda input:focus {
   color: black;
 }
 
-/* ELIMINAR USER */
-.esborrarUsuari {
-  margin: auto auto;
-}
-.esborrarUsuari div {
-  width: 400px;
-  background-color: #c5c4c4;
-  border-radius: 15px;
-  box-shadow: 15px 15px 30px rgb(71, 71, 71);
-  padding-bottom: 5px;
-}
-.esborrarUsuari div h1 {
-  text-align: center;
-  padding-top: 30px;
-}
-.esborrarUsuari div p {
-  text-align: center;
-  padding-top: 5px;
-}
-.esborrarUsuari div form {
-  margin: 40px;
-  border: 1px solid black;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-}
-.esborrarUsuari div form table {
-  margin: 5px;
-  width: 200px;
-  float: left;
-}
-.esborrarUsuari div form table tr {
-  margin-top: 2px;
-}
-.esborrarUsuari div form input[type=submit] {
-  width: 70px;
-  height: 40px;
-  border-radius: 15px;
-  margin: auto auto;
-}
-.esborrarUsuari div form input[type=submit]:hover {
-  cursor: pointer;
-  background-color: #a3a1a1;
-}
-
 /* RELACIONAT AMB VOCABULARIS */
 /* opcions */
 .eleccionVocabulario {
   margin: auto auto;
-  width: 600px;
+  width: 1400px;
+  height: 275px;
   background-color: lightgrey;
   border-radius: 10px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -1446,4 +1402,95 @@ div.extrasTaulaUsers .barra-busqueda input:focus {
   cursor: pointer;
 }
 
-/* CONFIRMACIONS *//*# sourceMappingURL=main.css.map */
+/* CONFIRMACIONS */
+#confirmarDeleteObra {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+#confirmarDeleteObra .popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  width: 1100px;
+}
+#confirmarDeleteObra .popup-content table {
+  margin: auto auto;
+}
+#confirmarDeleteObra .popup-content table tr {
+  height: 40px;
+}
+#confirmarDeleteObra .popup-content table tr th {
+  background-color: lightgrey;
+}
+#confirmarDeleteObra .popup-content table tr td {
+  width: 250px;
+}
+#confirmarDeleteObra .popup-content table tr td a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+#confirmarDeleteObra .popup-content button {
+  margin: 10px;
+  margin-top: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#confirmarDeleteUser {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+#confirmarDeleteUser .popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  width: 1100px;
+}
+#confirmarDeleteUser .popup-content table {
+  margin: auto auto;
+}
+#confirmarDeleteUser .popup-content table tr {
+  height: 40px;
+}
+#confirmarDeleteUser .popup-content table tr th {
+  background-color: lightgrey;
+}
+#confirmarDeleteUser .popup-content table tr td {
+  width: 250px;
+}
+#confirmarDeleteUser .popup-content table tr td a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+#confirmarDeleteUser .popup-content button {
+  margin: 10px;
+  margin-top: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+}/*# sourceMappingURL=main.css.map */

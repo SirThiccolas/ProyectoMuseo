@@ -35,17 +35,17 @@
                     echo "<td>" . htmlspecialchars($obra["Nombre_Datacion"]) . "</td>";
                     echo "<td class='imagenFicha'>";
                     echo "<div class='imagen-contenedor'>";
-                    echo "<a href='#' class='openPopup' onclick='popupHistoria()' data-id='" . htmlspecialchars($obra['Num_registro']) . "'>";
+                    echo "<a href='#' class='openPopup' onclick='popupEleccionFicha()' data-id='" . htmlspecialchars($obra['Num_registro']) . "'>";
                     echo "<img src='public/img/icono-ficha.png' alt='Veure fitxa'>";
                     echo "</a>";
-                    if ($_SESSION['rol'] === "admin" || $_SESSION['rol'] === "tecnico") {
+                    if ($_SESSION['rol'] != "invitado") {
                         echo "<a href='index.php?controller=Obres&action=editarFicha&id=" . htmlspecialchars($obra['Num_registro']) . "'>";
-                        echo "<img src='public/img/icono-lapiz.png' alt='Editar fitxa'>";
+                            echo "<img src='public/img/icono-lapiz.png' alt='Editar fitxa'>";
+                        echo "</a>";
+                        echo "<a href='#' class='openPopup' onclick='confirmarDeleteObra()' data-id='" . htmlspecialchars($obra['Num_registro']) . "'>";
+                            echo "<img src='public/img/icono-papelera.png'>";
                         echo "</a>";
                     }
-                    echo "<a href='#' class='openPopup' onclick='confirmarDeleteObra()'>";
-                    echo "<img src='public/img/icono-papelera.png' alt='Eliminar obra'>";
-                    echo "</a>";
                     echo "</div></td></tr>";
                 }
             } else {
@@ -55,11 +55,6 @@
         </table>
     </div>
 
-    <!-- Scripts necesarios -->
-    <script src="public/js/EleccionFicha.js"></script>
-    <script src="public/js/Confirmacion.js"></script>
-
-    <!-- Script para búsqueda en tiempo real -->
     <script>
         $(document).ready(function(){
             $('#search-box').on('input', function() {
@@ -108,3 +103,6 @@
             });
         });
     </script>
+
+<script src="public/js/EleccionFicha.js"></script>
+<script src="public/js/Confirmaciones.js"></script>

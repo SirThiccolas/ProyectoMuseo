@@ -115,6 +115,8 @@ public function verFichaBasica($id)
                 ec.estado AS Estat_Conservacio,
                 ub.descripcion AS Nombre_Ubicacion, 
                 d.datacio AS Nombre_Datacion,
+                d.any_inici AS Any_Inici_Datacio,
+                d.any_final AS Any_Final_Datacio,
                 cg.nombre AS Classificacio_Generica,
                 fi.forma AS Forma_Ingres,
                 us.Nom_Usuari AS Nom_Usuari,
@@ -194,5 +196,15 @@ public function verFichaBasica($id)
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC); 
         }
+    }
+
+    public function deleteObra($id) 
+    {
+        $sql = "DELETE FROM bens_patrimonials WHERE Num_Registro = :id";
+        $db = $this->conectar();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':id', $id);
+
+        return $stmt->execute();
     }
 }
