@@ -47,6 +47,10 @@ header .logo {
   font-size: 20px;
 }
 
+.enlaces > a.pag-sel {
+  font-weight: bold;
+}
+
 .usuari {
   float: right;
   width: 180px;

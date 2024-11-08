@@ -1,3 +1,44 @@
+div.extrasTaulaExpos {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 10.5%;
+}
+div.extrasTaulaExpos .crearRegistreExpos {
+  margin-right: 10px;
+  border: 0;
+  border-radius: 7px;
+  background-color: hsl(211, 82%, 59%);
+  padding: 6px 6px 0px 6px;
+  height: 27px;
+  text-decoration: none;
+  color: white;
+}
+div.extrasTaulaExpos .crearRegistreExpos img {
+  width: 10px;
+  margin: 4px 2px;
+  float: left;
+}
+div.extrasTaulaExpos .barra-busqueda {
+  float: right;
+  border: solid 1px rgb(182, 182, 182);
+  border-radius: 15px;
+  width: 250px;
+}
+div.extrasTaulaExpos .barra-busqueda img {
+  width: 20px;
+  margin: 6px 10px 0 10px;
+  float: left;
+}
+div.extrasTaulaExpos .barra-busqueda input {
+  width: 190px;
+  border: 0;
+  height: 28px;
+}
+div.extrasTaulaExpos .barra-busqueda input:focus {
+  outline: none;
+}
+
 .taulaExposicions table {
   width: 90%;
   margin: 20px auto;

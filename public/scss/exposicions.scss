@@ -1,4 +1,47 @@
 @import "variables";
+div.extrasTaulaExpos {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-right: 10.5%;
+    .crearRegistreExpos {
+        margin-right: 10px;
+        border: 0;
+        border-radius: 7px;
+        background-color: $bgColorBoton;
+        padding: 6px 6px 0px 6px;
+        height: 27px;
+        text-decoration: none;
+        color: white;
+        img {
+            width: 10px;
+            margin: 4px 2px;
+            float: left;
+        }
+    }
+    
+    .barra-busqueda {
+        float: right;
+        border: solid 1px rgb(182, 182, 182);
+        border-radius: 15px;
+        width: 250px;
+        img {
+            width: 20px;
+            margin: 6px 10px 0 10px;
+            float: left;
+        }
+    
+        input {
+            width: 190px;
+            border: 0;
+            height: 28px;
+        }
+        input:focus {
+            outline: none;
+        }
+    }
+}
+
 .taulaExposicions {
     table {
         width: 90%;

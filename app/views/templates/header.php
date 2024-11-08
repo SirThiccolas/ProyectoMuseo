@@ -2,10 +2,9 @@
     <div class="wrapper">
         <div class="logo"><img src="public/img/logo.png" alt=""></div>
         <nav class="enlaces">
-            <a href="index.php?controller=Obres&action=mostrarObres">Inici</a>
-            <a href="#">Serveis</a>
-            <a href="index.php?controller=Exposicions&action=mostrarExposicions">Exposicions</a>
-            <a href="index.php?controller=Restauracions&action=mostrarRestauracions">Restauracions</a>
+            <a href="index.php?controller=Obres&action=mostrarObres" <?php if ($_SESSION["controlador"] === "ObresController") { echo "class='pag-sel'"; }?>>Obres</a>
+            <a href="index.php?controller=Exposicions&action=mostrarExposicions" <?php if ($_SESSION["controlador"] === "ExposicionsController") { echo "class='pag-sel'"; }?>>Exposicions</a>
+            <a href="index.php?controller=Restauracions&action=mostrarRestauracions" <?php if ($_SESSION["controlador"] === "RestauracionsController") { echo "class='pag-sel'"; }?>>Restauracions</a>
         </nav>
         <nav class="usuari">
             <div class="paste-button">

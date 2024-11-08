@@ -123,3 +123,19 @@ function popupHistoria() {
         } 
     };
 }
+
+function popupEditar(modalId) {
+    document.getElementById(modalId).style.display = "block";
+}
+
+function cerrarPopup(modalId) {
+    document.getElementById(modalId).style.display = "none";
+}
+
+function guardarTexto(textareaId, inputId) {
+    const textarea = document.getElementById(textareaId);
+    const input = document.getElementById(inputId);
+    input.value = textarea.value;
+    cerrarPopup(textarea.closest(".modal").id);
+}
+

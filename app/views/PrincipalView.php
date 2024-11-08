@@ -26,7 +26,7 @@
             // Generar registros en la tabla de forma estática o mediante PHP (inicialmente vacía)
             if (!empty($obres)) {
                 foreach ($obres as $obra) {
-                    echo "<tr class='" . ($obra["Baixa"] == "si" ? "row-red" : "") . "'>";
+                    echo "<tr class='" . ($obra["Baixa"] == "Si" ? "row-red" : "") . "'>";
                     echo "<td>" . htmlspecialchars($obra["Num_registro"]) . "</td>";
                     echo "<td><img src='public/img-bd/" . htmlspecialchars($obra["Fotografia"]) . "' alt='Foto de " . htmlspecialchars($obra["Titol"]) . "'></td>";
                     echo "<td>" . htmlspecialchars($obra["Titol"]) . "</td>";

@@ -21,6 +21,7 @@ require_once "autoload.php";
    
 if (isset($_GET['controller'])){
     $nombreController = $_GET['controller']."Controller";
+    $_SESSION["controlador"] = $nombreController;
 }
 else{
     //Controlador per dedecte
@@ -40,3 +41,4 @@ if (class_exists($nombreController)){
 
     echo "No existe el controlador";
 }
+?>
