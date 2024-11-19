@@ -1,4 +1,4 @@
-#confirmarDeleteObra {
+.confirmarDeleteObra {
     position: fixed;
     display: none;
     top: 0;
@@ -17,29 +17,33 @@
         border-radius: 10px;
         text-align: center;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        width: 1100px;
-        table {
-            margin: auto auto;
-            tr {
-                height: 40px;
-                th {
-                    background-color: lightgrey;
-                }
-                td {
-                    width: 250px;
-                }
-                td a {
-                    text-decoration: none;
-                    color: black;
-                    cursor: pointer;
-                }
+        width: 600px;
+        height: 300px;
+        .izq {
+            width: 300px;
+            float: left;
+            p {
+                margin-top: 100px;
+            }
+            button {
+                width: 80px;
+                margin: 10px;
+                margin-top: 50px;
+                border: 1px solid black;
+                border-radius: 5px;
             }
         }
-        button {
-            margin: 10px;
-            margin-top: 30px;
-            padding: 10px 20px;
-            cursor: pointer;
+        .der {
+            width: 300px;
+            float: right;
+            height: 300px;
+            margin: 0;
+            img {
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+                height: 300px;
+                width: 300px;
+            }
         }
     }
 }

@@ -23,7 +23,6 @@
                 <th>Ficha</th>
             </tr>
             <?php
-            // Generar registros en la tabla de forma estática o mediante PHP (inicialmente vacía)
             if (!empty($obres)) {
                 foreach ($obres as $obra) {
                     echo "<tr class='" . ($obra["Baixa"] == "Si" ? "row-red" : "") . "'>";
@@ -42,11 +41,26 @@
                         echo "<a href='index.php?controller=Obres&action=editarFicha&id=" . htmlspecialchars($obra['Num_registro']) . "'>";
                             echo "<img src='public/img/icono-lapiz.png' alt='Editar fitxa'>";
                         echo "</a>";
-                        echo "<a href='#' class='openPopup' onclick='confirmarDeleteObra()' data-id='" . htmlspecialchars($obra['Num_registro']) . "'>";
-                            echo "<img src='public/img/icono-papelera.png'>";
+                        echo "<a href='#' class='openPopup' onclick='confirmarDeleteObra(\"" . htmlspecialchars($obra['Num_registro']) . "\", \"" . htmlspecialchars($obra['Fotografia']) . "\")'>";
+                        echo "<img src='public/img/icono-papelera.png' alt='Eliminar obra'>";
                         echo "</a>";
                     }
                     echo "</div></td></tr>";
+                    ?>
+                    <!-- Div de confirmación único para cada obra -->
+                    <div id="confirmarDeleteObra_<?php echo htmlspecialchars($obra['Num_registro']); ?>" style="display: none;" class='confirmarDeleteObra'>
+                        <div class="popup-content">
+                            <div class='izq'>
+                                <p>Segur que vols esborrar aquest registre?</p>
+                                <button onclick="confirmarDeleteObra('<?php echo htmlspecialchars($obra['Num_registro']); ?>')">Si</button>
+                                <button onclick="cerrarPopup('<?php echo htmlspecialchars($obra['Num_registro']); ?>')">No</button>
+                            </div>
+                            <div class='der'>
+                                <img src="public/img-bd/<?php echo htmlspecialchars($obra["Fotografia"]) ?>" alt="Imagen de la obra">
+                            </div>
+                        </div>
+                    </div>
+                    <?php
                 }
             } else {
                 echo "<tr><td colspan='7'>No hay registros</td></tr>";
@@ -54,17 +68,17 @@
             ?>
         </table>
     </div>
-
+        
     <script>
         $(document).ready(function(){
             $('#search-box').on('input', function() {
                 let query = $(this).val();
 
-                $.get('search.php', { key: query, full: 1 }, function(data) {
+                $.get('app/views/search/busquedaObres.php', { key: query, full: 1 }, function(data) {
                     let tableRows = '';
                     if (data.length > 0) {
                         data.forEach(obra => {
-                            tableRows += `<tr${obra.Baixa === 'si' ? ' class="row-red"' : ''}>`;
+                            tableRows += `<tr${obra.Baixa === 'Si' ? ' class="row-red"' : ''}>`;
                             tableRows += `<td>${obra.Num_registro}</td>`;
                             tableRows += `<td><img src='public/img-bd/${obra.Fotografia}' alt='Foto de ${obra.Titol}'></td>`;
                             tableRows += `<td>${obra.Titol}</td>`;

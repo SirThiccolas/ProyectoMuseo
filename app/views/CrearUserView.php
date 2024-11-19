@@ -2,12 +2,12 @@
     <form action='index.php?controller=Usuaris&action=crearUser' method='post' class='form-crearUsuari'>
         <table>
             <tr>
-                <td><p>Nom</p><input type='text' name='nom' placeholder='Paco' required></td>
-                <td><p>Contrasenya</p><input type='password' name='contrasenya' placeholder='Paquito123' required></td>
+                <td><p>Nom</p><input type='text' name='nom' required></td>
+                <td><p>Email</p><input type='text' name='mail' required></td>
             </tr>
             <tr>
-                <td><p>Email</p><input type='text' name='mail' placeholder='pacogonzalez@gmail.com' required></td>
-                <td><p>Torna a escriure la contrasenya</p><input type='password' name='contrasenya2' placeholder='Paquito123' required></td>
+                <td><p>Contrasenya</p><input type='password' name='contrasenya' required></td>
+                <td><p>Torna a escriure la contrasenya</p><input type='password' name='contrasenya2' required></td>
             </tr>
             <tr>
                 <td colspan='2'><p>Rol</p>

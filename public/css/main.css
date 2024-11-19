@@ -438,6 +438,141 @@ footer .redes img {
   margin-right: 3px;
 }
 
+/* EDITAR FICHA */
+.editarFicha {
+  background-color: lightgrey;
+}
+.editarFicha div {
+  width: 1700px;
+  margin: auto auto;
+  border: 1px solid black;
+  background-color: white;
+  /* PRIMERA FILA FICHA */
+  /* SEGUNDA FILA FICHA */
+  /* TERCERA FILA FICHA */
+  /* ENLACES EXTRAS */
+}
+.editarFicha div p {
+  font-size: 20px;
+  text-align: center;
+}
+.editarFicha div .primera-fila {
+  border: none;
+  width: 1500px;
+  height: 120px;
+  margin-bottom: 70px;
+}
+.editarFicha div .primera-fila .item1 {
+  width: 850px;
+  float: left;
+}
+.editarFicha div .primera-fila .item1 div {
+  border: none;
+  float: left;
+  height: 141px;
+  width: 125px;
+  margin: 5px;
+}
+.editarFicha div .primera-fila .item1 div img {
+  -o-object-fit: fill;
+     object-fit: fill;
+  width: 100%;
+  height: 100%;
+}
+.editarFicha div .primera-fila .item2 {
+  width: 600px;
+  float: right;
+}
+.editarFicha div .primera-fila .item2 table .medidas td input {
+  width: 50px;
+}
+.editarFicha div .segunda-fila {
+  width: 1500px;
+  height: 120px;
+  border: none;
+  margin-bottom: 70px;
+}
+.editarFicha div .segunda-fila .item3 {
+  width: 600px;
+  float: left;
+}
+.editarFicha div .segunda-fila .item4 {
+  width: 850px;
+  float: right;
+}
+.editarFicha div .segunda-fila .item4 table .inici-final td input {
+  width: 50px;
+}
+.editarFicha div .tercera-fila {
+  width: 1500px;
+  border: none;
+  height: 120px;
+  margin-bottom: 30px;
+}
+.editarFicha div .tercera-fila .item5 {
+  width: 850px;
+  float: left;
+}
+.editarFicha div .tercera-fila .item6 {
+  width: 600px;
+  float: right;
+}
+.editarFicha div div div table {
+  margin-left: 5px;
+}
+.editarFicha div div div table tr td {
+  height: 25px;
+}
+.editarFicha div div div table tr td:first-child {
+  width: 250px;
+}
+.editarFicha div div div table tr td:last-child {
+  width: 300px;
+  border-bottom: 1px solid lightgray;
+}
+.editarFicha div .extras {
+  width: 1500px;
+  margin: auto auto;
+  border: 1px solid black;
+}
+.editarFicha div .extras table tr td {
+  border-right: 1px solid rgb(136, 135, 135);
+  padding-right: 100px;
+  text-align: center;
+  height: 30px;
+  width: 500px;
+}
+.editarFicha div .extras table tr td a {
+  margin-left: 100px;
+  text-decoration: none;
+  color: black;
+}
+.editarFicha div .extras table tr td:last-child {
+  border: none;
+}
+.editarFicha div nav {
+  margin: 40px 100px 40px 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.editarFicha div nav a {
+  text-decoration: none;
+  color: black;
+}
+.editarFicha div nav a img {
+  width: 20px;
+  margin-right: 3px;
+}
+.editarFicha div table tr td input {
+  border: none;
+}
+.editarFicha div table tr td input:focus {
+  outline: none;
+}
+.editarFicha div table tr td select {
+  border: none;
+}
+
 /* GESTIONS */
 .opcions-gestions {
   display: flex;
@@ -1455,7 +1590,7 @@ div.extrasTaulaExpos .barra-busqueda input:focus {
 }
 
 /* CONFIRMACIONS */
-#confirmarDeleteObra {
+.confirmarDeleteObra {
   position: fixed;
   display: none;
   top: 0;
@@ -1465,7 +1600,7 @@ div.extrasTaulaExpos .barra-busqueda input:focus {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
 }
-#confirmarDeleteObra .popup-content {
+.confirmarDeleteObra .popup-content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1475,30 +1610,34 @@ div.extrasTaulaExpos .barra-busqueda input:focus {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  width: 1100px;
+  width: 600px;
+  height: 300px;
 }
-#confirmarDeleteObra .popup-content table {
-  margin: auto auto;
+.confirmarDeleteObra .popup-content .izq {
+  width: 300px;
+  float: left;
 }
-#confirmarDeleteObra .popup-content table tr {
-  height: 40px;
+.confirmarDeleteObra .popup-content .izq p {
+  margin-top: 100px;
 }
-#confirmarDeleteObra .popup-content table tr th {
-  background-color: lightgrey;
-}
-#confirmarDeleteObra .popup-content table tr td {
-  width: 250px;
-}
-#confirmarDeleteObra .popup-content table tr td a {
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
-}
-#confirmarDeleteObra .popup-content button {
+.confirmarDeleteObra .popup-content .izq button {
+  width: 80px;
   margin: 10px;
-  margin-top: 30px;
-  padding: 10px 20px;
-  cursor: pointer;
+  margin-top: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.confirmarDeleteObra .popup-content .der {
+  width: 300px;
+  float: right;
+  height: 300px;
+  margin: 0;
+}
+.confirmarDeleteObra .popup-content .der img {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  height: 300px;
+  width: 300px;
 }
 
 #confirmarDeleteUser {

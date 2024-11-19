@@ -1,5 +1,5 @@
     <?php if($ficha): ?>
-    <body class="fichaGeneral">
+    <body class="editarFicha">
         <div>
             <p>Fundacio Apel·les Fenosa</p>
             <form action="index.php?controller=Obres&action=editarFicha&id=<?php echo $ficha[0]["Num_Registro"]?>" method="post">
@@ -65,7 +65,7 @@
                                     ?>
                                 </select></td>
                             </tr>
-                            <tr>
+                            <tr class="medidas">
                                 <td>Mides</td>
                                 <td><input type="text" name="Mides_Maxima_Alcada_cm" value="<?php echo $ficha[0]["Mides_Maxima_Alcada_cm"]?>"> x <input type="text" name="Mides_Maxima_Amplada_cm" value="<?php echo $ficha[0]["Mides_Maxima_Amplada_cm"]?>"> x <input type="text" name="Mides_Maxima_Profunditat_cm" value="<?php echo $ficha[0]["Mides_Maxima_Profunditat_cm"]?>"></td>
                             </tr>
@@ -169,7 +169,7 @@
                                     ?>
                                 </select></td>
                             </tr>
-                            <tr>
+                            <tr class="inici-final">
                                 <td>Any d'inici/final</td>
                                 <td>
                                 <input type="number" name="Any_Inicial" value="<?php echo htmlspecialchars($ficha[0]["Any_Inicial"]); ?>"> / <input type="number" name="Any_Final" value="<?php echo htmlspecialchars($ficha[0]["Any_Final"]); ?>">
@@ -272,7 +272,6 @@
                     </table>
                 </div>
 
-                <!-- Campos ocultos para enviar los valores de los popups -->
                 <input type="hidden" name="Bibliografia" id="bibliografiaInput" value="<?php echo $ficha[0]['Bibliografia']; ?>">
                 <input type="hidden" name="Descripcio" id="descripcionInput" value="<?php echo $ficha[0]['Descripcio']; ?>">
                 <input type="hidden" name="Historia" id="historiaInput" value="<?php echo $ficha[0]['Historia_Objecte']; ?>">

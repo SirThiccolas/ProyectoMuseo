@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Temps de generació: 30-10-2024 a les 12:19:48
+-- Temps de generació: 14-11-2024 a les 10:25:53
 -- Versió del servidor: 10.4.32-MariaDB
 -- Versió de PHP: 8.2.12
 
@@ -52,10 +52,7 @@ INSERT INTO `bens_exposats` (`id_exposicio`, `id_obra`) VALUES
 (7, 'B001'),
 (7, 'B002'),
 (8, 'B002'),
-(8, 'B003'),
-(9, 'B003'),
-(9, 'B004'),
-(10, 'B004');
+(8, 'B003');
 
 -- --------------------------------------------------------
 
@@ -65,7 +62,6 @@ INSERT INTO `bens_exposats` (`id_exposicio`, `id_obra`) VALUES
 
 CREATE TABLE `bens_patrimonials` (
   `Num_Registro` varchar(255) NOT NULL,
-  `Nom_Museu` varchar(255) DEFAULT NULL,
   `Fotografia` varchar(255) DEFAULT NULL,
   `Classificacio_Generica` int(11) DEFAULT NULL,
   `Nom_Objecte` varchar(255) DEFAULT NULL,
@@ -80,16 +76,14 @@ CREATE TABLE `bens_patrimonials` (
   `Any_Inicial` int(11) DEFAULT NULL,
   `Any_Final` int(11) DEFAULT NULL,
   `Datacio` int(11) DEFAULT NULL,
-  `Comentari_Ubicacio` text DEFAULT NULL,
   `Data_Registro` date DEFAULT NULL,
-  `Nombre_Exemplars` int(11) DEFAULT NULL,
   `Forma_Ingres` int(11) DEFAULT NULL,
   `Data_Ingres` date DEFAULT NULL,
   `Font_Ingres` varchar(255) DEFAULT NULL,
   `Baixa` varchar(3) DEFAULT NULL,
   `Causa_Baixa` int(11) DEFAULT NULL,
   `Data_Baixa` date DEFAULT NULL,
-  `Persona_Autoritz_Baixa` varchar(255) DEFAULT NULL,
+  `Persona_Autoritz_Baixa` int(11) DEFAULT NULL,
   `Estat_Conservacio` int(11) DEFAULT NULL,
   `Lloc_Execucio` varchar(255) DEFAULT NULL,
   `Lloc_Procedencia` varchar(255) DEFAULT NULL,
@@ -101,7 +95,6 @@ CREATE TABLE `bens_patrimonials` (
   `Historia_Objecte` text DEFAULT NULL,
   `ID_Ubicacio` int(11) DEFAULT NULL,
   `ID_Expo` int(11) DEFAULT NULL,
-  `ID_Moviment` int(11) DEFAULT NULL,
   `usuario_registra` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -109,16 +102,22 @@ CREATE TABLE `bens_patrimonials` (
 -- Bolcament de dades per a la taula `bens_patrimonials`
 --
 
-INSERT INTO `bens_patrimonials` (`Num_Registro`, `Nom_Museu`, `Fotografia`, `Classificacio_Generica`, `Nom_Objecte`, `Colleccio_Procedencia`, `Mides_Maxima_Alcada_cm`, `Mides_Maxima_Amplada_cm`, `Mides_Maxima_Profunditat_cm`, `Material`, `Tecnica`, `Autor`, `Titol`, `Any_Inicial`, `Any_Final`, `Datacio`, `Comentari_Ubicacio`, `Data_Registro`, `Nombre_Exemplars`, `Forma_Ingres`, `Data_Ingres`, `Font_Ingres`, `Baixa`, `Causa_Baixa`, `Data_Baixa`, `Persona_Autoritz_Baixa`, `Estat_Conservacio`, `Lloc_Execucio`, `Lloc_Procedencia`, `Num_Tiratge`, `Altres_Numeros_Identificacio`, `Valoracio_Economica_Euros`, `Bibliografia`, `Descripcio`, `Historia_Objecte`, `ID_Ubicacio`, `ID_Expo`, `ID_Moviment`, `usuario_registra`) VALUES
-('B001', 'Museu d\'Art Antic', 'B001.jpg', 1, 'Vasija de cerámica maya', 'Colección Arqueológica', 25.00, 15.00, 10.00, 2, 1, 3, 'Vasija ceremonial', 1200, NULL, 6, 'Almacén arqueología', '2024-10-01', 1, 2, '2020-05-20', 'Donación de particular', 'no', NULL, NULL, NULL, 4, 'Chichén Itzá', 'Chichén Itzá', NULL, 'B001-2020', 1500.00, 'Referencias en el catálogo arqueológico maya.', 'Vasija utilizada en ceremonias de ofrendas.', 'Esta pieza fue descubierta durante excavaciones en Chichén Itzá.', 2, 1, NULL, 1),
-('B002', 'Museu Històric', 'B002.jpg', 2, 'Estatua romana de mármol', 'Colección Romana', 180.00, 60.00, 50.00, 3, 2, 4, 'Escultura de patricio', 150, NULL, 7, 'Sala de exposición permanente', '2024-10-02', 1, 3, '2019-04-15', 'Adquisición en subasta', 'no', NULL, NULL, NULL, 5, 'Roma', 'Roma', NULL, 'B002-2019', 50000.00, 'Mencionada en textos de historia del arte romano.', 'Estatua de mármol representando a un patricio romano.', 'Descubierta en una villa romana cerca de Pompeya.', 1, 1, NULL, 2),
-('B003', 'Museu Egipci', 'B003.jpg', 3, 'Máscara funeraria egipcia', 'Colección Egipcia', 45.00, 30.00, 20.00, 1, 3, 5, 'Máscara funeraria', -200, NULL, 8, 'Exposición temporal', '2024-10-03', 1, 4, '2021-06-10', 'Donación por parte de una fundación', 'si', 1, '2023-03-22', 'Directora del museo', 4, 'Giza', 'Giza', NULL, 'B003-2021', 100000.00, 'Documentada en varias investigaciones sobre el periodo predinástico.', 'Máscara funeraria perteneciente a un dignatario egipcio.', 'Encontrada en una tumba real durante excavaciones en Giza.', 2, 2, NULL, 3),
-('B004', 'Museu Viking', 'B004.jpg', 4, 'Espada vikinga', 'Colección de Armas', 90.00, 15.00, 5.00, 2, 4, 6, 'Espada ceremonial', 900, 950, 6, 'Almacén de armas', '2024-10-04', 1, 5, '2018-07-30', 'Compra directa', 'no', NULL, NULL, NULL, 5, 'Escandinavia', 'Oslo', NULL, 'B004-2018', 20000.00, 'Citada en varios estudios sobre armamento vikingo.', 'Espada utilizada en ceremonias rituales.', 'Esta espada fue encontrada en un barco vikingo durante excavaciones en Oslo.', 1, 4, NULL, 1),
-('B006', 'Museu del Renaixement', 'B006.jpg', 5, 'Retrato de noble', 'Colección Renacentista', 100.00, 75.00, 5.00, 4, 1, 7, 'Retrato de un noble italiano', 1500, 1505, 10, 'Galería de retratos', '2024-10-06', 1, 3, '2018-12-25', 'Compra en galería', 'no', NULL, NULL, NULL, 5, 'Florencia', 'Florencia', NULL, 'B006-2018', 45000.00, 'Catalogado en la historia de arte renacentista.', 'Retrato en óleo de un noble florentino.', 'Recuperado de una colección privada en Florencia.', 1, 2, NULL, 3),
-('B007', 'Museu de Ciències Naturals', 'B007.jpg', 6, 'Esqueleto de dinosaurio', 'Colección Paleontológica', 500.00, 200.00, 100.00, 3, 2, NULL, 'Esqueleto completo', -66000000, NULL, 11, 'Sala de paleontología', '2024-10-07', 1, 2, '2017-09-10', 'Donación de museo', 'no', NULL, NULL, NULL, 6, 'Patagonia', 'Patagonia', NULL, 'B007-2017', 200000.00, 'Estudios paleontológicos recientes.', 'Esqueleto fósil de un dinosaurio herbívoro.', 'Encontrado en excavaciones paleontológicas en la Patagonia.', 3, 5, NULL, 1),
-('B008', 'Museu del Medievo', 'B008.jpg', 4, 'Armadura de caballero', 'Colección Medieval', 180.00, 60.00, 30.00, 2, 4, 8, 'Armadura completa', 1300, 1350, 9, 'Sala de armas medievales', '2024-10-08', 1, 5, '2015-06-18', 'Adquisición en subasta', 'no', NULL, NULL, NULL, 5, 'Normandía', 'Normandía', NULL, 'B008-2015', 75000.00, 'Referencias en historia medieval.', 'Armadura utilizada en el periodo medieval.', 'Esta armadura fue recuperada de una colección privada en Normandía.', 2, 4, NULL, 2),
-('B009', 'Museu Asiàtic', 'B009.jpg', 7, 'Estatua de Buda', 'Colección Budista', 150.00, 50.00, 40.00, 5, 3, 9, 'Escultura de Buda', 600, 650, 12, 'Sala de arte asiático', '2024-10-09', 1, 2, '2019-03-22', 'Donación de templo budista', 'no', NULL, NULL, NULL, 4, 'Nepal', 'Kathmandu', NULL, 'B009-2019', 120000.00, 'Documentado en estudios sobre arte budista.', 'Representación de Buda en piedra.', 'Esta estatua fue donada por un templo en Nepal.', 3, 1, NULL, 2),
-('B010', 'Museu del Antic Egipte', 'B010.jpg', 3, 'Sarcófago egipcio', 'Colección Egipcia', 200.00, 70.00, 50.00, 1, 5, 5, 'Sarcófago de noble', -1200, NULL, 8, 'Galería de tumbas', '2024-10-10', 1, 4, '2021-05-30', 'Donación de expedición arqueológica', 'si', 2, '2022-12-01', 'Curador jefe', 4, 'El Cairo', 'Luxor', NULL, 'B010-2021', 150000.00, 'Estudios recientes sobre momificación.', 'Sarcófago de un dignatario egipcio.', 'Encontrado en una tumba en Luxor durante una excavación.', 2, 3, NULL, 1);
+INSERT INTO `bens_patrimonials` (`Num_Registro`, `Fotografia`, `Classificacio_Generica`, `Nom_Objecte`, `Colleccio_Procedencia`, `Mides_Maxima_Alcada_cm`, `Mides_Maxima_Amplada_cm`, `Mides_Maxima_Profunditat_cm`, `Material`, `Tecnica`, `Autor`, `Titol`, `Any_Inicial`, `Any_Final`, `Datacio`, `Data_Registro`, `Forma_Ingres`, `Data_Ingres`, `Font_Ingres`, `Baixa`, `Causa_Baixa`, `Data_Baixa`, `Persona_Autoritz_Baixa`, `Estat_Conservacio`, `Lloc_Execucio`, `Lloc_Procedencia`, `Num_Tiratge`, `Altres_Numeros_Identificacio`, `Valoracio_Economica_Euros`, `Bibliografia`, `Descripcio`, `Historia_Objecte`, `ID_Ubicacio`, `ID_Expo`, `usuario_registra`) VALUES
+('B001', 'B001.jpg', 1, 'Vasija de cerámica maya', 'Colección Arqueológica', 25.00, 15.00, 10.00, 2, 1, 3, 'Vasija ceremonial', 1200, 0, 6, '2024-10-01', 2, '2020-05-20', 'Donación de particular', 'No', NULL, NULL, NULL, 4, 'Chichén Itzá', 'Chichén Itzá', 0, 'B001-2020', 1500.00, 'Referencias en el catálogo arqueológico maya.', 'Vasija utilizada en ceremonias de ofrendas.', 'Esta pieza fue descubierta durante excavaciones en Chichén Itzá.', 2, 1, 1),
+('B002', 'B002.jpg', NULL, 'Estatua romana de mármol', 'Colección Romana', 180.00, 60.00, 50.00, 3, 2, 4, 'Escultura de patricio', 150, NULL, 7, '2024-10-02', 3, '2019-04-15', 'Adquisición en subasta', 'No', 2, '0000-00-00', 1, 5, 'Roma', 'Roma', NULL, 'B002-2019', 50000.00, 'Mencionada en textos de historia del arte romano.', 'Estatua de mármol representando a un patricio romano.', 'Descubierta en una villa romana cerca de Pompeya.', 1, 1, 2),
+('B003', 'B003.jpg', 3, 'Máscara funeraria egipcia', 'Colección Egipcia', 45.00, 30.00, 20.00, 1, 2, 5, 'Máscara funeraria', -200, 12312313, 2, '2024-10-03', 3, '2021-06-10', 'Donación por parte de una fundación', 'No', NULL, NULL, NULL, 4, 'Giza', 'Gizaa', 323, 'B003-2021', 100000.00, 'Documentada en varias investigaciones sobre el periodo predinástico.', 'Máscara funeraria perteneciente a un dignatario egipcio.', 'Encontrada en una tumba real durante excavaciones en Giza.', 2, 2, 3),
+('B004', 'B004.jpg', 4, 'Espada vikinga', 'Colección de Armas', 90.00, 15.00, 5.00, 2, 4, 6, 'Espada ceremonial', 900, 950, 6, '2024-10-04', 5, '2018-07-30', 'Compra directa', 'No', NULL, NULL, NULL, 5, 'Escandinavia', 'Oslo', NULL, 'B004-2018', 20000.00, 'Citada en varios estudios sobre armamento vikingo.', 'Espada utilizada en ceremonias rituales.', 'Esta espada fue encontrada en un barco vikingo durante excavaciones en Oslo.', 1, 4, 1),
+('B005', 'B005.jpg', 2, 'Anillo romano', 'Colección Romana', 2.00, 1.00, 0.50, 4, 1, 5, 'Anillo de oro', -100, 0, 3, '2024-10-05', 1, '2022-11-05', 'Herencia familiar', 'No', NULL, NULL, NULL, 4, 'Roma', 'Roma', NULL, 'B005-2022', 750.00, 'Estudios arqueológicos de joyería romana.', 'Anillo perteneciente a un patricio romano.', 'Recuperado durante la excavación de una villa romana.', 1, 3, 2),
+('B006', 'B006.jpg', 3, 'Cuchillo ceremonial azteca', 'Colección Arqueológica', 30.00, 5.00, 1.50, 3, 4, 7, 'Cuchillo de obsidiana', 1400, 1521, 5, '2024-10-06', 2, '2020-08-14', 'Compra en galería', 'No', NULL, NULL, NULL, 5, 'Tenochtitlán', 'Tenochtitlán', NULL, 'B006-2020', 3000.00, 'Incluido en estudios sobre la cultura azteca.', 'Utilizado en ceremonias de sacrificio.', 'Hallado en Tenochtitlán durante excavaciones.', 2, 2, 3),
+('B007', 'B007.jpg', 1, 'Vasija griega de cerámica', 'Colección Clásica', 35.00, 20.00, 20.00, 2, 1, 3, 'Ánfora decorada', -500, -400, 7, '2024-10-07', 3, '2021-10-10', 'Donación privada', 'No', NULL, NULL, NULL, 3, 'Atenas', 'Atenas', NULL, 'B007-2021', 4500.00, 'Estudios en arte griego clásico.', 'Ánfora utilizada en banquetes ceremoniales.', 'Hallada en una tumba en Atenas.', 1, 1, 4),
+('B008', 'B008.jpg', 4, 'Escultura de un león', 'Colección Escultura Medieval', 100.00, 30.00, 50.00, 1, 2, 6, 'León en mármol', 1300, 1350, 2, '2024-10-08', 4, '2018-05-19', 'Adquisición en subasta', 'No', NULL, NULL, NULL, 5, 'París', 'París', NULL, 'B008-2018', 12000.00, 'Referencias en estudios de arte medieval.', 'Escultura de un león guardián.', 'Parte de una serie de esculturas en catedrales.', 1, 4, 1),
+('B009', 'B009.jpg', 3, 'Máscara tribal africana', 'Colección Etnográfica', 25.00, 15.00, 5.00, 2, 4, 8, 'Máscara de madera', 1800, 0, 6, '2024-10-09', 3, '2020-10-25', 'Compra directa', 'No', NULL, NULL, NULL, 4, 'Nigeria', 'Nigeria', NULL, 'B009-2020', 800.00, 'Estudios de arte africano.', 'Máscara utilizada en ceremonias.', 'Adquirida en Nigeria.', 2, 1, 2),
+('B010', 'B010.jpg', 1, 'Jarro egipcio', 'Colección Egipcia', 35.00, 20.00, 15.00, 3, 2, 9, 'Jarro decorativo', -1500, -1400, 5, '2024-10-10', 5, '2021-09-11', 'Donación de particular', 'No', NULL, NULL, NULL, 5, 'Luxor', 'Luxor', NULL, 'B010-2021', 6500.00, 'Incluido en estudios de alfarería egipcia.', 'Jarro para almacenamiento de alimentos.', 'Descubierto en Luxor.', 1, 2, 4),
+('B011', 'B011.jpg', 2, 'Escudo medieval', 'Colección de Armas', 80.00, 60.00, 5.00, 1, 3, 5, 'Escudo de caballero', 1200, 1300, 2, '2024-10-11', 1, '2019-02-17', 'Compra privada', 'No', NULL, NULL, NULL, 3, 'Londres', 'Londres', NULL, 'B011-2019', 7500.00, 'Estudios en armamento medieval.', 'Escudo de un caballero inglés.', 'Hallado en una fortaleza en Inglaterra.', 2, 3, 1),
+('B012', 'B012.jpg', 4, 'Arco japonés', 'Colección Oriental', 150.00, 10.00, 5.00, 3, 4, 7, 'Arco ceremonial', 1700, 1800, 6, '2024-10-12', 2, '2022-02-21', 'Compra en subasta', 'No', NULL, NULL, NULL, 4, 'Kyoto', 'Kyoto', NULL, 'B012-2022', 1100.00, 'Referencias en cultura samurái.', 'Arco utilizado en ceremonias samurái.', 'Recuperado en un templo de Kyoto.', 2, 4, 3),
+('B013', 'B013.jpg', 2, 'Collar de jade', 'Colección Precolombina', 5.00, 3.00, 0.20, 4, 2, 8, 'Collar ceremonial', -500, -400, 7, '2024-10-13', 3, '2019-10-01', 'Donación de fundación', 'No', NULL, NULL, NULL, 5, 'Perú', 'Perú', NULL, 'B013-2019', 12000.00, 'Estudios en cultura precolombina.', 'Collar ceremonial de jade.', 'Adquirido en una fundación arqueológica en Perú.', 1, 3, 2),
+('B014', 'B014.jpg', 1, 'Amuleto de bronce', 'Colección Clásica', 2.00, 1.00, 0.50, 3, 1, 6, 'Amuleto protector', -200, -100, 3, '2024-10-14', 5, '2021-07-30', 'Herencia privada', 'No', NULL, NULL, NULL, 3, 'Esparta', 'Esparta', NULL, 'B014-2021', 600.00, 'Documentado en estudios de arte clásico.', 'Amuleto con poderes protectores.', 'Hallado en una tumba en Esparta.', 1, 2, 4),
+('B015', 'B015.jpg', 4, 'Copa romana', 'Colección Romana', 10.00, 8.00, 8.00, 2, 3, 9, 'Copa de vidrio', 100, 200, 7, '2024-10-15', 4, '2018-09-15', 'Adquisición en galería', 'No', NULL, NULL, NULL, 4, 'Roma', 'Roma', NULL, 'B015-2018', 3200.00, 'Estudios sobre arte romano.', 'Copa utilizada en banquetes romanos.', 'Adquirida en una galería de arte en Roma.', 1, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -147,9 +146,7 @@ INSERT INTO `exposicions` (`ID_Expo`, `Nom_Expo`, `Data_Inici_Expo`, `Data_Fi_Ex
 (5, 'Arte Contemporáneo', '2024-01-15', '2024-04-15', 2, 'Centre de Cultura Contemporània de Barcelona'),
 (6, 'La Escultura a Través de los Siglos', '2024-05-01', '2024-07-31', 1, 'Museu de les Arts Decoratives'),
 (7, 'Pinturas de la Naturaleza', '2024-08-01', '2024-10-31', 2, 'Museu d\'Art de Girona'),
-(8, 'Arte Urbano', '2024-11-01', '2025-01-31', 1, 'Museu d\'Art Contemporani de Barcelona'),
-(9, 'Fotografía Artística', '2025-02-01', '2025-04-30', 1, 'Fundació Foto Colectania'),
-(10, 'Colección de Arte Local', '2025-05-01', '2025-07-31', 2, 'Museu de la Ciutat de Barcelona');
+(8, 'Arte Urbano', '2024-11-01', '2025-01-31', 1, 'Museu d\'Art Contemporani de Barcelona');
 
 -- --------------------------------------------------------
 
@@ -248,7 +245,8 @@ CREATE TABLE `usuaris` (
 INSERT INTO `usuaris` (`ID_Usuari`, `Nom_Usuari`, `Email`, `Password`, `Rol`) VALUES
 (1, 'admin', 'admin@example.com', 'admin', 'admin'),
 (2, 'tecnico', 'tecnico@example.com', 'tecnico', 'tecnico'),
-(3, 'invitado', 'invitado@example.com', 'invitado', 'invitado');
+(3, 'invitado', 'invitado@example.com', 'invitado', 'invitado'),
+(4, 'admin2', 'admin2@gmail.com', 'admin', 'tecnico');
 
 -- --------------------------------------------------------
 
@@ -753,7 +751,6 @@ ALTER TABLE `bens_patrimonials`
   ADD PRIMARY KEY (`Num_Registro`),
   ADD KEY `ID_Ubicacio` (`ID_Ubicacio`),
   ADD KEY `ID_Expo` (`ID_Expo`),
-  ADD KEY `ID_Moviment` (`ID_Moviment`),
   ADD KEY `usuario_registra` (`usuario_registra`),
   ADD KEY `fk_vocabulario_autor` (`Autor`),
   ADD KEY `fk_vocabulario_causa_baixa` (`Causa_Baixa`),
@@ -762,7 +759,8 @@ ALTER TABLE `bens_patrimonials`
   ADD KEY `fk_vocabulario_estat_conservacio` (`Estat_Conservacio`),
   ADD KEY `fk_vocabulario_forma_ingres` (`Forma_Ingres`),
   ADD KEY `fk_vocabulario_material` (`Material`),
-  ADD KEY `fk_vocabulario_tecnica` (`Tecnica`);
+  ADD KEY `fk_vocabulario_tecnica` (`Tecnica`),
+  ADD KEY `fk_usuari_autoritzat_baixa` (`Persona_Autoritz_Baixa`);
 
 --
 -- Índexs per a la taula `exposicions`
@@ -881,7 +879,7 @@ ALTER TABLE `ubicacions`
 -- AUTO_INCREMENT per la taula `usuaris`
 --
 ALTER TABLE `usuaris`
-  MODIFY `ID_Usuari` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_Usuari` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT per la taula `vocabulario_autores`
@@ -946,6 +944,7 @@ ALTER TABLE `bens_exposats`
 -- Restriccions per a la taula `bens_patrimonials`
 --
 ALTER TABLE `bens_patrimonials`
+  ADD CONSTRAINT `fk_usuari_autoritzat_baixa` FOREIGN KEY (`Persona_Autoritz_Baixa`) REFERENCES `usuaris` (`ID_Usuari`),
   ADD CONSTRAINT `fk_usuario_registra` FOREIGN KEY (`usuario_registra`) REFERENCES `usuaris` (`ID_Usuari`),
   ADD CONSTRAINT `fk_vocabulario_autor` FOREIGN KEY (`Autor`) REFERENCES `vocabulario_autores` (`id`),
   ADD CONSTRAINT `fk_vocabulario_causa_baixa` FOREIGN KEY (`Causa_Baixa`) REFERENCES `vocabulario_causas_baja` (`id`),

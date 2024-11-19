@@ -3,6 +3,7 @@
 require_once 'app/models/Obres.php';
 require_once 'app/models/Users.php';
 require_once 'app/models/Vocabulari.php';
+require_once 'vendor/autoload.php';
 
 class ObresController
 {
@@ -85,7 +86,7 @@ class ObresController
             $Bibliografia = $_POST["Bibliografia"];
             $Descripcio = $_POST["Descripcio"];
             $Historia = $_POST["Historia"];
-
+            
             try {
                 $actualizarobra->updateObra(
                     $idObra, $Nom_Objecte, $Autor, $Titol, $Nombre_Datacion, $Classificacio_Generica, 
@@ -126,11 +127,37 @@ class ObresController
         if (!$idObra) {
             echo "No ha arribat l'ID de l'obra.";
             echo "<meta http-equiv='refresh' content='2;url=index.php?controller=Obres&action=mostrarObres'>";
-            return;
+        } else {
+            $eliminarobra->deleteObra($idObra);
+            echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Obres&action=mostrarObres'>";
         }
-
-        $eliminarobra->deleteObra($idObra);
-        echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Obres&action=mostrarObres'>";
     }
 
+    public function crearObra() {
+        $crearobra = new Obres();
+        $idObra = $_GET['id'] ?? null;
+
+        if ($_POST) {
+            echo "form enviado";
+            echo "<meta http-equiv='refresh' content='2;url=index.php?controller=Obres&action=mostrarObres'>";
+        } else {
+            require_once 'app/views/CrearObraView.php';
+        }
+    }
+
+    public function generarPDF() {
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
+    
+        $modelo = new Obres();
+        $ficha = $this->modelobras->verFichaGeneral($id);
+    
+        if (empty($ficha)) {
+            echo "Error: No se encontró la ficha con el ID especificado.";
+            exit;
+        }
+  
+        require_once 'app/views/pruebaPdf.php';
+        
+    }
+    
 }

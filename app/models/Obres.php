@@ -243,7 +243,7 @@ class Obres extends Database
                 d.any_final AS Any_Final_Datacio,
                 cg.nombre AS Classificacio_Generica,
                 fi.forma AS Forma_Ingres,
-                us.Nom_Usuari AS Nom_Usuari,
+                usu.Nom_Usuari AS Nom_Usuari,
                 t.tecnica AS Tecnica,
                 cb.causa AS Causa_Baixa,
                 bp.ID_Ubicacio AS FK_ID_Ubicacio,
@@ -365,4 +365,55 @@ class Obres extends Database
         return $stmt->execute();
     }
 
+    public function getObraPorId($id)
+    {
+        $sql = "SELECT 
+                    bp.Num_Registro, 
+                    bp.Fotografia,
+                    bp.Nom_Objecte,
+                    bp.Titol, 
+                    bp.Mides_Maxima_Alcada_cm,
+                    bp.Mides_Maxima_Amplada_cm,
+                    bp.Mides_Maxima_Profunditat_cm,
+                    bp.Valoracio_Economica_Euros,
+                    bp.Data_Ingres,
+                    bp.Font_Ingres,
+                    bp.Lloc_Procedencia,
+                    bp.Data_Registro,
+                    a.nombre AS Autor, 
+                    m.material AS Material,
+                    ec.estado AS Estat_Conservacio,
+                    ub.descripcion AS Nombre_Ubicacion, 
+                    d.datacio AS Nombre_Datacion,
+                    cg.nombre AS Classificacio_Generica,
+                    fi.forma AS Forma_Ingres,
+                    us.Nom_Usuari AS Nom_Usuari
+                FROM 
+                    bens_patrimonials bp
+                LEFT JOIN 
+                    ubicacions ub ON bp.ID_Ubicacio = ub.ID_Ubicacio
+                LEFT JOIN
+                    usuaris us ON bp.usuario_registra = us.Id_Usuari
+                LEFT JOIN 
+                    vocabulario_autores a ON bp.Autor = a.id
+                LEFT JOIN 
+                    vocabulario_classificacio_generica cg ON bp.Classificacio_Generica = cg.id
+                LEFT JOIN
+                    vocabulario_datacions d ON bp.Datacio = d.id
+                LEFT JOIN
+                    vocabulario_material m ON bp.Material = m.id
+                LEFT JOIN
+                    vocabulario_estados_conservacion ec ON bp.Estat_Conservacio = ec.id
+                LEFT JOIN
+                    vocabulario_formas_ingreso fi ON bp.Forma_Ingres = fi.id
+                WHERE 
+                    bp.Num_Registro = :id";
+
+        $db = $this->conectar();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_STR); 
+        $stmt->execute(); 
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC); 
+        return $resultado ? $resultado : null;
+    }
 }

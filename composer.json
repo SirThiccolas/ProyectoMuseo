@@ -1,0 +1,6 @@
+{
+    "require": {
+        "spipu/html2pdf": "5.2.6",
+        "mpdf/mpdf": "^6.1"
+    }
+}

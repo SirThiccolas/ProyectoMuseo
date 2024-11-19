@@ -1,18 +1,17 @@
-// Función para confirmar eliminación de usuario
 function confirmarDeleteObra(ObraId) {
-    const confirmarDeleteObraPopup = document.getElementById('confirmarDeleteObra');
-    const confBtn = document.getElementById('confirmarPopupConfirmarDeleteObra');
-    const closeBtn = document.getElementById("closePopupConfirmarDeleteObra");
+    const confirmarDeleteObraPopup = document.getElementById('confirmarDeleteObra_' + ObraId);
+    const confBtn = confirmarDeleteObraPopup.querySelector("button:first-of-type");
+    const closeBtn = confirmarDeleteObraPopup.querySelector("button:last-of-type");
 
     // Mostrar el popup
     confirmarDeleteObraPopup.style.display = "block";
 
-    // Asignar el ID de usuario al botón de confirmación
+    // Asignar la acción al botón de confirmación
     confBtn.onclick = function() {
         window.location.href = 'index.php?controller=Obres&action=deleteObra&id=' + ObraId;
     };
 
-    // Cerrar el popup cuando se haga clic en el botón "Cerrar"
+    // Cerrar el popup cuando se haga clic en el botón "No"
     closeBtn.onclick = function() {
         confirmarDeleteObraPopup.style.display = "none";
     };
@@ -24,6 +23,12 @@ function confirmarDeleteObra(ObraId) {
         }
     };
 }
+
+function cerrarPopup(ObraId) {
+    document.getElementById('confirmarDeleteObra_' + ObraId).style.display = "none";
+}
+
+
 
 // Función para confirmar eliminación de usuario
 function confirmarDeleteUser(userId) {

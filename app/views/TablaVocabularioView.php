@@ -11,7 +11,8 @@ if (!isset($id) || !isset($resultados)) {
 <div class="extrasTaulaVoc">
     <a href="index.php?controller=Vocabularis&action=mostrarFormularioCrear&id=<?php echo $id; ?>" class="crearRegistreVoc"><img src='public/img/icono-mas.png' alt='Icono mas'>Crear nou registre</a>
     <div class="barra-busqueda">
-        <img src="public/img/icono-lupa.png" alt=""><input type="text" placeholder="Cerca">
+        <img src="public/img/icono-lupa.png" alt="Lupa">
+        <input type="text" name="typeahead" id="search-box" placeholder="Cerca">
     </div>
 </div>
 
@@ -52,3 +53,55 @@ if (!isset($id) || !isset($resultados)) {
     <a href="index.php?controller=Vocabularis&action=mostrarVocabularis"><button>Volver</button></a>
 </div>
 
+<script>
+    // Pasar el rol del usuario a una variable de JavaScript
+    const tablaVoc = "<?php echo $id; ?>";
+
+    $(document).ready(function() {
+        $('#search-box').on('input', function() {
+            let query = $(this).val();
+
+            $.get('app/views/search/busquedaVocabulari.php', { key: query, full: 1 }, function(data) {
+                let tableRows = '';
+                if (data.length > 0) {
+                    data.forEach(exposicio => {
+                        if (["datacions"].includes(tablaVoc)) {
+                            tableRows += `<a href='#' class='openPopup' onclick='confirmarDeleteExposicio(${exposicio.ID_Expo})'>
+                                            <img src='public/img/icono-papelera.png' alt='Eliminar exposicio'>
+                                          </a>
+                                          <a href='index.php?controller=Exposicions&action=editarExposicio&id=${exposicio.ID_Expo}'>
+                                            <img src='public/img/icono-lapiz.png' alt='Editar exposicio'>
+                                          </a>`;
+                        } else {
+                        tableRows += `<tr>
+                                        <td>${exposicio.Nom_Expo}</td>
+                                        <td>${exposicio.Data_Inici_Expo}</td>
+                                        <td>${exposicio.Data_Fi_Expo}</td>
+                                        <td>${exposicio.Tipus_Expo}</td>
+                                        <td>${exposicio.Lloc_Exposicio}</td>
+                                        <td class='imagenFicha'>
+                                            <div class='imagen-contenedor'>
+                                                <a href='index.php?controller=Exposicions&action=mostrarObresExpuestas&id=${exposicio.ID_Expo}'>
+                                                    <img src='public/img/obrasExpuestas.png' alt='Veure obres exposades'>
+                                                </a>`;
+                        tableRows += `</div>
+                                    </td>
+                                  </tr>`;
+                        }
+                    });
+                } else {
+                    tableRows = "<tr><td colspan='6'>No hay registros</td></tr>";
+                }
+                $('.taulaExposicions table').html(`
+                    <tr>
+                        <th>Exposicio</th>
+                        <th>Data Inici</th>
+                        <th>Data Fi</th>
+                        <th>Tipus Exposicio</th>
+                        <th>Lloc Exposicio</th>
+                        <th>Accions</th>
+                    </tr>` + tableRows);
+            }, 'json');
+        });
+    });
+</script>

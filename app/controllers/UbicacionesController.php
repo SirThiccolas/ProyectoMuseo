@@ -11,10 +11,11 @@ class UbicacionesController {
     }
 
     public function obtenerArbolUbicaciones() {
-        header('Content-Type: application/json');
+        require_once 'app/views/templates/header.php';
         $ubicaciones = $this->ubicacionesModel->obtenerUbicaciones();
-        echo json_encode($ubicaciones);
-        require_once 'app/views/ubicacionesView.php';
+        include 'app/views/ubicacionesView.php'; // Asegúrate de que esta ruta sea correcta
+        require_once 'app/views/templates/footer.html';
+
     }
 }
 ?>
