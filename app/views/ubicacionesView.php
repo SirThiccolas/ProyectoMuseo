@@ -8,76 +8,83 @@
 </head>
 <body>
     <h1>Árbol de Ubicaciones</h1>
-
-    <!-- Buttons -->
     <div>
-        <button id="btn-add">Añadir</button>
-        <button id="btn-edit">Modificar</button>
-        <button id="btn-delete">Eliminar</button>
+        <div ><button id="btn-add">Añadir</button></div>
+        <div><button id="btn-edit">Modificar</button></div>
+        <div><button id="btn-delete">Eliminar</button></div>
     </div>
-
-    <!-- Tree -->
     <div id="jstree_demo"></div>
 
-    <!-- Include jQuery and jsTree -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
 
     <script>
         $(document).ready(function () {
-            // Initialize jsTree
-            $('#jstree_demo').jstree({
+            const tree = $('#jstree_demo');
+
+            // Inicializar jsTree con los datos iniciales
+            let treeData = <?php echo json_encode($ubicaciones); ?>;
+            tree.jstree({
                 'core': {
-                    'data': <?php echo json_encode($ubicaciones); ?>,
-                    'check_callback': true // Allow editing
+                    'data': treeData,
+                    'check_callback': true
                 },
                 "plugins": ["wholerow"]
             });
 
-            // Get selected node
-            function getSelectedNode() {
-                const selected = $('#jstree_demo').jstree('get_selected', true); // Get full node object
-                return selected.length > 0 ? selected[0] : null;
-            }
-
-            // Add new node
-            $('#btn-add').click(function () {
-                const selectedNode = getSelectedNode();
+            // Añadir ubicación
+            $('#btn-add').off('click').on('click', function () {
+                const selectedNode = tree.jstree('get_selected', true)[0];
                 if (!selectedNode) {
                     alert("Seleccione una ubicación donde añadir.");
                     return;
                 }
 
                 const newName = prompt("Ingrese el nombre de la nueva ubicación:");
-                if (newName) {
+                const description = prompt("Ingrese la descripción de la nueva ubicación:");
+                if (newName && description) {
                     $.ajax({
-                        url: '../models/acciones.php',
+                        url: 'index.php?controller=Ubicaciones&action=manejarAcciones',
                         method: 'POST',
                         data: {
                             action: 'add',
                             parent_id: selectedNode.id,
-                            name: newName
+                            name: newName,
+                            description: description
                         },
                         success: function (response) {
-                            const newNode = JSON.parse(response);
-                            $('#jstree_demo').jstree().create_node(selectedNode.id, newNode);
+                            const newNode = {
+                                id: response.id,  // ID del nodo
+                                text: response.name,  // Nombre de la nueva ubicación
+                                description: response.description  // Descripción, aunque no es visualizada por defecto
+                            };
+
+                            // Agregar el nuevo nodo al árbol
+                            tree.jstree('create_node', selectedNode, newNode, 'last'); // Añade al final
+                            tree.jstree('open_node', selectedNode);  // Expande el nodo donde se añadió el nuevo nodo
+
+                            // Redirigir al usuario después de añadir el nodo
+                            window.location.href = 'index.php?controller=Ubicaciones&action=obtenerArbolUbicaciones';
+                        },
+                        error: function (xhr) {
+                            alert("Error al añadir: " + (xhr.responseJSON ? xhr.responseJSON.error : 'Error desconocido'));
                         }
                     });
                 }
             });
 
-            // Edit selected node
-            $('#btn-edit').click(function () {
-                const selectedNode = getSelectedNode();
+            // Modificar ubicación
+            $('#btn-edit').off('click').on('click', function () {
+                const selectedNode = tree.jstree('get_selected', true)[0];
                 if (!selectedNode) {
                     alert("Seleccione una ubicación para modificar.");
                     return;
                 }
 
-                const newName = prompt("Ingrese el nuevo nombre de la ubicación:", selectedNode.text);
+                const newName = prompt("Ingrese el nuevo nombre:", selectedNode.text);
                 if (newName) {
                     $.ajax({
-                        url: '../models/acciones.php',
+                        url: 'index.php?controller=Ubicaciones&action=manejarAcciones',
                         method: 'POST',
                         data: {
                             action: 'edit',
@@ -85,30 +92,36 @@
                             name: newName
                         },
                         success: function () {
-                            $('#jstree_demo').jstree().rename_node(selectedNode.id, newName);
+                            tree.jstree('rename_node', selectedNode.id, newName);
+                        },
+                        error: function (xhr) {
+                            alert("Error al modificar: " + (xhr.responseJSON ? xhr.responseJSON.error : 'Error desconocido'));
                         }
                     });
                 }
             });
 
-            // Delete selected node
-            $('#btn-delete').click(function () {
-                const selectedNode = getSelectedNode();
+            // Eliminar ubicación
+            $('#btn-delete').off('click').on('click', function () {
+                const selectedNode = tree.jstree('get_selected', true)[0];
                 if (!selectedNode) {
                     alert("Seleccione una ubicación para eliminar.");
                     return;
                 }
 
-                if (confirm(`¿Está seguro de que desea eliminar la ubicación "${selectedNode.text}"?`)) {
+                if (confirm(`¿Está seguro de eliminar "${selectedNode.text}"?`)) {
                     $.ajax({
-                        url: '../models/acciones.php',
+                        url: 'index.php?controller=Ubicaciones&action=manejarAcciones',
                         method: 'POST',
                         data: {
                             action: 'delete',
                             id: selectedNode.id
                         },
                         success: function () {
-                            $('#jstree_demo').jstree().delete_node(selectedNode.id);
+                            tree.jstree('delete_node', selectedNode.id);
+                        },
+                        error: function (xhr) {
+                            alert("Error al eliminar: " + (xhr.responseJSON ? xhr.responseJSON.error : 'Error desconocido'));
                         }
                     });
                 }

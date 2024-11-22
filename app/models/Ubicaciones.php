@@ -1,6 +1,4 @@
 <?php
-// app/models/Ubicaciones.php
-
 require_once("database.php");
 
 class Ubicaciones extends Database {
@@ -29,10 +27,11 @@ class Ubicaciones extends Database {
     }
 
     // Añadir una nueva ubicación
-    public function addUbicacion($parentId, $name) {
-        $stmt = $this->db->prepare("INSERT INTO ubicacions (padre, Nom) VALUES (:padre, :nom)");
+    public function addUbicacion($parentId, $name, $description) {
+        $stmt = $this->db->prepare("INSERT INTO ubicacions (padre, Nom, descripcion) VALUES (:padre, :nom, :descripcion)");
         $stmt->bindParam(':padre', $parentId);
         $stmt->bindParam(':nom', $name);
+        $stmt->bindParam(':descripcion', $description);
         $stmt->execute();
 
         return $this->db->lastInsertId(); // Devuelve la ID generada
@@ -58,5 +57,51 @@ class Ubicaciones extends Database {
         $stmtDeleteNode->bindParam(':id', $id);
         $stmtDeleteNode->execute();
     }
+
+    // Manejo de acciones dinámicamente
+    public function manejarAccion($action, $data) {
+        switch ($action) {
+            case 'add':
+                $parentId = $data['parent_id'] ?? null;
+                $name = $data['name'] ?? null;
+                $description = $data['description'] ?? null;
+
+                if (!$parentId || !$name || !$description) {
+                    throw new Exception("Faltan datos requeridos para añadir una ubicación.");
+                }
+
+                $newId = $this->addUbicacion($parentId, $name, $description);
+                return [
+                    "id" => $newId,
+                    "parent" => $parentId,
+                    "text" => $name
+                ];
+
+            case 'edit':
+                $id = $data['id'] ?? null;
+                $name = $data['name'] ?? null;
+
+                if (!$id || !$name) {
+                    throw new Exception("Faltan datos requeridos para modificar la ubicación.");
+                }
+
+                $this->updateUbicacion($id, $name);
+                return "success";
+
+            case 'delete':
+                $id = $data['id'] ?? null;
+
+                if (!$id) {
+                    throw new Exception("Faltan datos requeridos para eliminar la ubicación.");
+                }
+
+                $this->deleteUbicacion($id);
+                return "success";
+
+            default:
+                throw new Exception("Acción inválida.");
+        }
+    }
 }
+
 ?>

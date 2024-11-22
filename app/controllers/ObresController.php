@@ -148,15 +148,17 @@ class ObresController
     public function generarPDF() {
         $id = isset($_GET['id']) ? $_GET['id'] : null;
     
-        $modelo = new Obres();
         $ficha = $this->modelobras->verFichaGeneral($id);
+        $moviments = $this->modelobras->verMovimentsFicha($id); 
+        $restauracions = $this->modelobras->verRestauracionsFicha($id);
+        $exposicions = $this->modelobras->verExposicionsFicha($id);
     
         if (empty($ficha)) {
             echo "Error: No se encontró la ficha con el ID especificado.";
             exit;
         }
   
-        require_once 'app/views/pruebaPdf.php';
+        require_once 'app/views/GenerarPDF.php';
         
     }
     

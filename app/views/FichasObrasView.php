@@ -77,7 +77,7 @@
                             </tr>
                             <tr>
                                 <td>Usuari que registra</td>
-                                <td><?php echo $ficha[0]["Nom_Usuari"]?></td>
+                                <td><?php echo $ficha[0]["Nom_Usuari_Registre"]?></td>
                             </tr>
                         </table>
                     </div>
@@ -130,7 +130,7 @@
                             </tr>  
                             <tr>
                                 <td>Persona autoritzada baixa</td>
-                                <td><?php echo $ficha[0]["Persona_Autoritz_Baixa"]?></td>
+                                <td><?php echo $ficha[0]["Nom_Usuari_Baixa"]?></td>
                             </tr>
                         </table>
                     </div>

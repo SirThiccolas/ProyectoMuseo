@@ -138,7 +138,7 @@
                             <tr>
                                 <td>Usuari que registra</td>
                                 <td><select name="Nom_Usuari_Registre">
-                                        <option value="<?php echo $ficha[0]["FK_Usuari_Registra"]?>"><?php echo $ficha[0]["Nom_Usuari"]?></option>
+                                        <option value="<?php echo $ficha[0]["FK_Usuari_Registra"]?>"><?php echo $ficha[0]["Nom_Usuari_Registre"]?></option>
                                     <?php
                                         foreach ($usuaris as $usuari) {
                                             if ($usuari["Nom_Usuari"] != $ficha[0]["Nom_Usuari"] && $usuari["Rol"] === "admin") {
@@ -229,7 +229,7 @@
                                 <td>Persona autoritzada baixa</td>
                                 <td>
                                     <select name="Persona_Autoritz_Baixa" id="persona_autoritz_baixa">
-                                        <option value="<?php echo $ficha[0]["FK_Persona_Autoritz_Baixa"] ?>"><?php echo $ficha[0]["Nom_Usuari"] ?></option>
+                                        <option value="<?php echo $ficha[0]["FK_Persona_Autoritz_Baixa"] ?>"><?php echo $ficha[0]["Nom_Usuari_Baixa"] ?></option>
                                         <?php
                                             foreach ($usuaris as $usuari) {
                                                 if ($usuari["Nom_Usuari"] != $ficha[0]["Nom_Usuari"] && $usuari["Rol"] != "invitado") {
