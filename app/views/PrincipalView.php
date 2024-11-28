@@ -14,8 +14,8 @@
     <div class="taulaObres">
         <table>
             <tr>
-                <th>Nº Registre</th>
                 <th>Foto</th>
+                <th>Nº Registre</th>
                 <th>Títol</th>
                 <th>Autor</th>
                 <th>Ubicació</th>
@@ -26,8 +26,8 @@
             if (!empty($obres)) {
                 foreach ($obres as $obra) {
                     echo "<tr class='" . ($obra["Baixa"] == "Si" ? "row-red" : "") . "'>";
-                    echo "<td>" . htmlspecialchars($obra["Num_registro"]) . "</td>";
                     echo "<td><img src='public/img-bd/" . htmlspecialchars($obra["Fotografia"]) . "' alt='Foto de " . htmlspecialchars($obra["Titol"]) . "'></td>";
+                    echo "<td>" . htmlspecialchars($obra["Num_registro"]) . "</td>";
                     echo "<td>" . htmlspecialchars($obra["Titol"]) . "</td>";
                     echo "<td>" . htmlspecialchars($obra["Autor"]) . "</td>";
                     echo "<td>" . htmlspecialchars($obra["Nombre_Ubicacion"]) . "</td>";
@@ -79,8 +79,8 @@
                     if (data.length > 0) {
                         data.forEach(obra => {
                             tableRows += `<tr${obra.Baixa === 'Si' ? ' class="row-red"' : ''}>`;
-                            tableRows += `<td>${obra.Num_registro}</td>`;
                             tableRows += `<td><img src='public/img-bd/${obra.Fotografia}' alt='Foto de ${obra.Titol}'></td>`;
+                            tableRows += `<td>${obra.Num_registro}</td>`;
                             tableRows += `<td>${obra.Titol}</td>`;
                             tableRows += `<td>${obra.Autor}</td>`;
                             tableRows += `<td>${obra.Nombre_Ubicacion}</td>`;
@@ -105,8 +105,8 @@
                     }
                     $('.taulaObres table').html(`
                         <tr>
-                            <th>Nº Registre</th>
                             <th>Foto</th>
+                            <th>Nº Registre</th>
                             <th>Títol</th>
                             <th>Autor</th>
                             <th>Ubicació</th>

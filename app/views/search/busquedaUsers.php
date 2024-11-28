@@ -11,7 +11,13 @@ if ($con->connect_error) {
 
 $searchTerm = '%' . $con->real_escape_string($key) . '%';
 
-$sql = "SELECT * FROM usuaris WHERE Nom_Usuari LIKE '$searchTerm'";
+$sql = "SELECT 
+                * 
+            FROM 
+                usuaris 
+            WHERE 
+                CONCAT(Nom_Usuari, ' ', Email, ' ', Rol) LIKE '$searchTerm'";
+
 $result = $con->query($sql);
 
 while ($row = $result->fetch_assoc()) {
@@ -22,3 +28,5 @@ echo json_encode($response);
 
 $con->close();
 ?>
+
+

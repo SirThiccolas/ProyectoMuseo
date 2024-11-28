@@ -11,7 +11,13 @@ if ($con->connect_error) {
 
 $searchTerm = '%' . $con->real_escape_string($key) . '%';
 
-$sql = "SELECT * FROM exposicions WHERE Nom_Expo LIKE '$searchTerm'";
+$sql = "SELECT 
+                * 
+            FROM 
+                exposicions 
+            WHERE 
+                CONCAT(Nom_Expo, ' ', Data_Inici_Expo, ' ', Data_Fi_Expo, ' ', Tipus_Expo, ' ', Lloc_Exposicio) LIKE '$searchTerm'";
+
 $result = $con->query($sql);
 
 while ($row = $result->fetch_assoc()) {
@@ -22,3 +28,5 @@ echo json_encode($response);
 
 $con->close();
 ?>
+
+

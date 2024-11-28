@@ -1,242 +1,219 @@
 <?php
-        use Spipu\Html2Pdf\Html2Pdf;
-        ob_start();
-        ob_get_clean();
-        $html2pdf = new Html2Pdf('L', 'A3', 'es');
-        
-        $html2pdf->writeHTML("
-               <style>
-        /* Estilo general */
+    use Spipu\Html2Pdf\Html2Pdf;
+    ob_start();
+    ob_get_clean();
+    $html2pdf = new Html2Pdf();
+
+    $html2pdf->writeHTML("
+    <style>
         .main {
-            display: flex;
-            max-width: 100%;
-            margin: auto;
-            gap: 20px;
+            position: relative;
+            display: inline-block;
+        }      
+
+        .a {
+            position: absolute;
+            top: -300px;
+            left: 10px;
+            z-index: 2;
         }
-        /* Imagen grande a la izquierda */
-        .imagen-obra {
-            flex: 1; /* La imagen ocupa 1/3 del espacio */
+
+        .main img {
+            position: relative;
+            z-index: 1;
+            top: 300px;
+            width: 700px;
         }
-        .imagen-obra img {
+
+        .layout-table {
             width: 100%;
-            height: auto;
-            border-radius: 8px;
-            object-fit: cover;
+            border-collapse: collapse;
         }
-    
-        /* Contenedor de las tablas */
+
+        .layout-table td {
+            vertical-align: top;
+            padding: 10px;
+        }
+
         .informacio {
-            flex: 2; /* Las tablas ocupan 2/3 del espacio */
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+            width: 100%;
         }
-    
-        /* Estilo de filas */
-        .fila {
-            display: flex;
-            gap: 20px;
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
         }
-    
-        /* Cuadros dentro de filas */
-        .item {
-            flex: 1;
-            border: 1px solid black;
-            padding: 15px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-    
-        /* Cuadro de extras que ocupa toda la fila */
-        .extras {
-            border: 1px solid black;
-            padding: 15px;
-            background-color: #f1f1f1;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-    
-        /* Estilo de tablas dentro de cuadros */
-        th {
-            text-align: left;
-            width: 200px;
+
+        .info-table td, .info-table th {
+            padding: 5px;
             padding-right: 10px;
+            width: 25%;
         }
-        td {
-            word-wrap: break-word;
+        .info-table td {
+            border-right: 1px solid gray;
+        }
+        .info-table h3 {
+            font-size: 12px;
+            margin: 0;
+        }
+
+        .info-table p {
+            font-size: 12px;
+            margin: 0;
+            padding-left: 10px;
+        }
+
+        .imagen {
+            border: none;
+        }
+            
+        .imagen img {
+            height: 120px;
+            width: auto;
+            margin-bottom: 30px;
+        }
+        
+        .extras {
+            left: 30px;
+            padding-top: 80px;
+            margin-left: 13px;
+        }
+
+        .extras div {
+            margin-bottom: 10px;
+        }
+
+        .extras h3 {
+            font-size: 12px;
+            margin: 5px 0;
+        }
+
+        .extras p {
+            font-size: 12px;
         }
     </style>
-    
-            
-            
-        <div class='main'>
-                <div class='imagen-obra'>
-                    <img src='public/img-bd/".$ficha[0]['Fotografia']."' alt='Imatge obra'>
-                </div>
-                <div class='informacio'>
-                    <div class='fila'>
-                            <div class='item'>
-                                    <table>
-                                    <tr>
-                                            <th>Nº de registre</th>
-                                            <td>". $ficha[0]['Num_Registro']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Objecte</th>
-                                            <td>". $ficha[0]['Nom_Objecte']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Autor</th>
-                                            <td>". $ficha[0]['Autor']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Titol</th>
-                                            <td>". $ficha[0]['Titol']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Datacio</th>
-                                            <td>". $ficha[0]['Nombre_Datacion']."</td>
-                                    </tr>
-                                    </table>
-                            </div>
-                            <div class='item'>
-                                    <table>
-                                    <tr>
-                                            <th>Classificacio</th>
-                                            <td>". $ficha[0]['Classificacio_Generica']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Mides</th>
-                                            <td>a x b x c</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Material</th>
-                                            <td>". $ficha[0]['Material']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Conservacio</th>
-                                            <td>". $ficha[0]['Estat_Conservacio']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Valoracio economica</th>
-                                            <td>". $ficha[0]['Valoracio_Economica_Euros']."</td>
-                                    </tr>
-                                    </table>
-                            </div>
-                    </div>
-                    <div class='fila'>
-                            <div class='item'>
-                                    <table>
-                                    <tr>
-                                            <th>Forma d'ingres</th>
-                                            <td>". $ficha[0]['Forma_Ingres']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Data d'ingres</th>
-                                            <td>". $ficha[0]['Data_Ingres']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Font d'ingres</th>
-                                            <td>". $ficha[0]['Font_Ingres']."</td>
-                                    </tr>  
-                                    <tr>
-                                            <th>Data de registre</th>
-                                            <td>". $ficha[0]['Data_Registro']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Usuari que registra</th>
-                                            <td>". $ficha[0]['Nom_Usuari_Registre']."</td>
-                                    </tr>
-                                    </table>
-                            </div>
-                            <div class='item'>
-                                    <table>
-                                    <tr>
-                                            <th>Col·leccio de procedencia</th>
-                                            <td>". $ficha[0]['Colleccio_Procedencia']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Tecnica</th>
-                                            <td>". $ficha[0]['Tecnica']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Any d'inici/final</th>
-                                            <td>". $ficha[0]['Any_Inicial']." / ".$ficha[0]['Any_Final']."</td>
-                                    </tr>  
-                                    <tr>
-                                            <th>Nº Tiratge</th>
-                                            <td>". $ficha[0]['Num_Tiratge']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Altres numeros d'identificacio</th>
-                                            <td>". $ficha[0]['Altres_Numeros_Identificacio']."</td>
-                                    </tr>
-                                    </table>
-                            </div>
-                    </div>
-                    <div class='fila'>
-                            <div class='item'>
-                                    <table>
-                                    <tr>
-                                            <th>Baixa</th>
-                                            <td>". $ficha[0]['Baixa']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Causa de baixa</th>
-                                            <td>". $ficha[0]['Causa_Baixa']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Data de baixa</th>
-                                            <td>". $ficha[0]['Data_Baixa']."</td>
-                                    </tr>  
-                                    <tr>
-                                            <th>Persona autoritzada baixa</th>
-                                            <td>". $ficha[0]['Nom_Usuari_Baixa']."</td>
-                                    </tr>
-                                    </table>
-                            </div>
-                            <div class='item'>
-                                    <table>
-                                    <tr>
-                                            <th>Estat de conservacio</th>
-                                            <td>". $ficha[0]['Estat_Conservacio']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Lloc de procedencia</th>
-                                            <td>". $ficha[0]['Lloc_Procedencia']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th>Lloc d'execucio</th>
-                                            <td>". $ficha[0]['Lloc_Execucio']."</td>
-                                    </tr>
-                                    <tr>
-                                            <th></th>
-                                    </tr>
-                                    </table>
-                            </div>
-                    </div>
-                    <div class='extras'>
-                        <table>
+    <div class='main'>
+        <img src='public/img/logo-pdf.png' alt='logo'>
+        <div class='a'>
+            <table class='layout-table'>
+                <tr>
+                    <td class='informacio'>
+                        <table class='info-table'>
                             <tr>
-                                <th>Bibliografia</th>
-                                <td>". $ficha[0]['Bibliografia']."</td>
+                                <td class='imagen'>
+                                    <img src='public/img-bd/".$ficha[0]['Fotografia']."' alt='Imatge obra'>
+                                </td>
                             </tr>
                             <tr>
-                                <th>Descripcio</th>
-                                <td>". $ficha[0]['Descripcio']."</td>
+                                <th><h3>Nº de registre</h3></th>
+                                <td><p>".$ficha[0]['Num_Registro']."</p></td>
+                                <th><h3>Classificacio</h3></th>
+                                <td><p>".$ficha[0]['Classificacio_Generica']."</p></td>
                             </tr>
                             <tr>
-                                <th>Historia de l'objecte</th>
-                                <td>". $ficha[0]['Historia_Objecte']."</td>
+                                <th><h3>Objecte</h3></th>
+                                <td><p>".$ficha[0]['Nom_Objecte']."</p></td>
+                                <th><h3>Mides</h3></th>
+                                <td><p>".$ficha[0]['Mides_Maxima_Alcada_cm']." x ". $ficha[0]['Mides_Maxima_Amplada_cm']." x ". $ficha[0]['Mides_Maxima_Profunditat_cm']."</p></td>
+                            </tr>
+                            <tr>
+                                <th><h3>Autor</h3></th>
+                                <td><p>".$ficha[0]['Autor']."</p></td>
+                                <th><h3>Material</h3></th>
+                                <td><p>".$ficha[0]['Material']."</p></td>
+                            </tr>
+                            <tr>
+                                <th><h3>Titol</h3></th>
+                                <td><p>".$ficha[0]['Titol']."</p></td>
+                                <th><h3>Conservacio</h3></th>
+                                <td><p>".$ficha[0]['Estat_Conservacio']."</p></td>
+                            </tr>
+                            <tr>
+                                <th><h3>Datacio</h3></th>
+                                <td><p>".$ficha[0]['Nombre_Datacion']."</p></td>
+                                <th><h3>Valoracio economica</h3></th>
+                                <td><p>".$ficha[0]['Valoracio_Economica_Euros']."</p></td>
                             </tr>
                         </table>
-                    </div>
+                        <br><br>
+                        <table class='info-table'>
+                            <tr>
+                                <th><h3>Forma d'ingres</h3></th>
+                                <td><p>". $ficha[0]['Forma_Ingres']."</p></td>
+                                <th><h3>Col·leccio de procedencia</h3></th>
+                                <td><p>". $ficha[0]['Colleccio_Procedencia']."</p></td>
+                            </tr>   
+                            <tr>
+                                <th><h3>Data d'ingres</h3></th>
+                                <td><p>". $ficha[0]['Data_Ingres']."</p></td>
+                                <th><h3>Tecnica</h3></th>
+                                <td><p>". $ficha[0]['Tecnica']."</p></td>
+                            </tr>
+                            <tr>
+                                <th><h3>Font d'ingres</h3></th>
+                                <td><p>". $ficha[0]['Font_Ingres']."</p></td>
+                                <th><h3>Any d'inici/final</h3></th>
+                                <td><p>". $ficha[0]['Any_Inicial']." / ".$ficha[0]['Any_Final']."</p></td>
+                            </tr>
+                            <tr>
+                                <th><h3>Data de registre</h3></th>
+                                <td><p>". $ficha[0]['Data_Registro']."</p></td>
+                                <th><h3>Nº Tiratge</h3></th>
+                                <td><p>". $ficha[0]['Num_Tiratge']."</p></td>
+                            </tr>
+                            <tr>
+                                <th><h3>Usuari que registra</h3></th>
+                                <td><p>". $ficha[0]['Nom_Usuari_Registre']."</p></td>
+                                <th><h3>Altres numeros d'identificacio</h3></th>
+                                <td><p>". $ficha[0]['Altres_Numeros_Identificacio']."</p></td>
+                            </tr>
+                        </table>
+                        <br><br>
+                        <table class='info-table'>
+                            <tr>
+                                <th><h3>Baixa</h3></th>
+                                <td><p>". $ficha[0]['Baixa']."</p></td>
+                                <th><h3>Estat de conservacio</h3></th>
+                                <td><p>". $ficha[0]['Estat_Conservacio']."</p></td>
+                            </tr>
+                            <tr>   
+                                <th><h3>Causa de baixa</h3></th>
+                                <td><p>". $ficha[0]['Causa_Baixa']."</p></td>
+                                <th><h3>Lloc de procedencia</h3></th>
+                                <td><p>". $ficha[0]['Lloc_Procedencia']."</p></td>
+                            </tr>
+                            <tr>
+                                <th><h3>Data de baixa</h3></th>
+                                <td><p>". $ficha[0]['Data_Baixa']."</p></td>
+                                <th><h3>Lloc d'execucio</h3></th>
+                                <td><p>". $ficha[0]['Lloc_Execucio']."</p></td>
+                            </tr>
+                            <tr>
+                                <th><h3>Persona autoritzada baixa</h3></th>
+                                <td><p>". $ficha[0]['Nom_Usuari_Baixa']."</p></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+        </table>
+        <div class='extras'>
+                <div>
+                        <h3>Bibliografia</h3>
+                        <p>".$ficha[0]['Bibliografia']."</p>
+                </div>
+                <div>
+                        <h3>Descripcio</h3>
+                        <p>".$ficha[0]['Descripcio']."</p>
+                </div>
+                <div>
+                        <h3>Historia de l'objecte</h3>
+                        <p>".$ficha[0]['Historia_Objecte']."</p>
                 </div>
         </div>
-        ");
-        
-        ob_end_clean();
-        $html2pdf->output("FICHA GENERAL " . $ficha[0]["Num_Registro"] . ".pdf", 'I');
-        
+        </div>
+    </div>
+    ");
+    
+    ob_end_clean();
+    $html2pdf->output("FICHA GENERAL " . $ficha[0]["Num_Registro"] . ".pdf", 'I');
 ?>

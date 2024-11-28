@@ -22,7 +22,9 @@ $sql = "SELECT
                 restauracions r
             INNER JOIN 
                 bens_patrimonials bp ON bp.Num_Registro = r.id_obra
-            WHERE nom_restaurador LIKE '$searchTerm'";
+            WHERE 
+                CONCAT(r.id_obra, ' ', r.nom_restaurador, ' ', r.comentari, ' ', r.data_fi, ' ', r.data_inici, ' ', bp.Titol) LIKE '$searchTerm'";
+
 $result = $con->query($sql);
 
 while ($row = $result->fetch_assoc()) {
@@ -33,3 +35,5 @@ echo json_encode($response);
 
 $con->close();
 ?>
+
+
