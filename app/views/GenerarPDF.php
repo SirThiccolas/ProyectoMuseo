@@ -164,7 +164,7 @@
                             <tr>
                                 <th><h3>Usuari que registra</h3></th>
                                 <td><p>". $ficha[0]['Nom_Usuari_Registre']."</p></td>
-                                <th><h3>Altres numeros d'identificacio</h3></th>
+                                <th><h3>Altres identificadors</h3></th>
                                 <td><p>". $ficha[0]['Altres_Numeros_Identificacio']."</p></td>
                             </tr>
                         </table>

@@ -1,0 +1,68 @@
+.tablaCopias {
+  margin-bottom: 20px;
+}
+.tablaCopias h1 {
+  text-align: center;
+}
+.tablaCopias table {
+  border: none;
+  margin: auto auto;
+  width: 80%;
+  border-collapse: collapse;
+}
+.tablaCopias table thead {
+  text-align: center;
+  background-color: rgb(188, 185, 185);
+}
+.tablaCopias table thead th {
+  height: 40px;
+}
+.tablaCopias table tbody {
+  text-align: center;
+}
+.tablaCopias table tbody tr:nth-child(odd) {
+  background-color: white;
+}
+.tablaCopias table tbody tr:nth-child(even) {
+  background-color: #b3c4ec;
+}
+.tablaCopias table tbody td {
+  height: 30px;
+}
+.tablaCopias table tbody tr > td > a {
+  text-decoration: none;
+  color: black;
+  margin: 3px;
+}
+.tablaCopias table tbody tr > td > a:hover {
+  cursor: pointer;
+  color: #4CAF50;
+}
+.tablaCopias form {
+  text-align: center;
+}
+.tablaCopias form button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 38px;
+  font-size: 16px;
+}
+.tablaCopias form button:hover {
+  background-color: #338c38;
+}
+.tablaCopias form a {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.tablaCopias form a:hover {
+  background-color: #338c38;
+}/*# sourceMappingURL=backups.css.map */

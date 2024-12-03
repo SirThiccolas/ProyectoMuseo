@@ -10,7 +10,7 @@
                 <h3>Gestio de usuaris</h3>
             </div>
         </a>
-        <a href="#">
+        <a href="index.php?controller=CopiasSeguridad&action=mostrarCopias">
             <div>
                 <img src="public/img/icono-copiasSeguridad.png" alt="Icono gestion bienes">
                 <h3>Copies de seguretat</h3>
