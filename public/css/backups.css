@@ -24,7 +24,7 @@
   background-color: white;
 }
 .tablaCopias table tbody tr:nth-child(even) {
-  background-color: #b3c4ec;
+  background-color: #d7deef;
 }
 .tablaCopias table tbody td {
   height: 30px;
@@ -36,14 +36,14 @@
 }
 .tablaCopias table tbody tr > td > a:hover {
   cursor: pointer;
-  color: #4CAF50;
+  color: #445cbc;
 }
 .tablaCopias form {
   text-align: center;
 }
 .tablaCopias form button {
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #627eee;
   color: white;
   border: none;
   border-radius: 5px;
@@ -52,11 +52,11 @@
   font-size: 16px;
 }
 .tablaCopias form button:hover {
-  background-color: #338c38;
+  background-color: #445cbc;
 }
 .tablaCopias form a {
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #627eee;
   color: white;
   border: none;
   border-radius: 5px;
@@ -64,5 +64,5 @@
   text-decoration: none;
 }
 .tablaCopias form a:hover {
-  background-color: #338c38;
+  background-color: #445cbc;
 }/*# sourceMappingURL=backups.css.map */

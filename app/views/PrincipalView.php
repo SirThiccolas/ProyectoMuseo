@@ -18,8 +18,9 @@
                 <th>Nº Registre</th>
                 <th>Títol</th>
                 <th>Autor</th>
+                <th>Tecnica</th>
                 <th>Ubicació</th>
-                <th>Datació</th>
+                <th>Any</th>
                 <th>Ficha</th>
             </tr>
             <?php
@@ -30,8 +31,9 @@
                     echo "<td>" . htmlspecialchars($obra["Num_registro"]) . "</td>";
                     echo "<td>" . htmlspecialchars($obra["Titol"]) . "</td>";
                     echo "<td>" . htmlspecialchars($obra["Autor"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($obra["Nombre_Tecnica"]) . "</td>";
                     echo "<td>" . htmlspecialchars($obra["Nombre_Ubicacion"]) . "</td>";
-                    echo "<td>" . htmlspecialchars($obra["Nombre_Datacion"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($obra["Any_Final"]) . "</td>";
                     echo "<td class='imagenFicha'>";
                     echo "<div class='imagen-contenedor'>";
                     echo "<a href='#' class='openPopup' onclick='popupEleccionFicha()' data-id='" . htmlspecialchars($obra['Num_registro']) . "'>";
@@ -83,8 +85,9 @@
                             tableRows += `<td>${obra.Num_registro}</td>`;
                             tableRows += `<td>${obra.Titol}</td>`;
                             tableRows += `<td>${obra.Autor}</td>`;
+                            tableRows += `<td>${obra.Nombre_Tecnica}</td>`;
                             tableRows += `<td>${obra.Nombre_Ubicacion}</td>`;
-                            tableRows += `<td>${obra.Nombre_Datacion}</td>`;
+                            tableRows += `<td>${obra.Any_Final}</td>`;
                             tableRows += `<td class='imagenFicha'>
                                             <div class='imagen-contenedor'>
                                                 <a href='#' class='openPopup' onclick='popupHistoria()' data-id='${obra.Num_registro}'>
@@ -109,8 +112,9 @@
                             <th>Nº Registre</th>
                             <th>Títol</th>
                             <th>Autor</th>
+                            <th>Tecnica</th>
                             <th>Ubicació</th>
-                            <th>Datació</th>
+                            <th>Any</th>
                             <th>Ficha</th>
                         </tr>` + tableRows);
                 }, 'json');

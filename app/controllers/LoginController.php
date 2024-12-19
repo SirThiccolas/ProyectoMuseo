@@ -18,6 +18,7 @@ class LoginController
         if ($userData){
             $_SESSION['usuari'] = $userData['Nom_Usuari'];
             $_SESSION['rol'] = $userData['Rol'];
+            $_SESSION['id'] = $userData['ID_Usuari'];
             echo "<meta http-equiv='refresh' content='0;url=index.php?controller=Obres&action=mostrarObres'>";
         } else {
             // Si las credenciales son incorrectas, mostrar un error

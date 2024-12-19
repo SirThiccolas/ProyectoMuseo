@@ -573,6 +573,146 @@ footer .redes img {
   border: none;
 }
 
+.fromCrearObra {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.fromCrearObra form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.fromCrearObra form table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+.fromCrearObra form table td {
+  padding: 10px;
+  vertical-align: top;
+  height: 20px;
+}
+.fromCrearObra form table td:first-child {
+  width: 30%;
+}
+.fromCrearObra form table img {
+  max-width: 300px;
+}
+.fromCrearObra form input[type=text],
+.fromCrearObra form input[type=number],
+.fromCrearObra form input[type=date],
+.fromCrearObra form textarea,
+.fromCrearObra form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+.fromCrearObra form input[type=text]:focus,
+.fromCrearObra form input[type=number]:focus,
+.fromCrearObra form input[type=date]:focus,
+.fromCrearObra form textarea:focus,
+.fromCrearObra form select:focus {
+  border-color: #6c757d;
+  outline: none;
+}
+.fromCrearObra form input[type=file] {
+  padding: 5px;
+}
+.fromCrearObra form button,
+.fromCrearObra form input[type=submit] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.fromCrearObra form button:hover,
+.fromCrearObra form input[type=submit]:hover {
+  background-color: #0056b3;
+}
+.fromCrearObra form .popupAñadirEnlaces {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+.fromCrearObra form .popupAñadirEnlaces .popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.fromCrearObra form .popupAñadirEnlaces .popup-content .close-btn {
+  align-self: flex-end;
+  font-size: 20px;
+  color: #007bff;
+  cursor: pointer;
+}
+.fromCrearObra form .popupAñadirEnlaces .popup-content .close-btn:hover {
+  color: #0056b3;
+}
+.fromCrearObra form .popupAñadirEnlaces .popup-content h3 {
+  margin: 0 0 10px;
+}
+.fromCrearObra form .popupAñadirEnlaces .popup-content #linkContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.fromCrearObra form .popupSubirArchivos {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 1000;
+}
+.fromCrearObra form .popupSubirArchivos .popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.fromCrearObra form .popupSubirArchivos .popup-content .file-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px 0;
+}
+.fromCrearObra form .popupSubirArchivos .popup-content .file-type {
+  background: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+.fromCrearObra form .popupSubirArchivos .popup-content #filePreviewContainer {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.fromCrearObra form .popupSubirArchivos .popup-content .close-btn {
+  cursor: pointer;
+  font-size: 18px;
+  align-self: flex-end;
+}
+
 /* GESTIONS */
 .opcions-gestions {
   display: flex;
@@ -1589,6 +1729,73 @@ div.extrasTaulaExpos .barra-busqueda input:focus {
   width: 400px;
 }
 
+/* Estilos para el popup */
+.popupAñadirEnlaces {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  z-index: 1000;
+  width: 400px;
+}
+.popupAñadirEnlaces .popup-content {
+  position: relative;
+}
+.popupAñadirEnlaces .popup-content .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.popupAñadirEnlaces .popup-content h3 {
+  margin-bottom: 15px;
+}
+.popupAñadirEnlaces .popup-content #linkContainer {
+  margin-bottom: 15px;
+}
+.popupAñadirEnlaces .popup-content #linkContainer input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.popupAñadirEnlaces .popup-content button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.popupAñadirEnlaces .popup-content button:first-child {
+  background-color: #5cb85c;
+  color: white;
+}
+.popupAñadirEnlaces .popup-content button:last-child {
+  background-color: #d9534f;
+  color: white;
+}
+
+/* Fondo oscuro detrás del popup */
+.popup::before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
 /* CONFIRMACIONS */
 .confirmarDeleteObra {
   position: fixed;
@@ -1713,7 +1920,7 @@ div.extrasTaulaExpos .barra-busqueda input:focus {
   background-color: white;
 }
 .tablaCopias table tbody tr:nth-child(even) {
-  background-color: #b3c4ec;
+  background-color: #d7deef;
 }
 .tablaCopias table tbody td {
   height: 30px;
@@ -1725,14 +1932,14 @@ div.extrasTaulaExpos .barra-busqueda input:focus {
 }
 .tablaCopias table tbody tr > td > a:hover {
   cursor: pointer;
-  color: #4CAF50;
+  color: #445cbc;
 }
 .tablaCopias form {
   text-align: center;
 }
 .tablaCopias form button {
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #627eee;
   color: white;
   border: none;
   border-radius: 5px;
@@ -1741,11 +1948,11 @@ div.extrasTaulaExpos .barra-busqueda input:focus {
   font-size: 16px;
 }
 .tablaCopias form button:hover {
-  background-color: #338c38;
+  background-color: #445cbc;
 }
 .tablaCopias form a {
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #627eee;
   color: white;
   border: none;
   border-radius: 5px;
@@ -1753,5 +1960,5 @@ div.extrasTaulaExpos .barra-busqueda input:focus {
   text-decoration: none;
 }
 .tablaCopias form a:hover {
-  background-color: #338c38;
+  background-color: #445cbc;
 }/*# sourceMappingURL=main.css.map */

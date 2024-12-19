@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* TAULA OBRES */
 .extrasTaulaObres {
   display: flex;
@@ -422,4 +423,144 @@
 }
 .editarFicha div table tr td select {
   border: none;
+}
+
+.fromCrearObra {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.fromCrearObra form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.fromCrearObra form table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+.fromCrearObra form table td {
+  padding: 10px;
+  vertical-align: top;
+  height: 20px;
+}
+.fromCrearObra form table td:first-child {
+  width: 30%;
+}
+.fromCrearObra form table img {
+  max-width: 300px;
+}
+.fromCrearObra form input[type=text],
+.fromCrearObra form input[type=number],
+.fromCrearObra form input[type=date],
+.fromCrearObra form textarea,
+.fromCrearObra form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+.fromCrearObra form input[type=text]:focus,
+.fromCrearObra form input[type=number]:focus,
+.fromCrearObra form input[type=date]:focus,
+.fromCrearObra form textarea:focus,
+.fromCrearObra form select:focus {
+  border-color: #6c757d;
+  outline: none;
+}
+.fromCrearObra form input[type=file] {
+  padding: 5px;
+}
+.fromCrearObra form button,
+.fromCrearObra form input[type=submit] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.fromCrearObra form button:hover,
+.fromCrearObra form input[type=submit]:hover {
+  background-color: #0056b3;
+}
+.fromCrearObra form .popupAñadirEnlaces {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+.fromCrearObra form .popupAñadirEnlaces .popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.fromCrearObra form .popupAñadirEnlaces .popup-content .close-btn {
+  align-self: flex-end;
+  font-size: 20px;
+  color: #007bff;
+  cursor: pointer;
+}
+.fromCrearObra form .popupAñadirEnlaces .popup-content .close-btn:hover {
+  color: #0056b3;
+}
+.fromCrearObra form .popupAñadirEnlaces .popup-content h3 {
+  margin: 0 0 10px;
+}
+.fromCrearObra form .popupAñadirEnlaces .popup-content #linkContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.fromCrearObra form .popupSubirArchivos {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 1000;
+}
+.fromCrearObra form .popupSubirArchivos .popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.fromCrearObra form .popupSubirArchivos .popup-content .file-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px 0;
+}
+.fromCrearObra form .popupSubirArchivos .popup-content .file-type {
+  background: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+.fromCrearObra form .popupSubirArchivos .popup-content #filePreviewContainer {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.fromCrearObra form .popupSubirArchivos .popup-content .close-btn {
+  cursor: pointer;
+  font-size: 18px;
+  align-self: flex-end;
 }/*# sourceMappingURL=obres.css.map */

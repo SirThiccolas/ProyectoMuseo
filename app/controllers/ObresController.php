@@ -135,17 +135,91 @@ class ObresController
 
     public function crearObra() {
         $crearobra = new Obres();
-        $idObra = $_GET['id'] ?? null;
-
+        $this->modelvoc = new Vocabulari();
+        $this->modelusers = new Users();
+    
         if ($_POST) {
-            echo "form enviado";
-            echo "<meta http-equiv='refresh' content='2;url=index.php?controller=Obres&action=mostrarObres'>";
+            $idObra = $_POST["idObra"];
+            $Nom_Objecte = $_POST["Nom_Objecte"];
+            $Autor = $_POST["Autor"];
+            $Titol = $_POST["Titol"];
+            $Nombre_Datacion = $_POST["Nombre_Datacion"];
+            $Classificacio_Generica = $_POST["Classificacio_Generica"];
+            $Mides_Maxima_Alcada_cm = $_POST["Mides_Maxima_Alcada_cm"];
+            $Mides_Maxima_Amplada_cm = $_POST["Mides_Maxima_Amplada_cm"];
+            $Mides_Maxima_Profunditat_cm = $_POST["Mides_Maxima_Profunditat_cm"];
+            $Material = $_POST["Material"];
+            $Estat_Conservacio = $_POST["Estat_Conservacio"];
+            $Valoracio_Economica_Euros = $_POST["Valoracio_Economica_Euros"];
+            $Forma_Ingres = $_POST["Forma_Ingres"];
+            $Data_Ingres = $_POST["Data_Ingres"];
+            $Font_Ingres = $_POST["Font_Ingres"];
+            $Data_Registro = $_POST["Data_Registro"];
+            $Nom_Usuari_Registre = 3;
+            $Colleccio_Procedencia = $_POST["Colleccio_Procedencia"];
+            $Tecnica = $_POST["Tecnica"];
+            $Any_Inicial = $_POST["Any_Inicial"];
+            $Any_Final = $_POST["Any_Final"];
+            $Num_Tiratge = $_POST["Num_Tiratge"];
+            $Altres_Numeros_Identificacio = $_POST["Altres_Numeros_Identificacio"];
+            $Baixa = "No";
+            $Causa_Baixa = null;
+            $Data_Baixa = null;
+            $Persona_Autoritz_Baixa = null;
+            $Lloc_Procedencia = $_POST["Lloc_Procedencia"];
+            $Lloc_Execucio = $_POST["Lloc_Execucio"];
+            $Bibliografia = $_POST["Bibliografia"];
+            $Descripcio = $_POST["Descripcio"];
+            $Historia = $_POST["Historia"];
+            $archivos = $_FILES['archivos'];
+            $ubicacion = $_POST['ubicacion']; // Obtener la ubicación seleccionada
+
+            $enlaces = isset($_POST["enlaces"]) ? json_decode($_POST["enlaces"], true) : [];
+            
+            try {
+                $crearobra->createObra(
+                    $idObra, $Nom_Objecte, $Autor, $Titol, $Nombre_Datacion, $Classificacio_Generica, 
+                    $Mides_Maxima_Alcada_cm, $Mides_Maxima_Amplada_cm, $Mides_Maxima_Profunditat_cm, 
+                    $Material, $Estat_Conservacio, $Valoracio_Economica_Euros, $Forma_Ingres, 
+                    $Data_Ingres, $Font_Ingres, $Data_Registro, $Nom_Usuari_Registre, $Colleccio_Procedencia,
+                    $Tecnica, $Any_Inicial, $Any_Final, $Num_Tiratge, $Altres_Numeros_Identificacio, 
+                    $Baixa, $Causa_Baixa, $Data_Baixa, $Persona_Autoritz_Baixa, $Lloc_Procedencia,
+                    $Lloc_Execucio, $Bibliografia, $Descripcio, $Historia, $archivos
+                );
+    
+                if (isset($_FILES['archivos']) && count($_FILES['archivos']['name']) > 0) {
+                    $uploads_dir = 'uploads/';
+                    foreach ($_FILES['archivos']['name'] as $index => $file_name) {
+                        $file_tmp = $_FILES['archivos']['tmp_name'][$index];
+                        $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+                        $new_file_name = $uploads_dir . $idObra . '_' . ($index + 1) . '.' . $file_ext;
+                        if (!move_uploaded_file($file_tmp, $new_file_name)) {
+                            throw new Exception("Error al subir el archivo " . $file_name);
+                        }
+                    }
+                }
+    
+                #echo "<meta http-equiv='refresh' content='1;URL=index.php?controller=Obres&action=mostrarObres'>";
+            } catch (Exception $e) {
+                echo "Error al crear la obra: " . $e->getMessage();
+            }
         } else {
+            $vocabulariAutores = $this->modelvoc->getAutores();
+            $vocabulariCausasBaja = $this->modelvoc->getCausasBaja();
+            $vocabulariDataciones = $this->modelvoc->getDatacions();
+            $vocabulariEstadosConservacion = $this->modelvoc->getEstadosConservacion();
+            $vocabulariFormasIngreo = $this->modelvoc->getFormasIngreso();
+            $vocabulariTiposExposicion = $this->modelvoc->getTiposExposicion();
+            $vocabulariMaterial = $this->modelvoc->getMaterial();
+            $vocabulariTecnica = $this->modelvoc->getTecnica();
+            $vocabulariCodigoGetty = $this->modelvoc->getCogigoGetty();
+            $vocabulariClasificacionGenerica = $this->modelvoc->getClasificacionGenerica();
             require_once 'app/views/CrearObraView.php';
         }
     }
+    
 
-    public function generarPDF() {
+    public function generarPDFGeneral() {
         $id = isset($_GET['id']) ? $_GET['id'] : null;
     
         $ficha = $this->modelobras->verFichaGeneral($id);
@@ -158,8 +232,21 @@ class ObresController
             exit;
         }
   
-        require_once 'app/views/GenerarPDF.php';
+        require_once 'app/views/PDFFichaGeneral.php';
         
     }
+
+    public function generarPDFBasica() {
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
     
+        $ficha = $this->modelobras->verFichaBasica($id);
+        
+        if (empty($ficha)) {
+            echo "Error: No se encontró la ficha con el ID especificado.";
+            
+        }
+  
+        require_once 'app/views/PDFFichaBasica.php';
+        
+    }
 }

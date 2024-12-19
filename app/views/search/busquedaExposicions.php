@@ -12,11 +12,20 @@ if ($con->connect_error) {
 $searchTerm = '%' . $con->real_escape_string($key) . '%';
 
 $sql = "SELECT 
-                * 
-            FROM 
-                exposicions 
-            WHERE 
-                CONCAT(Nom_Expo, ' ', Data_Inici_Expo, ' ', Data_Fi_Expo, ' ', Tipus_Expo, ' ', Lloc_Exposicio) LIKE '$searchTerm'";
+            e.ID_Expo,
+            e.Nom_Expo,
+            e.Data_Inici_Expo,
+            e.Data_Fi_Expo,
+            e.Lloc_Exposicio,
+            v.tipo AS Tipus_Expo
+        FROM 
+            exposicions e 
+        INNER JOIN
+            vocabulario_tipos_exposicion v 
+        ON 
+            v.id = e.Tipus_Expo    
+        WHERE 
+            CONCAT(e.Nom_Expo, ' ', e.Data_Inici_Expo, ' ', e.Data_Fi_Expo, ' ', v.tipo, ' ', e.Lloc_Exposicio) LIKE '$searchTerm'";
 
 $result = $con->query($sql);
 

@@ -13,16 +13,18 @@ class Obres extends Database
                     a.nombre AS Autor, 
                     bp.Titol, 
                     u.Nom AS Nombre_Ubicacion, 
-                    d.datacio AS Nombre_Datacion
+                    bp.Any_Final,
+                    t.tecnica AS Nombre_Tecnica
                 FROM 
                     bens_patrimonials bp
                 INNER JOIN 
                     ubicacions u ON bp.ID_Ubicacio = u.ID_Ubicacio
                 INNER JOIN 
                     vocabulario_autores a ON bp.Autor = a.id
-                INNER JOIN 
-                    vocabulario_datacions d ON bp.Datacio = d.id
-                ORDER BY bp.Num_registro ASC";
+                INNER JOIN
+                    vocabulario_tecnica t ON bp.Tecnica = t.id
+                ORDER BY 
+                    bp.Num_registro ASC";
 
         $db = $this->conectar();
         $rows = $db->query($sql);
@@ -378,4 +380,65 @@ class Obres extends Database
 
         return $stmt->execute();
     }
+    
+    public function createObra($idObra, $Nom_Objecte, $Autor, $Titol, $Nombre_Datacion, $Classificacio_Generica, $Mides_Maxima_Alcada_cm, $Mides_Maxima_Amplada_cm, $Mides_Maxima_Profunditat_cm,
+        $Material, $Estat_Conservacio, $Valoracio_Economica_Euros, $Forma_Ingres, $Data_Ingres, $Font_Ingres, $Data_Registro, $Nom_Usuari_Registre, $Colleccio_Procedencia,
+        $Tecnica, $Any_Inicial, $Any_Final, $Num_Tiratge, $Altres_Numeros_Identificacio, $Baixa, $Causa_Baixa, $Data_Baixa, $Persona_Autoritz_Baixa, $Lloc_Procedencia,
+        $Lloc_Execucio, $Bibliografia, $Descripcio, $Historia) {
+    
+        $sql = "INSERT INTO bens_patrimonials (Num_Registro, Nom_Objecte, Autor, Titol, Datacio, Classificacio_Generica, Mides_Maxima_Alcada_cm, Mides_Maxima_Amplada_cm, Mides_Maxima_Profunditat_cm,
+                Material, Estat_Conservacio, Valoracio_Economica_Euros, Forma_Ingres, Data_Ingres, Font_Ingres, Data_Registro, Colleccio_Procedencia,
+                Tecnica, Any_Inicial, Any_Final, Num_Tiratge, Altres_Numeros_Identificacio, Baixa, Causa_Baixa, Data_Baixa, Persona_Autoritz_Baixa, Lloc_Procedencia,
+                Lloc_Execucio, Bibliografia, Descripcio, Historia_Objecte, usuario_registra) 
+                VALUES (:Num_Registro, :Nom_Objecte, :Autor, :Titol, :Nombre_Datacion, :Classificacio_Generica, :Mides_Maxima_Alcada_cm, :Mides_Maxima_Amplada_cm, :Mides_Maxima_Profunditat_cm,
+                :Material, :Estat_Conservacio, :Valoracio_Economica_Euros, :Forma_Ingres, :Data_Ingres, :Font_Ingres, :Data_Registro, :Colleccio_Procedencia,
+                :Tecnica, :Any_Inicial, :Any_Final, :Num_Tiratge, :Altres_Numeros_Identificacio, :Baixa, :Causa_Baixa, :Data_Baixa, :Persona_Autoritz_Baixa, :Lloc_Procedencia,
+                :Lloc_Execucio, :Bibliografia, :Descripcio, :Historia_Objecte, :usuario_registra)";
+    
+        $db = $this->conectar();
+        $stmt = $db->prepare($sql);
+
+        $stmt->bindParam(':Num_Registro', $idObra);
+        $stmt->bindParam(':Nom_Objecte', $Nom_Objecte);
+        $stmt->bindParam(':Autor', $Autor);
+        $stmt->bindParam(':Titol', $Titol);
+        $stmt->bindParam(':Nombre_Datacion', $Nombre_Datacion);
+        $stmt->bindParam(':Classificacio_Generica', $Classificacio_Generica);
+        $stmt->bindParam(':Mides_Maxima_Alcada_cm', $Mides_Maxima_Alcada_cm);
+        $stmt->bindParam(':Mides_Maxima_Amplada_cm', $Mides_Maxima_Amplada_cm);
+        $stmt->bindParam(':Mides_Maxima_Profunditat_cm', $Mides_Maxima_Profunditat_cm);
+        $stmt->bindParam(':Material', $Material);
+        $stmt->bindParam(':Estat_Conservacio', $Estat_Conservacio);
+        $stmt->bindParam(':Valoracio_Economica_Euros', $Valoracio_Economica_Euros);
+        $stmt->bindParam(':Forma_Ingres', $Forma_Ingres);
+        $stmt->bindParam(':Data_Ingres', $Data_Ingres);
+        $stmt->bindParam(':Font_Ingres', $Font_Ingres);
+        $stmt->bindParam(':Data_Registro', $Data_Registro);
+        $stmt->bindParam(':Colleccio_Procedencia', $Colleccio_Procedencia);
+        $stmt->bindParam(':Tecnica', $Tecnica);
+        $stmt->bindParam(':Any_Inicial', $Any_Inicial);
+        $stmt->bindParam(':Any_Final', $Any_Final);
+        $stmt->bindParam(':Num_Tiratge', $Num_Tiratge);
+        $stmt->bindParam(':Altres_Numeros_Identificacio', $Altres_Numeros_Identificacio);
+        $stmt->bindParam(':Baixa', $Baixa);
+        $stmt->bindParam(':Causa_Baixa', $Causa_Baixa);
+        $stmt->bindParam(':Data_Baixa', $Data_Baixa);
+        $stmt->bindParam(':Persona_Autoritz_Baixa', $Persona_Autoritz_Baixa);
+        $stmt->bindParam(':Lloc_Procedencia', $Lloc_Procedencia);
+        $stmt->bindParam(':Lloc_Execucio', $Lloc_Execucio);
+        $stmt->bindParam(':Bibliografia', $Bibliografia);
+        $stmt->bindParam(':Descripcio', $Descripcio);
+        $stmt->bindParam(':Historia_Objecte', $Historia);
+        $stmt->bindParam(':usuario_registra', $Nom_Usuari_Registre);
+    
+        $stmt->execute();
+    }
+
+    public function guardarEnlace($idObra, $enlace) {
+        $sql = "INSERT INTO obra_enlaces (id_obra, enlace) VALUES (?, ?)";
+        $db = $this->conectar();
+        $stmt = $db->prepare($sql);
+        $stmt->execute([$idObra, $enlace]);
+    }
+    
 }

@@ -6,7 +6,18 @@ class Exposicions extends Database
 {   
     public function getExposicions()
     {
-        $sql = 'SELECT * FROM exposicions';
+        $sql = 'SELECT 
+                    e.ID_Expo,
+                    e.Nom_Expo,
+                    e.Data_Inici_Expo,
+                    e.Data_Fi_Expo,
+                    e.Lloc_Exposicio,
+                    v.tipo AS Tipus_Expo
+                FROM 
+                    exposicions e 
+                INNER JOIN
+                    vocabulario_tipos_exposicion v 
+                ON v.id = e.Tipus_Expo';
         $db = $this->conectar();
         $rows = $db->query($sql);
         $resultado = $rows->fetchAll(PDO::FETCH_ASSOC); // Usamos fetchAll en lugar de fetch

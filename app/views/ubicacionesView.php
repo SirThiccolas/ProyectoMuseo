@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Árbol de Ubicaciones</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css" />
-</head>
-<body>
+<div class='ubicacions'>
     <h1>Árbol de Ubicaciones</h1>
     <div>
         <div ><button id="btn-add">Añadir</button></div>
@@ -128,5 +120,4 @@
             });
         });
     </script>
-</body>
-</html>
+</div>

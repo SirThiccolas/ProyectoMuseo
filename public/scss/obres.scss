@@ -478,3 +478,167 @@
         }
     }
 }
+// Estilos para el formulario crear obra
+
+$form-bg-color: #f9f9f9;
+$input-border: #ccc;
+$input-focus: #6c757d;
+$button-bg: #007bff;
+$button-bg-hover: #0056b3;
+$button-color: #fff;
+
+.fromCrearObra {
+  background-color: $form-bg-color;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+
+      td {
+        padding: 10px;
+        vertical-align: top;
+        height: 20px;
+
+        &:first-child {
+          width: 30%;
+        }
+      }
+
+      img {
+        max-width: 300px;
+      }
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid $input-border;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: border-color 0.2s;
+
+      &:focus {
+        border-color: $input-focus;
+        outline: none;
+      }
+    }
+
+    input[type="file"] {
+      padding: 5px;
+    }
+
+    button,
+    input[type="submit"] {
+      background-color: $button-bg;
+      color: $button-color;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $button-bg-hover;
+      }
+    }
+
+    .popupAñadirEnlaces {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: $form-bg-color;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: none;
+
+      .popup-content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .close-btn {
+          align-self: flex-end;
+          font-size: 20px;
+          color: $button-bg;
+          cursor: pointer;
+
+          &:hover {
+            color: $button-bg-hover;
+          }
+        }
+
+        h3 {
+          margin: 0 0 10px;
+        }
+
+        #linkContainer {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        }
+      }
+    }
+
+    .popupSubirArchivos {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 8px;
+        z-index: 1000;
+        .popup-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .file-icon {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                background: #f0f0f0;
+                padding: 10px;
+                border-radius: 4px;
+                margin: 5px 0;
+            }
+            .file-type {
+                background: #007bff;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 4px;
+            }
+        
+            #filePreviewContainer {
+                max-height: 200px;
+                overflow-y: auto;
+            }
+        
+            .close-btn {
+                cursor: pointer;
+                font-size: 18px;
+                align-self: flex-end;
+            }
+        }
+    }
+
+    
+  }
+}

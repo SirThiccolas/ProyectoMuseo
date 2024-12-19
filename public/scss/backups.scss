@@ -19,11 +19,10 @@
             text-align: center;
             tr:nth-child(odd) {
                 background-color: white;
-              }
-        
-              tr:nth-child(even) {
-                background-color: #b3c4ec;
-              }
+            }        
+            tr:nth-child(even) {
+                background-color: #d7deef;
+            }
             td {
                 height: 30px;
             }
@@ -34,7 +33,7 @@
             }
             tr > td > a:hover {
                 cursor: pointer;
-                color: #4CAF50;
+                color: #445cbc;
             }
         }
     }
@@ -42,7 +41,7 @@
         text-align: center;
         button {
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #627eee;
             color: white;
             border: none;
             border-radius: 5px;
@@ -50,19 +49,19 @@
             height: 38px;
             font-size: 16px;
             &:hover {
-                background-color: #338c38;
+                background-color: #445cbc;
             }
         }
         a {
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #627eee;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
             &:hover {
-              background-color: #338c38;
+                background-color: #445cbc;
             }
           }
     }

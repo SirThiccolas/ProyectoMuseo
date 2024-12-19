@@ -18,17 +18,18 @@ $sql = "SELECT
             a.nombre AS Autor, 
             bp.Titol, 
             u.Nom AS Nombre_Ubicacion, 
-            d.datacio AS Nombre_Datacion
+            bp.Any_Final,
+            t.tecnica AS Nombre_Tecnica
         FROM 
             bens_patrimonials bp
         INNER JOIN 
             ubicacions u ON bp.ID_Ubicacio = u.ID_Ubicacio
         INNER JOIN 
             vocabulario_autores a ON bp.Autor = a.id
-        INNER JOIN 
-            vocabulario_datacions d ON bp.Datacio = d.id 
+        INNER JOIN
+            vocabulario_tecnica t ON bp.Tecnica = t.id
         WHERE 
-            CONCAT(bp.Num_registro, ' ', bp.Titol, ' ', a.nombre, ' ', u.Nom, ' ', d.datacio) LIKE '$searchTerm'
+            CONCAT(bp.Num_registro, ' ', bp.Titol, ' ', a.nombre, ' ', u.Nom, ' ', bp.Any_Final, ' ', t.tecnica) LIKE '$searchTerm'
         ORDER BY 
             bp.Num_Registro ASC";
 

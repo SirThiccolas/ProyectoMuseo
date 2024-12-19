@@ -168,7 +168,7 @@
                 </div>
                 <nav>
                     <a href="index.php?controller=Obres&action=mostrarObres">Volver</a>
-                    <a href="index.php?controller=Obres&action=generarPDF&id=<?php echo $ficha[0]["Num_Registro"] ?>" target="_blank" alt="Icono descarga"><img src="public/img/icono-descarga.png"></a>
+                    <a href="index.php?controller=Obres&action=generarPDFGeneral&id=<?php echo $ficha[0]["Num_Registro"] ?>" target="_blank" alt="Icono descarga"><img src="public/img/icono-descarga.png"></a>
                 </nav>
             </div>
         </body>
@@ -259,7 +259,7 @@
                 </div>
                 <nav>
                     <a href="index.php?controller=Obres&action=mostrarObres">Volver</a>
-                    <a href="index.php?controller=Obres&action=descargarPDF" alt="Icono descarga"><img src="public/img/icono-descarga.png"></a>
+                    <a href="index.php?controller=Obres&action=generarPDFBasica&id=<?php echo $ficha["Num_Registro"] ?>" target="_blank" alt="Icono descarga"><img src="public/img/icono-descarga.png"></a>
                 </nav>
             </div>
         </body>

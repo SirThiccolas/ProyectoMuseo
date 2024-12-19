@@ -5,6 +5,9 @@ if ($_SESSION['rol'] != "admin") {
 }
 ?>
 <div class="extrasTaulaUsers">
+<a href='index.php?controller=OpcionsGestions&action=mostrarOpcionsGestions' class='crearRegistreUsers'>
+        Tornar
+    </a>
     <a href='index.php?controller=Usuaris&action=crearUser' class='crearRegistreUsers'>
         <img src='public/img/icono-mas.png' alt='Icono más'>Donar d'alta
     </a>
